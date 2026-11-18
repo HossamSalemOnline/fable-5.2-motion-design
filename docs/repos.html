@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>20 GitHub repos that turn Fable 5.2 into a full video editing studio</title><meta name="robots" content="noindex"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#0e0a09;--panel:#18110f;--panel2:#211715;--line:#33241f;--ink:#f3e7d3;--muted:#b6a48d;
+--accent:#e8613c;--accent2:#e9407a;--mustard:#e3a82b;--cream:#efe4cf;--radius:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#3a1712 0%,transparent 60%),var(--bg);
+color:var(--ink);font:17px/1.7 Inter,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--mustard);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(14,10,9,.78);border-bottom:1px solid var(--line)}
+.nav .in{max-width:1180px;margin:auto;display:flex;align-items:center;gap:22px;padding:14px 22px;flex-wrap:wrap}
+.brand{font-family:'Bricolage Grotesque',Inter,sans-serif;font-weight:800;font-size:19px;color:var(--ink)}
+.brand b{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav a.l{color:var(--muted);font-size:15px;font-weight:500}.nav a.l.on,.nav a.l:hover{color:var(--ink);text-decoration:none}
+.nav .sp{flex:1}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',Inter,sans-serif;line-height:1.15;letter-spacing:-.015em}
+h1{font-size:clamp(34px,5vw,56px);margin:.2em 0 .4em}
+h2{font-size:30px;margin:2.2em 0 .6em;padding-top:.4em}
+h3{font-size:22px;margin:1.8em 0 .5em;color:var(--cream)}h4{font-size:18px;margin:1.6em 0 .4em;color:var(--mustard)}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:56px;max-width:1180px;margin:auto;padding:40px 22px 100px}
+.doc{max-width:780px;min-width:0}
+.toc{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 110px);overflow:auto;font-size:14px;border-left:1px solid var(--line);padding-left:18px}
+.toc b{display:block;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.toc a{display:block;color:var(--muted);padding:4px 0;line-height:1.35}.toc a:hover{color:var(--ink);text-decoration:none}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.toc{display:none}}
+p,li,td{color:#eadcc6;overflow-wrap:anywhere}strong{color:var(--ink)}
+hr{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:48px 0}
+blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 12px 12px 0;color:var(--muted)}
+blockquote p{margin:.3em 0;color:#e2d3bd}
+code{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:.88em;background:var(--panel2);border:1px solid var(--line);padding:.1em .4em;border-radius:6px}
+pre{position:relative;background:#120d0c;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;overflow:auto;line-height:1.55}
+pre code{background:none;border:0;padding:0;font-size:13.5px;color:#f1e2cb;white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:10px;right:10px;font:600 12px Inter,sans-serif;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer;opacity:.85}
+.copy:hover{opacity:1;border-color:var(--accent)}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:22px 0;font-size:15px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:block;overflow-x:auto}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--panel2);color:var(--cream);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}tbody tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+img{max-width:100%;border-radius:12px}
+figure{margin:30px 0}figure img{display:block;margin:auto;border:1px solid var(--line)}
+figure.video video{display:block;width:100%;border-radius:var(--radius);border:1px solid var(--line);background:#000;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+figure.video.tall video{max-height:78vh;width:auto;max-width:100%;margin:auto}
+figcaption{text-align:center;font-size:14px;color:var(--muted);margin-top:10px}
+figcaption a{font-weight:600}
+.hero{position:relative;border-radius:28px;overflow:hidden;margin:36px 0 18px;border:1px solid var(--line)}
+.hero img{display:block;width:100%;border-radius:0}
+.hero-copy{padding:40px 0 10px;max-width:820px}
+.hero-copy p.lead{font-size:20px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:30px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.stat b{display:block;font:800 30px 'Bricolage Grotesque',Inter,sans-serif;color:var(--ink)}
+.stat span{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:26px 0 10px}
+.card{display:block;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:26px;color:var(--ink);transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);text-decoration:none}
+.card .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.card h3{margin:.4em 0 .3em;color:var(--ink)}.card p{color:var(--muted);margin:0;font-size:15px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:22px}
+.gallery .g{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.gallery video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.gallery .g.tall video{aspect-ratio:4/5}
+.gallery .t{padding:12px 14px}.gallery .t b{display:block}.gallery .t span{font-size:13.5px;color:var(--muted)}
+.foot{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center;padding:30px 22px 50px}
+.pill{display:inline-block;font-size:12.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+</style></head><body>
+<nav class="nav"><div class="in"><a class="brand" href="index.html">Fable <b>5.2</b> Motion Archive</a><span class="sp"></span><a class="l" href="index.html">Home</a><a class="l" href="article.html">Article</a><a class="l on" href="repos.html">20 Repos</a><a class="l" href="prompts.html">Prompt packs</a><a class="l" href="sources.html">Sources</a></div></nav>
+<div class="layout"><article class="doc"><h1 id="20-github-repos-that-turn-fable-52-into-a-full-video-editing-studio">20 GitHub repos that turn Fable 5.2 into a full video editing studio</h1>
+<ul>
+<li><strong>Author:</strong> anstap (<a href="https://x.com/anstapnever">@anstapnever</a>)</li>
+<li><strong>Posted:</strong> Tue 17 Nov 2026, 13:11 UTC</li>
+<li><strong>Source:</strong> <a href="https://x.com/anstapnever/status/2122679111323922521">https://x.com/anstapnever/status/2122679111323922521</a></li>
+<li><strong>Quotes:</strong> the article <a href="article.html">Motion Design with Fable 5.2</a> (https://x.com/anstapnever/status/2121750611691712817)</li>
+<li><strong>Stats at capture (18 Nov 2026):</strong> 77,451 views · 976 likes · 111 reposts · 5 quotes · 13 replies · 1,952 bookmarks</li>
+<li><strong>Captured via:</strong> Apify (<code>xquik/x-tweet-scraper</code> for the post, <code>apidojo/tweet-scraper</code> for replies). All t.co short links expanded to their real GitHub URLs.</li>
+</ul>
+<h2 id="attached-video">Attached video</h2>
+<figure class="video tall"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2122677403998965760/img/cH2isJgN6nv5UA3f.jpg"><source src="https://video.twimg.com/amplify_video/2122677403998965760/vid/avc1/1080x1350/jbXBov89DPz7X9vj.mp4?tag=29" type="video/mp4"></video><figcaption>Video, 21 s, 1080x1350 (4:5) · <a href="https://video.twimg.com/amplify_video/2122677403998965760/vid/avc1/1080x1350/jbXBov89DPz7X9vj.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2122677403998965760/vid/avc1/720x900/psyv9yhShdXHDldw.mp4?tag=29">720p</a></figcaption></figure>
+
+<h2 id="full-post-text-verbatim-links-expanded">Full post text (verbatim, links expanded)</h2>
+<p>this is f*cking gold for Fable 5.2</p>
+<p>these 20 GitHub repos will turn your Fable 5.2 into a full Video Editing studio.</p>
+<p>edit. captions. audio. AI FX. export.</p>
+<p>01 DaVinci Resolve MCP → Claude drives DaVinci Resolve.
+<a href="https://github.com/samuelgursky/davinci-resolve-mcp">https://github.com/samuelgursky/davinci-resolve-mcp</a></p>
+<p>02 auto-editor → Cuts the silence out for you.
+<a href="https://github.com/WyattBlue/auto-editor">https://github.com/WyattBlue/auto-editor</a></p>
+<p>03 PySceneDetect → Finds every scene cut.
+<a href="https://github.com/Breakthrough/PySceneDetect">https://github.com/Breakthrough/PySceneDetect</a></p>
+<p>04 MoviePy → Video editing in Python.
+<a href="https://github.com/Zulko/moviepy">https://github.com/Zulko/moviepy</a></p>
+<p>05 Remotion → Edit video as React code.
+<a href="https://github.com/remotion-dev/remotion">https://github.com/remotion-dev/remotion</a></p>
+<p>06 video-use → Raw footage in, final.mp4 out. Cuts fillers, grades, burns subtitles.
+<a href="https://github.com/browser-use/video-use">https://github.com/browser-use/video-use</a></p>
+<p>07 faster-whisper → Transcripts, 4x faster than Whisper.
+<a href="https://github.com/SYSTRAN/faster-whisper">https://github.com/SYSTRAN/faster-whisper</a></p>
+<p>08 WhisperX → Word-level timing for captions.
+<a href="https://github.com/m-bain/whisperX">https://github.com/m-bain/whisperX</a></p>
+<p>09 AutoSubs → Subtitles right inside Resolve and Premiere.
+<a href="https://github.com/tmoroney/auto-subs">https://github.com/tmoroney/auto-subs</a></p>
+<p>10 FunClip → Cut a video by editing its text.
+<a href="https://github.com/modelscope/FunClip">https://github.com/modelscope/FunClip</a></p>
+<p>11 Demucs → Split vocals, drums and bass.
+<a href="https://github.com/adefossez/demucs">https://github.com/adefossez/demucs</a></p>
+<p>12 DeepFilterNet → Kills background noise.
+<a href="https://github.com/Rikorose/DeepFilterNet">https://github.com/Rikorose/DeepFilterNet</a></p>
+<p>13 SAM 2 → Track any object in any video.
+<a href="https://github.com/facebookresearch/sam2">https://github.com/facebookresearch/sam2</a></p>
+<p>14 RobustVideoMatting → Green screen without the green screen.
+<a href="https://github.com/PeterL1n/RobustVideoMatting">https://github.com/PeterL1n/RobustVideoMatting</a></p>
+<p>15 ProPainter → Erase objects from video.
+<a href="https://github.com/sczhou/ProPainter">https://github.com/sczhou/ProPainter</a></p>
+<p>16 video-subtitle-remover → Removes hard-coded subtitles.
+<a href="https://github.com/YaoFANGUK/video-subtitle-remover">https://github.com/YaoFANGUK/video-subtitle-remover</a></p>
+<p>17 Real-ESRGAN → Upscale old footage to 4K.
+<a href="https://github.com/xinntao/Real-ESRGAN">https://github.com/xinntao/Real-ESRGAN</a></p>
+<p>18 LatentSync → Lip sync to any audio.
+<a href="https://github.com/bytedance/LatentSync">https://github.com/bytedance/LatentSync</a></p>
+<p>19 LosslessCut → Trim in seconds, zero re-encode.
+<a href="https://github.com/mifi/lossless-cut">https://github.com/mifi/lossless-cut</a></p>
+<p>20 FFmpeg → The engine under every video tool.
+<a href="https://github.com/FFmpeg/FFmpeg">https://github.com/FFmpeg/FFmpeg</a></p>
+<p>Raw → cut → captions → sound → final cut.</p>
+<p>Bookmark this then go edit something worth watching.</p>
+<h2 id="quick-reference-table">Quick-reference table</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Repo</th>
+<th>What it does (author's line)</th>
+<th>Stage</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>DaVinci Resolve MCP</td>
+<td>Claude drives DaVinci Resolve</td>
+<td>Edit</td>
+<td><a href="https://github.com/samuelgursky/davinci-resolve-mcp">samuelgursky/davinci-resolve-mcp</a></td>
+</tr>
+<tr>
+<td>02</td>
+<td>auto-editor</td>
+<td>Cuts the silence out for you</td>
+<td>Edit</td>
+<td><a href="https://github.com/WyattBlue/auto-editor">WyattBlue/auto-editor</a></td>
+</tr>
+<tr>
+<td>03</td>
+<td>PySceneDetect</td>
+<td>Finds every scene cut</td>
+<td>Edit</td>
+<td><a href="https://github.com/Breakthrough/PySceneDetect">Breakthrough/PySceneDetect</a></td>
+</tr>
+<tr>
+<td>04</td>
+<td>MoviePy</td>
+<td>Video editing in Python</td>
+<td>Edit</td>
+<td><a href="https://github.com/Zulko/moviepy">Zulko/moviepy</a></td>
+</tr>
+<tr>
+<td>05</td>
+<td>Remotion</td>
+<td>Edit video as React code</td>
+<td>Edit</td>
+<td><a href="https://github.com/remotion-dev/remotion">remotion-dev/remotion</a></td>
+</tr>
+<tr>
+<td>06</td>
+<td>video-use</td>
+<td>Raw footage in, final.mp4 out. Cuts fillers, grades, burns subtitles</td>
+<td>Edit</td>
+<td><a href="https://github.com/browser-use/video-use">browser-use/video-use</a></td>
+</tr>
+<tr>
+<td>07</td>
+<td>faster-whisper</td>
+<td>Transcripts, 4x faster than Whisper</td>
+<td>Captions</td>
+<td><a href="https://github.com/SYSTRAN/faster-whisper">SYSTRAN/faster-whisper</a></td>
+</tr>
+<tr>
+<td>08</td>
+<td>WhisperX</td>
+<td>Word-level timing for captions</td>
+<td>Captions</td>
+<td><a href="https://github.com/m-bain/whisperX">m-bain/whisperX</a></td>
+</tr>
+<tr>
+<td>09</td>
+<td>AutoSubs</td>
+<td>Subtitles right inside Resolve and Premiere</td>
+<td>Captions</td>
+<td><a href="https://github.com/tmoroney/auto-subs">tmoroney/auto-subs</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>FunClip</td>
+<td>Cut a video by editing its text</td>
+<td>Captions</td>
+<td><a href="https://github.com/modelscope/FunClip">modelscope/FunClip</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Demucs</td>
+<td>Split vocals, drums and bass</td>
+<td>Audio</td>
+<td><a href="https://github.com/adefossez/demucs">adefossez/demucs</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>DeepFilterNet</td>
+<td>Kills background noise</td>
+<td>Audio</td>
+<td><a href="https://github.com/Rikorose/DeepFilterNet">Rikorose/DeepFilterNet</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>SAM 2</td>
+<td>Track any object in any video</td>
+<td>AI FX</td>
+<td><a href="https://github.com/facebookresearch/sam2">facebookresearch/sam2</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>RobustVideoMatting</td>
+<td>Green screen without the green screen</td>
+<td>AI FX</td>
+<td><a href="https://github.com/PeterL1n/RobustVideoMatting">PeterL1n/RobustVideoMatting</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>ProPainter</td>
+<td>Erase objects from video</td>
+<td>AI FX</td>
+<td><a href="https://github.com/sczhou/ProPainter">sczhou/ProPainter</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>video-subtitle-remover</td>
+<td>Removes hard-coded subtitles</td>
+<td>AI FX</td>
+<td><a href="https://github.com/YaoFANGUK/video-subtitle-remover">YaoFANGUK/video-subtitle-remover</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Real-ESRGAN</td>
+<td>Upscale old footage to 4K</td>
+<td>AI FX</td>
+<td><a href="https://github.com/xinntao/Real-ESRGAN">xinntao/Real-ESRGAN</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>LatentSync</td>
+<td>Lip sync to any audio</td>
+<td>AI FX</td>
+<td><a href="https://github.com/bytedance/LatentSync">bytedance/LatentSync</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>LosslessCut</td>
+<td>Trim in seconds, zero re-encode</td>
+<td>Export</td>
+<td><a href="https://github.com/mifi/lossless-cut">mifi/lossless-cut</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>FFmpeg</td>
+<td>The engine under every video tool</td>
+<td>Export</td>
+<td><a href="https://github.com/FFmpeg/FFmpeg">FFmpeg/FFmpeg</a></td>
+</tr>
+</tbody>
+</table>
+<p>The "Stage" column is my grouping against the post's own "edit. captions. audio. AI FX. export." line; the author did not label each repo.</p>
+<h2 id="replies-captured-9-of-13-the-rest-were-not-publicly-returned-by-x">Replies captured (9 of 13; the rest were not publicly returned by X)</h2>
+<table>
+<thead>
+<tr>
+<th>Time (UTC)</th>
+<th>Author</th>
+<th>Reply</th>
+<th>Likes</th>
+<th>Views</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17 Nov 22:36</td>
+<td><a href="https://x.com/0xretard_/status/2122821187214692454">@0xretard_</a></td>
+<td>That's an awesome design</td>
+<td>2</td>
+<td>446</td>
+</tr>
+<tr>
+<td>17 Nov 23:26</td>
+<td><a href="https://x.com/cryptowluha/status/2122833724714668361">@cryptowluha</a></td>
+<td>really sick collection, honestly been exclusively using fable 5.2 lately</td>
+<td>1</td>
+<td>381</td>
+</tr>
+<tr>
+<td>17 Nov 23:45</td>
+<td><a href="https://x.com/LeonidaSignal/status/2122838659615408185">@LeonidaSignal</a></td>
+<td>this looks amazing, but how am i supposed to figure this out lol</td>
+<td>0</td>
+<td>210</td>
+</tr>
+<tr>
+<td>18 Nov 00:21</td>
+<td><a href="https://x.com/50xtrade_FX/status/2122847726383895010">@50xtrade_FX</a></td>
+<td>I have already bookmarked it</td>
+<td>1</td>
+<td>164</td>
+</tr>
+<tr>
+<td>18 Nov 01:14</td>
+<td><a href="https://x.com/crypto_ninjas/status/2122861065231081728">@crypto_ninjas</a></td>
+<td>DaVinci Resolve control changes the whole editing workflow completely.</td>
+<td>1</td>
+<td>366</td>
+</tr>
+<tr>
+<td>18 Nov 02:12</td>
+<td><a href="https://x.com/YXxquf/status/2122875643256000590">@YXxquf</a></td>
+<td>The underrated feature in a stack like this is a reversible edit. Keep the source footage untouched and save the edit decisions separately, so "undo that cut" does not become "rerun the entire pipeline." Twenty tools are useful; one reliable way back is essential.</td>
+<td>1</td>
+<td>211</td>
+</tr>
+<tr>
+<td>18 Nov 05:03</td>
+<td><a href="https://x.com/nakaastd/status/2122918654052634790">@nakaastd</a></td>
+<td>crazy ...</td>
+<td>1</td>
+<td>48</td>
+</tr>
+<tr>
+<td>18 Nov 06:06</td>
+<td><a href="https://x.com/kimindiehacker/status/2122934326056931482">@kimindiehacker</a></td>
+<td>those tools are solid, but some may need a learning curve to master</td>
+<td>0</td>
+<td>60</td>
+</tr>
+<tr>
+<td>18 Nov 06:51</td>
+<td><a href="https://x.com/xuemy_/status/2122945839563940207">@xuemy_</a></td>
+<td>视频工具链先保证剪切确定性和音画同步，再叠视觉效果。 (Translation: a video toolchain should first guarantee cut determinism and audio/video sync, then layer visual effects on top.)</td>
+<td>0</td>
+<td>34</td>
+</tr>
+</tbody>
+</table>
+<p>One further item returned by the scraper was an unrelated eToro ad and has been excluded.</p></article><aside class="toc"><b>On this page</b><a href="#attached-video">Attached video</a><a href="#full-post-text-verbatim-links-expanded">Full post text (verbatim, links expanded)</a><a href="#quick-reference-table">Quick-reference table</a><a href="#replies-captured-9-of-13-the-rest-were-not-publicly-returned-by-x">Replies captured (9 of 13; the rest were not publicly returned by X)</a></aside></div>
+<div class="foot">All content © its authors (@anstapnever; @claudeai for the launch post). Archived 18 Nov 2026 for personal reference.</div>
+<script>
+document.querySelectorAll('pre').forEach(pre=>{const b=document.createElement('button');b.className='copy';b.textContent='Copy';
+b.onclick=()=>{navigator.clipboard.writeText(pre.innerText.replace(/^Copy\n?/,'')).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1400)})};pre.prepend(b)});
+</script></body></html>

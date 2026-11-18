@@ -1,0 +1,580 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motion Design with Fable 5.2: from zero to your first video in 10 minutes</title><meta name="robots" content="noindex"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#0e0a09;--panel:#18110f;--panel2:#211715;--line:#33241f;--ink:#f3e7d3;--muted:#b6a48d;
+--accent:#e8613c;--accent2:#e9407a;--mustard:#e3a82b;--cream:#efe4cf;--radius:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#3a1712 0%,transparent 60%),var(--bg);
+color:var(--ink);font:17px/1.7 Inter,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--mustard);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(14,10,9,.78);border-bottom:1px solid var(--line)}
+.nav .in{max-width:1180px;margin:auto;display:flex;align-items:center;gap:22px;padding:14px 22px;flex-wrap:wrap}
+.brand{font-family:'Bricolage Grotesque',Inter,sans-serif;font-weight:800;font-size:19px;color:var(--ink)}
+.brand b{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav a.l{color:var(--muted);font-size:15px;font-weight:500}.nav a.l.on,.nav a.l:hover{color:var(--ink);text-decoration:none}
+.nav .sp{flex:1}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',Inter,sans-serif;line-height:1.15;letter-spacing:-.015em}
+h1{font-size:clamp(34px,5vw,56px);margin:.2em 0 .4em}
+h2{font-size:30px;margin:2.2em 0 .6em;padding-top:.4em}
+h3{font-size:22px;margin:1.8em 0 .5em;color:var(--cream)}h4{font-size:18px;margin:1.6em 0 .4em;color:var(--mustard)}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:56px;max-width:1180px;margin:auto;padding:40px 22px 100px}
+.doc{max-width:780px;min-width:0}
+.toc{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 110px);overflow:auto;font-size:14px;border-left:1px solid var(--line);padding-left:18px}
+.toc b{display:block;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.toc a{display:block;color:var(--muted);padding:4px 0;line-height:1.35}.toc a:hover{color:var(--ink);text-decoration:none}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.toc{display:none}}
+p,li,td{color:#eadcc6;overflow-wrap:anywhere}strong{color:var(--ink)}
+hr{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:48px 0}
+blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 12px 12px 0;color:var(--muted)}
+blockquote p{margin:.3em 0;color:#e2d3bd}
+code{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:.88em;background:var(--panel2);border:1px solid var(--line);padding:.1em .4em;border-radius:6px}
+pre{position:relative;background:#120d0c;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;overflow:auto;line-height:1.55}
+pre code{background:none;border:0;padding:0;font-size:13.5px;color:#f1e2cb;white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:10px;right:10px;font:600 12px Inter,sans-serif;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer;opacity:.85}
+.copy:hover{opacity:1;border-color:var(--accent)}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:22px 0;font-size:15px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:block;overflow-x:auto}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--panel2);color:var(--cream);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}tbody tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+img{max-width:100%;border-radius:12px}
+figure{margin:30px 0}figure img{display:block;margin:auto;border:1px solid var(--line)}
+figure.video video{display:block;width:100%;border-radius:var(--radius);border:1px solid var(--line);background:#000;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+figure.video.tall video{max-height:78vh;width:auto;max-width:100%;margin:auto}
+figcaption{text-align:center;font-size:14px;color:var(--muted);margin-top:10px}
+figcaption a{font-weight:600}
+.hero{position:relative;border-radius:28px;overflow:hidden;margin:36px 0 18px;border:1px solid var(--line)}
+.hero img{display:block;width:100%;border-radius:0}
+.hero-copy{padding:40px 0 10px;max-width:820px}
+.hero-copy p.lead{font-size:20px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:30px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.stat b{display:block;font:800 30px 'Bricolage Grotesque',Inter,sans-serif;color:var(--ink)}
+.stat span{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:26px 0 10px}
+.card{display:block;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:26px;color:var(--ink);transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);text-decoration:none}
+.card .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.card h3{margin:.4em 0 .3em;color:var(--ink)}.card p{color:var(--muted);margin:0;font-size:15px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:22px}
+.gallery .g{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.gallery video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.gallery .g.tall video{aspect-ratio:4/5}
+.gallery .t{padding:12px 14px}.gallery .t b{display:block}.gallery .t span{font-size:13.5px;color:var(--muted)}
+.foot{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center;padding:30px 22px 50px}
+.pill{display:inline-block;font-size:12.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+</style></head><body>
+<nav class="nav"><div class="in"><a class="brand" href="index.html">Fable <b>5.2</b> Motion Archive</a><span class="sp"></span><a class="l" href="index.html">Home</a><a class="l on" href="article.html">Article</a><a class="l" href="repos.html">20 Repos</a><a class="l" href="prompts.html">Prompt packs</a><a class="l" href="sources.html">Sources</a></div></nav>
+<div class="layout"><article class="doc"><h1 id="motion-design-with-fable-52-from-zero-to-your-first-video-in-10-minutes">Motion Design with Fable 5.2: from zero to your first video in 10 minutes</h1>
+<figure><img src="https://pbs.twimg.com/media/HXH4Wh8aMAAWybP.jpg" alt="Article cover"></figure>
+
+<ul>
+<li><strong>Author:</strong> anstap (<a href="https://x.com/anstapnever">@anstapnever</a>)</li>
+<li><strong>Published:</strong> Sat 14 Nov 2026, 23:42 UTC (X Article)</li>
+<li><strong>Source:</strong> <a href="https://x.com/anstapnever/status/2121750611691712817">https://x.com/anstapnever/status/2121750611691712817</a></li>
+<li><strong>Cover image:</strong> <a href="https://pbs.twimg.com/media/HXH4Wh8aMAAWybP.jpg">https://pbs.twimg.com/media/HXH4Wh8aMAAWybP.jpg</a></li>
+<li><strong>Stats at capture (18 Nov 2026):</strong> 174,403 views · 67 likes · 10 reposts · 161 bookmarks</li>
+<li><strong>Captured via:</strong> Apify (<code>xquik/x-article-scraper</code>), full text and every media block, unedited</li>
+</ul>
+<blockquote>
+<p>Note: X media links (video.twimg.com / pbs.twimg.com) can expire if the post is deleted. Download the MP4s if you want permanent copies.</p>
+</blockquote>
+<hr />
+<p>You don't need After Effects for this. You don't need to know code either, or to have ever animated anything.</p>
+<p>You need Claude, a browser and this guide.</p>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2121746406381875200/img/tyMXifONr3G427Ft.jpg"><source src="https://video.twimg.com/amplify_video/2121746406381875200/vid/avc1/1920x1080/NV6Js20RBFQ2Vdgv.mp4?tag=29" type="video/mp4"></video><figcaption>Video 1: finished "Deep Cuts" intro, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121746406381875200/vid/avc1/1920x1080/NV6Js20RBFQ2Vdgv.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121746406381875200/vid/avc1/1280x720/YChTmjggtkn6SQ3w.mp4?tag=29">720p</a></figcaption></figure>
+
+<p>That intro took Fable 5.2 two messages and under 6 minutes. Both were typed in plain English, and every shape, letter and bounce in it is drawn by code Fable wrote. There's no stock footage, no template and no plugin behind it.</p>
+<p>This guide takes you from nothing installed to an MP4 you can post, step by step. Every prompt here was run on Fable 5.2, and you'll see what came back from each one, including the one that came out generic.</p>
+<p>What's inside:</p>
+<ul>
+<li>How it works, in one minute</li>
+<li>What you need and what it costs</li>
+<li>Path 1: no install, in the Claude app</li>
+<li>Path 2: Claude Code, on Windows or Mac</li>
+<li>Your first video: one line, and what it gives you</li>
+<li>The director's template: the 6 lines that make it yours</li>
+<li>How to ask for changes: 12 phrases that work</li>
+<li>Vertical video for Reels, TikTok and Shorts</li>
+<li>Turn it into an MP4</li>
+<li>Add music</li>
+<li>4 more prompts you can copy</li>
+<li>10 beginner mistakes and their fixes</li>
+</ul>
+<hr />
+<h2 id="how-it-works-in-one-minute">How it works, in one minute</h2>
+<p>Fable 5.2 doesn't make a video file. It writes a small web page that animates itself.</p>
+<p>You open that page in Chrome and the animation plays: shapes move, letters drop in, the camera pushes in. Because it's code, every move happens at the exact second you asked for, and you can change any of it by asking.</p>
+<p>Then you turn the page into an MP4, either by recording the screen or with a small script that saves it frame by frame. That MP4 is what you post.</p>
+<p><img alt="Pipeline diagram" src="https://pbs.twimg.com/media/HXH1NnKbgAAW2Y_.jpg" /></p>
+<p>That's the whole pipeline. Everything else in this guide is about writing prompts that give you good motion on the first try, and fixing what's off in the second.</p>
+<p>Why Fable 5.2 for this? Anthropic lists 3D and motion design among the things it's built for, and it follows detailed direction closely. Tell it "the title lands at 3.0 s with a small bounce" and it lands at 3.0 s with a small bounce.</p>
+<blockquote>
+<p><strong>[Embedded post]</strong> <a href="https://x.com/i/status/2119867114450268322">https://x.com/i/status/2119867114450268322</a></p>
+</blockquote>
+<hr />
+<h2 id="what-you-need-and-what-it-costs">What you need and what it costs</h2>
+<ul>
+<li>A paid Claude plan with access to Fable 5.2. Check the model menu in the Claude app: if you see Fable 5.2, you're set.</li>
+<li>A computer with Google Chrome.</li>
+<li>10 minutes for the first video.</li>
+</ul>
+<p>Fable 5.2 is Anthropic's most expensive model. On the API it costs $8 per million input tokens and $40 per million output tokens, twice the price of Opus 5.5. On a subscription you don't pay per token, but Fable uses up your limits faster than other models.</p>
+<p>Real numbers from the videos in this guide, counted from the session logs at API prices:</p>
+<table>
+<thead>
+<tr>
+<th>Video</th>
+<th>Time to make</th>
+<th>API price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube intro, one line</td>
+<td>6m 56s</td>
+<td>$3.65</td>
+</tr>
+<tr>
+<td>YouTube intro, director's template</td>
+<td>2m 22s</td>
+<td>$2.81</td>
+</tr>
+<tr>
+<td>The same intro, one follow-up</td>
+<td>3m 21s</td>
+<td>$2.39</td>
+</tr>
+<tr>
+<td>Vertical post for Reels</td>
+<td>5m 16s</td>
+<td>$3.03</td>
+</tr>
+<tr>
+<td>30 s kids cartoon in 3D</td>
+<td>11m 11s</td>
+<td>$9.34</td>
+</tr>
+<tr>
+<td>24 s 3D scene, capybara in a hot spring</td>
+<td>26m 47s</td>
+<td>$11.32</td>
+</tr>
+</tbody>
+</table>
+<p>Short 2D motion like an intro or animated text is cheap. Big 3D scenes cost more. Either way it's a fraction of what a freelance motion designer charges for the same 10 seconds.</p>
+<hr />
+<h2 id="path-1-no-install-in-the-claude-app">Path 1: no install, in the Claude app</h2>
+<p>This is the fastest way to see your first animation. Nothing to install.</p>
+<ol>
+<li>Open claude.ai or the Claude desktop app.</li>
+<li>Pick Fable 5.2 in the model menu.</li>
+<li>Paste a prompt from this guide. Every prompt here asks for "one HTML file I can open in Chrome".</li>
+<li>Claude writes the file and shows it in the preview panel next to the chat. Press play if it doesn't start on its own.</li>
+<li>Ask for changes in plain words: "make the title bigger", "slow down the ending".</li>
+<li>Download the file, open it in Chrome, and record the screen: Win+Shift+R on Windows (Snipping Tool, video mode), Cmd+Shift+5 on a Mac.</li>
+</ol>
+<p>A screen recording is fine for your first post. It isn't frame-perfect, though: if your computer is busy it can skip frames, and the motion stutters. For a sharp 60 fps file, use Path 2.</p>
+<hr />
+<h2 id="path-2-claude-code-on-windows-or-mac">Path 2: Claude Code, on Windows or Mac</h2>
+<p>Claude Code is Claude working in a folder on your computer. It writes the file, opens it, checks it and turns it into an MP4 itself. You type what you want, it does the rest.</p>
+<p>You need a paid plan (Pro, Max, Team or Enterprise). Here's the setup, once.</p>
+<p>On Windows, open PowerShell (press Start, type "PowerShell", press Enter) and paste:</p>
+<pre><code>irm https://claude.ai/install.ps1 | iex
+winget install Gyan.FFmpeg
+</code></pre>
+<p>On a Mac, open Terminal and paste:</p>
+<pre><code>brew install --cask claude-code
+brew install ffmpeg
+</code></pre>
+<p>The first line installs Claude Code. The second installs ffmpeg, the free tool that turns frames into an MP4. (No Homebrew on your Mac? Get it at brew.sh first.)</p>
+<p>Close the window, open a new one, and start Claude Code in a fresh folder:</p>
+<pre><code>mkdir my-first-video
+cd my-first-video
+claude
+</code></pre>
+<p>It asks you to sign in with your Claude account the first time. Then pick the model and the effort:</p>
+<pre><code>/model fable
+/effort high
+</code></pre>
+<p>Effort is how hard Fable thinks before it answers. Use high for a new video and medium for small fixes. Max costs a lot more and isn't better for this kind of work: it can think for minutes and still give you the same file.</p>
+<p>You're ready. Everything below works the same in both paths.</p>
+<hr />
+<h2 id="your-first-video-one-line-and-what-it-gives-you">Your first video: one line, and what it gives you</h2>
+<p>Start the way almost everyone starts: one line, the way you'd ask a friend.</p>
+<pre><code>Make me a 10-second animated intro for my YouTube channel called &quot;Deep Cuts&quot;. Make it look professional. One HTML file I can open in Chrome.
+</code></pre>
+<p>This is what Fable 5.2 made from it, with no follow-ups:</p>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2121746964320841728/img/vbVj7cneRMmx5wUW.jpg"><source src="https://video.twimg.com/amplify_video/2121746964320841728/vid/avc1/1920x1080/cwT81mc0LNPzsLU2.mp4?tag=29" type="video/mp4"></video><figcaption>Video 2: one-line prompt result, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121746964320841728/vid/avc1/1920x1080/cwT81mc0LNPzsLU2.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121746964320841728/vid/avc1/1280x720/04GDV2pzEmBSKwsz.mp4?tag=29">720p</a></figcaption></figure>
+
+<p>It looks like a movie trailer. A dive through a tunnel of red frames, a depth counter, a glowing blade slashing across the screen, and "DEEP CUTS" slamming together from two halves. Technically, it's impressive.</p>
+<p>But it's the wrong video. Deep Cuts is a channel about rare vinyl records. Fable didn't know that, so it guessed from the name: "deep" became the ocean (the counter runs down to 10,994 m, the deepest point on Earth) and "cuts" became a blade. It even wrote a tagline, "Go beyond the surface", for a channel that doesn't exist. Every choice in this video was Fable's, not yours.</p>
+<p>That's the lesson of the first try. Fable can only make decisions you didn't make yourself, so with one line it guesses what your channel is about and picks a look that fits its guess. It isn't a bad intro. It's just not yours.</p>
+<p>The fix isn't a better model or a magic word. It's six lines of direction.</p>
+<hr />
+<h2 id="the-directors-template-the-6-lines-that-make-it-yours">The director's template: the 6 lines that make it yours</h2>
+<p>A motion designer never gets "make it look professional" as a brief. They get what it's for, the size, the colors, and what happens at each second. Give Fable the same and it stops guessing.</p>
+<p>Here's the template. Copy it, fill in the brackets, and keep the order:</p>
+<pre><code>Make a [length]-second animated video as one HTML file I can open in Chrome. Everything is drawn in code: no images, no video files. Do it in one go without asking me questions.
+
+WHAT: [what it is and who it's for, one sentence]
+
+SIZE: [1920x1080 for YouTube and X, 1080x1920 for Reels and TikTok], 60 fps. [It plays once and holds the last frame / It loops with no seam.]
+
+LOOK: background [color + hex code], text [color + hex], one accent [color + hex]. Font: [style, e.g. a bold rounded sans-serif from Google Fonts].
+
+TIMELINE:
+[0.0-1.0 s]: [what happens]
+[1.0-3.0 s]: [what happens]
+[...]: [one line per moment, until the end]
+
+MOTION: nothing moves in a straight line at constant speed. Entrances ease out, exits ease in. Every bounce settles within 0.4 s.
+</code></pre>
+<p>Six blocks, and each one closes a door Fable would otherwise open on its own:</p>
+<ul>
+<li>WHAT tells it the purpose, so it knows what matters most.</li>
+<li>SIZE fixes the frame, so nothing gets cropped when you post.</li>
+<li>LOOK gives exact colors. Hex codes are the 6-character color codes like #E8613C. Google "color picker", pick a color, copy the code.</li>
+<li>TIMELINE is the most important block. One line per moment, with seconds. This is where the video becomes yours.</li>
+<li>MOTION is the same for every video. Copy it as is: it's the difference between "moves" and "feels designed".</li>
+</ul>
+<p>Here's the same "Deep Cuts" intro, written with the template:</p>
+<pre><code>Make a 10-second animated intro video as one HTML file I can open in Chrome. Everything is drawn in code: no images, no video files. Do it in one go without asking me questions.
+
+WHAT: an intro for my YouTube channel &quot;Deep Cuts&quot;, where I dig up rare vinyl records nobody plays anymore.
+
+SIZE: 1920x1080, 60 fps. It plays once, holds the last frame, and replays when I press R.
+
+LOOK: a 70s record store. Warm cream background #EFE4CF with a subtle paper grain, deep brown ink #2B1B12, two accents: burnt orange #D9541E and mustard #E3A82B. Font: a fat retro serif from Google Fonts (like Shrikhand). Flat shapes with soft shadows, small halftone dots in the corners.
+
+TIMELINE:
+0.0-1.5 s: a square record sleeve slides in from the left with a small overshoot. Its cover is bold orange and mustard stripes.
+1.5-3.0 s: a black vinyl record slides out of the sleeve to the right, then the sleeve slides away. The record has fine grooves and an orange center label.
+3.0-4.5 s: the record starts spinning. A tonearm swings in from the top right and drops onto the record with a tiny bounce.
+4.5-7.0 s: the title &quot;Deep Cuts&quot; appears letter by letter next to the record, 150 px, brown with a mustard offset shadow. Each letter pops in with a small bounce, 0.08 s apart.
+7.0-8.5 s: the line &quot;rare records, one dig at a time&quot; slides up under the title, 42 px.
+8.5-10.0 s: everything holds. The record keeps spinning and three small music notes float up from it and fade out.
+
+MOTION: nothing moves in a straight line at constant speed. Entrances ease out, exits ease in. Every bounce settles within 0.4 s.
+
+SOUND: none.
+</code></pre>
+<p>And the result, again first try, no follow-ups:</p>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2121747161084018688/img/JwwOeWYhJc45VG6n.jpg"><source src="https://video.twimg.com/amplify_video/2121747161084018688/vid/avc1/1920x1080/SonE7XOMf2OEAitC.mp4?tag=29" type="video/mp4"></video><figcaption>Video 3: director's template result, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121747161084018688/vid/avc1/1920x1080/SonE7XOMf2OEAitC.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121747161084018688/vid/avc1/1280x720/_cDQlIKsRZi3tA4g.mp4?tag=29">720p</a></figcaption></figure>
+
+<p>Every line of the timeline is on screen at the second it was asked for. The sleeve slides in, the record slides out and starts spinning, the tonearm drops, the title pops in letter by letter, the tagline slides up, the notes float away. Your colors, your words, your channel.</p>
+<p>Fable added two things on its own, and both fit: "DEEP CUTS / SIDE A / 33 1/3" printed on the record label, and a short two-color line under the tagline.</p>
+<p>It isn't perfect, though. In the first 3 seconds the sleeve sits in the top left corner and looks tiny, and the tonearm looks like a stick lying on the record. That's what the next section is for.</p>
+<p>Side by side, the difference is the whole point of this guide:</p>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2121747275059965952/img/D8eqMiGpUbv383AT.jpg"><source src="https://video.twimg.com/amplify_video/2121747275059965952/vid/avc1/1920x800/UoD2B2tykucHTh0W.mp4?tag=29" type="video/mp4"></video><figcaption>Video 4: side-by-side comparison, 10 s, 1920x800 · <a href="https://video.twimg.com/amplify_video/2121747275059965952/vid/avc1/1920x800/UoD2B2tykucHTh0W.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121747275059965952/vid/avc1/1728x720/hqYs8fZrai2t_Cnc.mp4?tag=29">720p</a></figcaption></figure>
+
+<p>You don't need to know animation words to write a timeline. "A record slides out of the sleeve" is enough. What matters is that every moment has a time, and that you said what you wanted instead of "make it professional".</p>
+<p>A trick for the timeline if you're stuck: describe the video out loud as if you're telling a friend what you saw, second by second. Then write that down.</p>
+<hr />
+<h2 id="how-to-ask-for-changes-12-phrases-that-work">How to ask for changes: 12 phrases that work</h2>
+<p>Your first render will be close, not perfect. That's normal for designers too. The fix is a follow-up message, and the best follow-ups name a time and a number.</p>
+<p>"Make it better" gives Fable nothing to work with. "From 0 to 3 s everything sits in the top left corner, center it" is a fix Fable can make in one go.</p>
+<p>Here's a real one. After the template intro above, I sent Fable one message:</p>
+<pre><code>Two changes. 1) From 0 to 3 s the sleeve and the record sit in the top left corner and look tiny: center them in the frame, and make the record 30% bigger for the whole video. 2) The tonearm looks like a stick lying on the record: make it a real tonearm with a round base at the top right of the record, and the arm swings from the base onto the record at 3.0 s.
+</code></pre>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2121747404760518656/img/Qp_AGxk3mpB5e0HV.jpg"><source src="https://video.twimg.com/amplify_video/2121747404760518656/vid/avc1/1920x1080/7HW9y5RvGC_kGuVn.mp4?tag=29" type="video/mp4"></video><figcaption>Video 5: result after one follow-up, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121747404760518656/vid/avc1/1920x1080/7HW9y5RvGC_kGuVn.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121747404760518656/vid/avc1/1280x720/x44YzoEZ7RKRwc3v.mp4?tag=29">720p</a></figcaption></figure>
+
+<p>Fable rewrote the file in 3m 21s, for $2.39 at API prices. The sleeve and the record now sit in the center, the record is bigger, and a real tonearm with a base and a counterweight swings onto the grooves. It also added one move I didn't ask for and told me why: the record glides left at 2.4 s so the bigger record still fits next to the title. Two problems, two numbers, one message.</p>
+<p>Phrases that work, and when to use them:</p>
+<table>
+<thead>
+<tr>
+<th>What's wrong</th>
+<th>What to type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>It moves too fast</td>
+<td>"Slow down everything between 3 and 6 s by 30%."</td>
+</tr>
+<tr>
+<td>It feels stiff</td>
+<td>"Add a small overshoot to every landing, it should settle within 0.4 s."</td>
+</tr>
+<tr>
+<td>It feels like a slideshow</td>
+<td>"Nothing appears with a plain fade. Every element enters with a move."</td>
+</tr>
+<tr>
+<td>The text is hard to read</td>
+<td>"Make the title 30% bigger and hold it at least 1.5 s before anything else moves."</td>
+</tr>
+<tr>
+<td>The ending is empty</td>
+<td>"From 8 s, keep something moving: the notes float 6 px up and down."</td>
+</tr>
+<tr>
+<td>Things overlap</td>
+<td>"The tagline overlaps the record at 7 s. Move the tagline 40 px right."</td>
+</tr>
+<tr>
+<td>A color looks off</td>
+<td>"Use exactly #D9541E for the accent. No other orange anywhere."</td>
+</tr>
+<tr>
+<td>It looks cheap</td>
+<td>"Add soft shadows under every shape, and a very subtle grain on the background."</td>
+</tr>
+<tr>
+<td>The start is boring</td>
+<td>"Frame 1 must already be moving. No empty first second."</td>
+</tr>
+<tr>
+<td>The loop jumps</td>
+<td>"The last frame must flow into the first. No jump at the seam."</td>
+</tr>
+<tr>
+<td>Something is cut off</td>
+<td>"Every word is fully inside the frame, with at least 80 px margin."</td>
+</tr>
+<tr>
+<td>You want a new version</td>
+<td>"Keep this file. Make a copy called v2.html and try the title in mustard there."</td>
+</tr>
+</tbody>
+</table>
+<p>Change one or two things per message, not ten. Fable will do ten, but it's harder for you to see which change made it better.</p>
+<hr />
+<h2 id="vertical-video-for-reels-tiktok-and-shorts">Vertical video for Reels, TikTok and Shorts</h2>
+<p>The same method works for vertical video. Change the size to 1080x1920 and design for a phone: big text, one idea per screen, and something moving from the first frame.</p>
+<p>This one was made for Reels:</p>
+<pre><code>Make a 12-second vertical video for Reels and TikTok as one HTML file I can open in Chrome. Everything is drawn in code: no images, no video files. Do it in one go without asking me questions.
+
+WHAT: a &quot;record of the week&quot; post for my vinyl channel &quot;Deep Cuts&quot;.
+
+SIZE: 1080x1920 (vertical), 60 fps, a seamless loop: the last frame flows into the first.
+
+LOOK: dark brown background #1E140E with a slow moving warm glow, cream text #F3E7D3, one accent burnt orange #E0592A. Fonts from Google Fonts: a heavy condensed sans-serif for the big words, a retro serif for the small ones.
+
+TIMELINE (120 BPM, one beat = 0.5 s):
+0.0-0.5 s: a vinyl record is already spinning in the top half on frame 1, no empty start.
+0.5-4.0 s: the words &quot;RECORD OF THE WEEK&quot; land one per beat under the record, stacked, each with a small squash.
+4.0-7.0 s: a card slides up with the record's details, one line per beat: &quot;Side B, Track 3&quot;, &quot;Pressed in 1974&quot;, &quot;Only 500 copies&quot;. The number &quot;500&quot; is orange and 1.5x bigger.
+7.0-9.0 s: the record speeds up for one beat and a stamp &quot;FOUND IT&quot; slams onto the card with a 3-frame shake.
+9.0-11.0 s: everything holds and pulses gently on every beat.
+11.0-12.0 s: the text slides down and out, and the record returns to the exact position of frame 1, so the loop has no seam.
+
+MOTION: nothing moves in a straight line at constant speed. Entrances ease out, exits ease in.
+
+SOUND: none.
+</code></pre>
+<figure class="video tall"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2121747753890177024/img/sssl0noNoX6VElUQ.jpg"><source src="https://video.twimg.com/amplify_video/2121747753890177024/vid/avc1/1080x1920/4W38UmmxDL_E9pun.mp4?tag=29" type="video/mp4"></video><figcaption>Video 6: vertical "Record of the Week" Reel, 12 s, 1080x1920 · <a href="https://video.twimg.com/amplify_video/2121747753890177024/vid/avc1/1080x1920/4W38UmmxDL_E9pun.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121747753890177024/vid/avc1/720x1280/ph5sWU1W1tTrNNmo.mp4?tag=29">720p</a></figcaption></figure>
+
+<p>The record is spinning on frame 1, the words land on the beat, and the stamp hits like a real rubber stamp. The record makes exactly 7 full turns in 12 seconds, so the last frame flows straight into the first and the loop has no seam.</p>
+<p>One detail I liked: Fable broke one of my MOTION rules on purpose and told me why. The stamp speeds up as it falls instead of slowing down, because a slam has to hit hard. A good designer breaks a rule when they know why.</p>
+<p>Two lines in that prompt do the heavy lifting. "120 BPM, one beat = 0.5 s" puts every word on a beat, so any 120 BPM track you add later lines up with it. And "the last frame flows into the first" makes a loop: people watch it twice without noticing, and the platform counts both views.</p>
+<p>Sizes for every platform:</p>
+<table>
+<thead>
+<tr>
+<th>Where you post</th>
+<th>Size</th>
+<th>Shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube, X (wide)</td>
+<td>1920x1080</td>
+<td>16:9</td>
+</tr>
+<tr>
+<td>X, Instagram feed (tall)</td>
+<td>1080x1350</td>
+<td>4:5</td>
+</tr>
+<tr>
+<td>Reels, TikTok, Shorts, Stories</td>
+<td>1080x1920</td>
+<td>9:16</td>
+</tr>
+<tr>
+<td>Square</td>
+<td>1080x1080</td>
+<td>1:1</td>
+</tr>
+</tbody>
+</table>
+<p>On X, 4:5 takes the most space in the feed on a phone. If you post the same video everywhere, make it 9:16 and keep the text inside the middle 1080x1350, so the 4:5 crop still works.</p>
+<hr />
+<h2 id="turn-it-into-an-mp4">Turn it into an MP4</h2>
+<p>You have an HTML file. Here are three ways to get a video out of it, from easiest to best.</p>
+<p>The easiest: ask Claude Code. In the same session, type:</p>
+<pre><code>Turn index.html into a 60 fps MP4, frame by frame, so no frames are dropped. 10 seconds.
+</code></pre>
+<p>It writes a small script, runs it and gives you index.mp4. This is what I'd do on day one.</p>
+<p>The quick one: record your screen. Open the file in Chrome, press F11 for full screen, and use Win+Shift+R on Windows or Cmd+Shift+5 on a Mac. Fine for a draft, but it can stutter.</p>
+<p>The best one: my render script. Same result every time, perfectly smooth, and it works on any page from this guide without changes. It uses a trick: it gives the page a fake clock that moves exactly 1/60 of a second per frame, so even a slow laptop never drops a frame.</p>
+<p>You need Python once. Windows: winget install Python.Python.3.12. Mac: brew install python. Then:</p>
+<pre><code>pip install playwright
+</code></pre>
+<p>Save this as render.py in the same folder as your index.html (also saved separately in this folder as <a href="render.py"><code>render.py</code></a>):</p>
+<pre><code class="language-python"># render.py: turns an animated HTML page into a smooth MP4, frame by frame.
+# Setup once:  pip install playwright   (plus Google Chrome and ffmpeg, see the article)
+# Use:         python render.py index.html 10            (file, seconds)
+#              python render.py index.html 12 1080 1920  (vertical)
+import sys, subprocess, pathlib
+from playwright.sync_api import sync_playwright
+
+page_file = pathlib.Path(sys.argv[1]).resolve()
+SECONDS = float(sys.argv[2]) if len(sys.argv) &gt; 2 else 10
+W = int(sys.argv[3]) if len(sys.argv) &gt; 3 else 1920
+H = int(sys.argv[4]) if len(sys.argv) &gt; 4 else 1080
+FPS = 60
+out = page_file.with_suffix(&quot;.mp4&quot;)
+
+# A fake clock: the page thinks time passes exactly 1/60 s per frame,
+# so no frame is ever dropped, however slow your computer is.
+CLOCK = &quot;&quot;&quot;
+(() =&gt; {
+  let now = 0; const start = Date.now(); const RealDate = Date;
+  performance.now = () =&gt; now;
+  Date.now = () =&gt; start + now;
+  window.Date = class extends RealDate {
+    constructor(...a) { a.length ? super(...a) : super(start + now); }
+    static now() { return start + now; }
+  };
+  let queue = [];
+  window.requestAnimationFrame = cb =&gt; { queue.push(cb); return queue.length; };
+  window.cancelAnimationFrame = () =&gt; {};
+  window.__tick = ms =&gt; { now += ms; const q = queue; queue = []; q.forEach(cb =&gt; cb(now)); };
+})();
+&quot;&quot;&quot;
+
+ffmpeg = subprocess.Popen([
+    &quot;ffmpeg&quot;, &quot;-y&quot;, &quot;-loglevel&quot;, &quot;error&quot;,
+    &quot;-f&quot;, &quot;image2pipe&quot;, &quot;-framerate&quot;, str(FPS), &quot;-i&quot;, &quot;-&quot;,
+    &quot;-c:v&quot;, &quot;libx264&quot;, &quot;-crf&quot;, &quot;16&quot;, &quot;-preset&quot;, &quot;slow&quot;, &quot;-pix_fmt&quot;, &quot;yuv420p&quot;,
+    &quot;-movflags&quot;, &quot;+faststart&quot;, str(out)], stdin=subprocess.PIPE)
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(channel=&quot;chrome&quot;, args=[&quot;--enable-gpu&quot;, &quot;--ignore-gpu-blocklist&quot;])  # uses your own Google Chrome
+    page = browser.new_page(viewport={&quot;width&quot;: W, &quot;height&quot;: H})
+    page.add_init_script(CLOCK)
+    page.goto(page_file.as_uri())
+    page.wait_for_load_state(&quot;networkidle&quot;)
+    page.evaluate(&quot;document.fonts.ready&quot;)
+    page.evaluate(&quot;window.__tick(0)&quot;)
+    frames = int(SECONDS * FPS)
+    for i in range(frames):
+        page.evaluate(f&quot;window.__tick({1000 / FPS})&quot;)
+        ffmpeg.stdin.write(page.screenshot(type=&quot;jpeg&quot;, quality=95))
+        if i % FPS == 0:
+            print(f&quot;{i // FPS + 1} / {int(SECONDS)} s&quot;)
+    browser.close()
+
+ffmpeg.stdin.close(); ffmpeg.wait()
+print(&quot;done:&quot;, out)
+</code></pre>
+<p>Run it with the file name and the length in seconds:</p>
+<pre><code>python render.py index.html 10
+</code></pre>
+<p>For vertical video, add the size:</p>
+<pre><code>python render.py index.html 12 1080 1920
+</code></pre>
+<p>It prints the seconds as it goes and saves index.mp4 next to your file. A 10-second video takes about a minute.</p>
+<hr />
+<h2 id="add-music">Add music</h2>
+<p>A video with sound gets watched longer. Three ways to add it:</p>
+<ul>
+<li>Free music. Pixabay Music has thousands of tracks you can use for free, no sign-up needed to listen. Search by mood ("upbeat", "lofi") and pick one around 120 BPM if your timeline uses beats.</li>
+<li>Your own track. Anything you have the rights to.</li>
+<li>Let Fable make it. Ask: "Write a Python script that synthesizes a 10-second upbeat track at 120 BPM in C major and saves music.wav." It's simple, but it's 100% yours.</li>
+</ul>
+<p>Then put the music under the video. Ask Claude Code ("add music.mp3 to index.mp4, fade out the last second"), or run this yourself:</p>
+<pre><code>ffmpeg -i index.mp4 -i music.mp3 -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -af &quot;afade=t=out:st=9:d=1&quot; -shortest final.mp4
+</code></pre>
+<p>One tip that matters more than which track you pick: keep the music quieter than you think. Most people watch with sound low or off, and loud music sounds cheap. If you're unsure, turn it down by a third.</p>
+<hr />
+<h2 id="4-more-prompts-you-can-copy">4 more prompts you can copy</h2>
+<p>Every one of these was run on Fable 5.2 and is printed here in full. Swap the nouns, keep the numbers.</p>
+<p><strong>1. A kids cartoon that teaches something</strong></p>
+<p>A fox and a bunny share a pizza and a 6-year-old learns what "one half" means. 30 seconds, 3D, 7 shots. Change four lines and it teaches counting, shapes or telling time instead.</p>
+<blockquote>
+<p><strong>[Embedded post]</strong> <a href="https://x.com/i/status/2121216551890419748">https://x.com/i/status/2121216551890419748</a></p>
+</blockquote>
+<p>Fable 5.2: 11m 11s, $9.34.</p>
+<p><strong>2. A 3D scene with camera moves</strong></p>
+<p>A capybara in a snowy Japanese hot spring, 24 seconds, five camera angles. The trick is that the prompt gives the camera positions in meters and every action on the second, so the result looks directed instead of random.</p>
+<blockquote>
+<p><strong>[Embedded post]</strong> <a href="https://x.com/i/status/2120500496850997258">https://x.com/i/status/2120500496850997258</a></p>
+</blockquote>
+<p>Fable 5.2: 26m 47s, $11.32.</p>
+<p><strong>3. A YouTube intro</strong></p>
+<p>The "Deep Cuts" template from this guide. Change WHAT, LOOK and the words in TIMELINE, and it's your channel's intro.</p>
+<p><strong>4. A "record of the week" post for Reels</strong></p>
+<p>The vertical post from this guide. Change the three detail lines and the stamp, and it's a weekly series: book of the week, sneaker of the week, recipe of the week.</p>
+<hr />
+<h2 id="10-beginner-mistakes-and-their-fixes">10 beginner mistakes and their fixes</h2>
+<table>
+<thead>
+<tr>
+<th>Mistake</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Make it look professional"</td>
+<td>Write a TIMELINE with seconds. Adjectives give you an average video.</td>
+</tr>
+<tr>
+<td>No colors in the prompt</td>
+<td>Give 3 hex codes: background, text, one accent.</td>
+</tr>
+<tr>
+<td>Too many ideas in 10 seconds</td>
+<td>One idea per video. If you need to explain two things, make two videos.</td>
+</tr>
+<tr>
+<td>Text appears and disappears too fast</td>
+<td>Hold every line at least 1.5 s. People need time to read on a phone.</td>
+</tr>
+<tr>
+<td>An empty first second</td>
+<td>Something is already moving on frame 1. The first 3 seconds decide whether people keep watching.</td>
+</tr>
+<tr>
+<td>Asking for 10 changes at once</td>
+<td>1 or 2 per message, with a time and a number.</td>
+</tr>
+<tr>
+<td>Recording the screen for the final</td>
+<td>Use render.py or ask Claude Code for a frame-by-frame MP4.</td>
+</tr>
+<tr>
+<td>Using Max effort</td>
+<td>High for new videos, medium for fixes. Max costs more and isn't better here.</td>
+</tr>
+<tr>
+<td>Wrong size for the platform</td>
+<td>Pick the size before you start, from the table above.</td>
+</tr>
+<tr>
+<td>Music too loud</td>
+<td>Turn it down by a third. Quiet music sounds expensive.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="the-short-version">The short version</h2>
+<ol>
+<li>Open Claude, pick Fable 5.2, effort high.</li>
+<li>Use the template: WHAT, SIZE, LOOK, TIMELINE, MOTION.</li>
+<li>Fix with follow-ups that name a time and a number.</li>
+<li>Render with Claude Code or render.py.</li>
+<li>Add quiet music and post.</li>
+</ol>
+<p>Your first video will take 10 minutes. Your fifth will look like you hired someone.</p>
+<p>If this saved you a subscription to After Effects, bookmark it so the template is here when you need it, and follow @anstapnever for the next prompt pack.</p></article><aside class="toc"><b>On this page</b><a href="#how-it-works-in-one-minute">How it works, in one minute</a><a href="#what-you-need-and-what-it-costs">What you need and what it costs</a><a href="#path-1-no-install-in-the-claude-app">Path 1: no install, in the Claude app</a><a href="#path-2-claude-code-on-windows-or-mac">Path 2: Claude Code, on Windows or Mac</a><a href="#your-first-video-one-line-and-what-it-gives-you">Your first video: one line, and what it gives you</a><a href="#the-directors-template-the-6-lines-that-make-it-yours">The director's template: the 6 lines that make it yours</a><a href="#how-to-ask-for-changes-12-phrases-that-work">How to ask for changes: 12 phrases that work</a><a href="#vertical-video-for-reels-tiktok-and-shorts">Vertical video for Reels, TikTok and Shorts</a><a href="#turn-it-into-an-mp4">Turn it into an MP4</a><a href="#add-music">Add music</a><a href="#4-more-prompts-you-can-copy">4 more prompts you can copy</a><a href="#10-beginner-mistakes-and-their-fixes">10 beginner mistakes and their fixes</a><a href="#the-short-version">The short version</a></aside></div>
+<div class="foot">All content © its authors (@anstapnever; @claudeai for the launch post). Archived 18 Nov 2026 for personal reference.</div>
+<script>
+document.querySelectorAll('pre').forEach(pre=>{const b=document.createElement('button');b.className='copy';b.textContent='Copy';
+b.onclick=()=>{navigator.clipboard.writeText(pre.innerText.replace(/^Copy\n?/,'')).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1400)})};pre.prepend(b)});
+</script></body></html>
