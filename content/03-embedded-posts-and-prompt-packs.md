@@ -46,6 +46,8 @@ The article embeds three posts. Two of them link to PDF prompt packs on Google D
 
 ### PDF: "One Half Kids Cartoon Prompt Pack" (5 pages)
 
+**Original PDF with full design:** [prompt-pack-one-half.pdf](../docs/media/prompt-pack-one-half.pdf)
+
 #### Page 01: Overview
 
 **ONE HALF. Prompt pack. Fable 5.2 + Opus 5.5 prompt. A kids cartoon in pure code, 30 seconds.**
@@ -272,6 +274,8 @@ Shot 7, 24.0-30.0 s: close-up: they turn to the camera: "Great job, [name]!"
 **Other reply captured:** @preprintpigeon: "the capybara's tiny fruit hat is an excellent bit of holiday planning. absolutely nothing left on the itinerary." ([link](https://x.com/preprintpigeon/status/2121103781655904734))
 
 ### PDF: "Capybara Onsen Prompt Pack" (4 pages)
+
+**Original PDF with full design:** [prompt-pack-capybara-onsen.pdf](../docs/media/prompt-pack-capybara-onsen.pdf)
 
 #### Page 01: Overview
 

@@ -1,0 +1,50 @@
+name: Fetch media and rebuild site
+
+# Downloads every file listed in sources/media-manifest.json into docs/media/,
+# switches all links to the local copies, rebuilds docs/, and commits the result.
+# Runs on the first push, whenever the manifest or content changes, and on demand.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "sources/media-manifest.json"
+      - "content/**"
+      - "tools/**"
+      - "README.md"
+      - ".github/workflows/fetch-media.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install markdown
+
+      - name: Download media (original first, Apify mirror as fallback)
+        run: python tools/fetch_media.py
+
+      - name: Rebuild site
+        run: python tools/build_site.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "Archive media locally and rebuild site"
+            git push
+          fi

@@ -28,7 +28,7 @@
 | **"One Half" kids cartoon (3D)** | **Capybara onsen (3D)** | **20-repo stack** |
 | [![One Half](https://pbs.twimg.com/amplify_video_thumb/2121215855254196224/img/WCYghVlgHjuprsa-.jpg)](https://video.twimg.com/amplify_video/2121215855254196224/vid/avc1/1080x1350/TV3uTpkB9ZA6Z-0R.mp4?tag=29) | [![Capybara](https://pbs.twimg.com/amplify_video_thumb/2120496468310237184/img/MqrKAE4MJhVo858D.jpg)](https://video.twimg.com/amplify_video/2120496468310237184/vid/avc1/1080x1350/BX-YgJYbxCfCnFiP.mp4?tag=29) | [![20 repos](https://pbs.twimg.com/amplify_video_thumb/2122677403998965760/img/cH2isJgN6nv5UA3f.jpg)](https://video.twimg.com/amplify_video/2122677403998965760/vid/avc1/1080x1350/jbXBov89DPz7X9vj.mp4?tag=29) |
 
-<sub>Click any thumbnail to play the MP4.</sub>
+<sub>Click any thumbnail to play the MP4. All 24 media files are stored in this repo under <code>docs/media/</code>, so nothing depends on X staying online.</sub>
 
 ---
 
@@ -39,6 +39,7 @@
 | 📘 | [**The article**](content/01-article-motion-design-with-fable-5.2.md) | The guide in full: how it works, what it costs, setup on the Claude app and Claude Code, the director's template, 12 fix-it phrases, vertical video, rendering to MP4, adding music, 10 beginner mistakes. |
 | 🧰 | [**20 repos**](content/02-thread-20-github-repos-video-editing.md) | The video editing stack, every link expanded, grouped by stage, plus the public replies. |
 | 🎬 | [**Prompt packs**](content/03-embedded-posts-and-prompt-packs.md) | Both PDFs in full: the 1146-word "One Half" cartoon prompt and the 822-word capybara prompt, Fable vs Opus cost tables, 10 kids lessons and two fill-in templates. |
+| 📄 | [**Original PDFs**](docs/media/) | Both prompt packs as the author designed them: [One Half](docs/media/prompt-pack-one-half.pdf) (5 pages) and [Capybara Onsen](docs/media/prompt-pack-capybara-onsen.pdf) (4 pages). |
 | 🗂 | [**Master sources**](sources/SOURCES.md) | Every original URL, how it was captured, and an inventory of all 12 media items. |
 | ⚙️ | [**render.py**](tools/render.py) | The author's frame-perfect HTML-to-MP4 renderer. |
 | 🌐 | [**Website**](docs/index.html) | The same content as a designed site with videos playing inline. Turn on GitHub Pages from `/docs` to publish it. |
@@ -98,11 +99,16 @@ MOTION: nothing moves in a straight line at constant speed. Entrances ease out, 
 │   ├── 01-article-motion-design-with-fable-5.2.md
 │   ├── 02-thread-20-github-repos-video-editing.md
 │   └── 03-embedded-posts-and-prompt-packs.md
-├── sources/SOURCES.md         ← master source list and media inventory
+├── sources/
+│   ├── SOURCES.md             ← master source list and media inventory
+│   └── media-manifest.json    ← every media file: original URL + Apify backup
 ├── tools/
 │   ├── render.py              ← HTML → MP4, frame by frame
-│   └── build_site.py          ← rebuilds docs/ from content/
-└── docs/                      ← GitHub Pages site (index, article, repos, prompts)
+│   ├── build_site.py          ← rebuilds docs/ from content/
+│   └── fetch_media.py         ← downloads all media into docs/media/
+├── .github/workflows/
+│   └── fetch-media.yml        ← runs fetch_media + build_site on every push
+└── docs/                      ← GitHub Pages site + docs/media/ (videos, images, PDFs)
 ```
 
 ---

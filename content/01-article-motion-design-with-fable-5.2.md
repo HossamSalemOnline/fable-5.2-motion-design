@@ -18,7 +18,7 @@ You don't need After Effects for this. You don't need to know code either, or to
 You need Claude, a browser and this guide.
 
 <p align="center"><a href="https://video.twimg.com/amplify_video/2121746406381875200/vid/avc1/1920x1080/NV6Js20RBFQ2Vdgv.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2121746406381875200/img/tyMXifONr3G427Ft.jpg" width="720" alt="Video 1: finished &quot;Deep Cuts&quot; intro, 10 s, 1920x1080"></a><br>
-<sub>▶ Video 1: finished "Deep Cuts" intro, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121746406381875200/vid/avc1/1920x1080/NV6Js20RBFQ2Vdgv.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121746406381875200/vid/avc1/1280x720/YChTmjggtkn6SQ3w.mp4?tag=29">720p</a></sub></p>
+<sub>▶ Video 1: finished "Deep Cuts" intro, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121746406381875200/vid/avc1/1920x1080/NV6Js20RBFQ2Vdgv.mp4?tag=29">MP4 1080p</a></sub></p>
 
 That intro took Fable 5.2 two messages and under 6 minutes. Both were typed in plain English, and every shape, letter and bounce in it is drawn by code Fable wrote. There's no stock footage, no template and no plugin behind it.
 
@@ -151,7 +151,7 @@ Make me a 10-second animated intro for my YouTube channel called "Deep Cuts". Ma
 This is what Fable 5.2 made from it, with no follow-ups:
 
 <p align="center"><a href="https://video.twimg.com/amplify_video/2121746964320841728/vid/avc1/1920x1080/cwT81mc0LNPzsLU2.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2121746964320841728/img/vbVj7cneRMmx5wUW.jpg" width="720" alt="Video 2: one-line prompt result, 10 s, 1920x1080"></a><br>
-<sub>▶ Video 2: one-line prompt result, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121746964320841728/vid/avc1/1920x1080/cwT81mc0LNPzsLU2.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121746964320841728/vid/avc1/1280x720/04GDV2pzEmBSKwsz.mp4?tag=29">720p</a></sub></p>
+<sub>▶ Video 2: one-line prompt result, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121746964320841728/vid/avc1/1920x1080/cwT81mc0LNPzsLU2.mp4?tag=29">MP4 1080p</a></sub></p>
 
 It looks like a movie trailer. A dive through a tunnel of red frames, a depth counter, a glowing blade slashing across the screen, and "DEEP CUTS" slamming together from two halves. Technically, it's impressive.
 
@@ -221,7 +221,7 @@ SOUND: none.
 And the result, again first try, no follow-ups:
 
 <p align="center"><a href="https://video.twimg.com/amplify_video/2121747161084018688/vid/avc1/1920x1080/SonE7XOMf2OEAitC.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2121747161084018688/img/JwwOeWYhJc45VG6n.jpg" width="720" alt="Video 3: director's template result, 10 s, 1920x1080"></a><br>
-<sub>▶ Video 3: director's template result, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121747161084018688/vid/avc1/1920x1080/SonE7XOMf2OEAitC.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121747161084018688/vid/avc1/1280x720/_cDQlIKsRZi3tA4g.mp4?tag=29">720p</a></sub></p>
+<sub>▶ Video 3: director's template result, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121747161084018688/vid/avc1/1920x1080/SonE7XOMf2OEAitC.mp4?tag=29">MP4 1080p</a></sub></p>
 
 Every line of the timeline is on screen at the second it was asked for. The sleeve slides in, the record slides out and starts spinning, the tonearm drops, the title pops in letter by letter, the tagline slides up, the notes float away. Your colors, your words, your channel.
 
@@ -232,7 +232,7 @@ It isn't perfect, though. In the first 3 seconds the sleeve sits in the top left
 Side by side, the difference is the whole point of this guide:
 
 <p align="center"><a href="https://video.twimg.com/amplify_video/2121747275059965952/vid/avc1/1920x800/UoD2B2tykucHTh0W.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2121747275059965952/img/D8eqMiGpUbv383AT.jpg" width="720" alt="Video 4: side-by-side comparison, 10 s, 1920x800"></a><br>
-<sub>▶ Video 4: side-by-side comparison, 10 s, 1920x800 · <a href="https://video.twimg.com/amplify_video/2121747275059965952/vid/avc1/1920x800/UoD2B2tykucHTh0W.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121747275059965952/vid/avc1/1728x720/hqYs8fZrai2t_Cnc.mp4?tag=29">720p</a></sub></p>
+<sub>▶ Video 4: side-by-side comparison, 10 s, 1920x800 · <a href="https://video.twimg.com/amplify_video/2121747275059965952/vid/avc1/1920x800/UoD2B2tykucHTh0W.mp4?tag=29">MP4 1080p</a></sub></p>
 
 You don't need to know animation words to write a timeline. "A record slides out of the sleeve" is enough. What matters is that every moment has a time, and that you said what you wanted instead of "make it professional".
 
@@ -253,7 +253,7 @@ Two changes. 1) From 0 to 3 s the sleeve and the record sit in the top left corn
 ```
 
 <p align="center"><a href="https://video.twimg.com/amplify_video/2121747404760518656/vid/avc1/1920x1080/7HW9y5RvGC_kGuVn.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2121747404760518656/img/Qp_AGxk3mpB5e0HV.jpg" width="720" alt="Video 5: result after one follow-up, 10 s, 1920x1080"></a><br>
-<sub>▶ Video 5: result after one follow-up, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121747404760518656/vid/avc1/1920x1080/7HW9y5RvGC_kGuVn.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121747404760518656/vid/avc1/1280x720/x44YzoEZ7RKRwc3v.mp4?tag=29">720p</a></sub></p>
+<sub>▶ Video 5: result after one follow-up, 10 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2121747404760518656/vid/avc1/1920x1080/7HW9y5RvGC_kGuVn.mp4?tag=29">MP4 1080p</a></sub></p>
 
 Fable rewrote the file in 3m 21s, for $2.39 at API prices. The sleeve and the record now sit in the center, the record is bigger, and a real tonearm with a base and a counterweight swings onto the grooves. It also added one move I didn't ask for and told me why: the record glides left at 2.4 s so the bigger record still fits next to the title. Two problems, two numbers, one message.
 
@@ -307,7 +307,7 @@ SOUND: none.
 ```
 
 <p align="center"><a href="https://video.twimg.com/amplify_video/2121747753890177024/vid/avc1/1080x1920/4W38UmmxDL_E9pun.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2121747753890177024/img/sssl0noNoX6VElUQ.jpg" width="720" alt="Video 6: vertical &quot;Record of the Week&quot; Reel, 12 s, 1080x1920"></a><br>
-<sub>▶ Video 6: vertical "Record of the Week" Reel, 12 s, 1080x1920 · <a href="https://video.twimg.com/amplify_video/2121747753890177024/vid/avc1/1080x1920/4W38UmmxDL_E9pun.mp4?tag=29">MP4 1080p</a> · <a href="https://video.twimg.com/amplify_video/2121747753890177024/vid/avc1/720x1280/ph5sWU1W1tTrNNmo.mp4?tag=29">720p</a></sub></p>
+<sub>▶ Video 6: vertical "Record of the Week" Reel, 12 s, 1080x1920 · <a href="https://video.twimg.com/amplify_video/2121747753890177024/vid/avc1/1080x1920/4W38UmmxDL_E9pun.mp4?tag=29">MP4 1080p</a></sub></p>
 
 The record is spinning on frame 1, the words land on the beat, and the stamp hits like a real rubber stamp. The record makes exactly 7 full turns in 12 seconds, so the last frame flows straight into the first and the loop has no seam.
 

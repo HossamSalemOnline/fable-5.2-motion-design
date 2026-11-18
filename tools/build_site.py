@@ -8,6 +8,8 @@ import pathlib
 import re
 import shutil
 
+import json
+
 import markdown
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -135,7 +137,7 @@ IMG_BLOCK = re.compile(r'<p align="center"><img src="([^"]+)" width="\d+" alt="(
 
 def video_fig(m):
     mp4, poster, alt, cap = m.groups()
-    tall = "1080x1920" in mp4 or "1080x1350" in mp4
+    tall = any(k in mp4 for k in ("1080x1920", "1080x1350", "v6-", "v7-", "v9-", "v10-"))
     cap = cap.replace("▶ ", "")
     return (f'<figure class="video{" tall" if tall else ""}"><video controls playsinline preload="none" poster="{poster}">'
             f'<source src="{mp4}" type="video/mp4"></video><figcaption>{cap}</figcaption></figure>')
@@ -179,6 +181,22 @@ def toc_html(tokens):
     return "<b>On this page</b>" + "".join(items)
 
 
+def localize_html(out):
+    """Point remote media URLs at docs/media/ copies when they exist (after tools/fetch_media.py)."""
+    out = out.replace("../docs/media/", "media/").replace("docs/media/", "media/")
+    manifest = ROOT / "sources" / "media-manifest.json"
+    if manifest.exists():
+        for item in json.loads(manifest.read_text())["files"]:
+            if (ROOT / item["path"]).exists():
+                local = "media/" + pathlib.Path(item["path"]).name
+                out = out.replace(item["original"], local).replace(item["original"].replace("&", "&amp;"), local)
+    return out
+
+
+def write(path, text):
+    path.write_text(localize_html(text))
+
+
 def build():
     DOCS.mkdir(exist_ok=True)
     for fname, src, label, _ in PAGES:
@@ -187,12 +205,12 @@ def build():
         flat = tokens[0]["children"] if tokens and tokens[0].get("level") == 1 else tokens
         page = f'<div class="layout"><article class="doc">{body}</article><aside class="toc">{toc_html(flat)}</aside></div>'
         title = re.search(r"^# (.+)$", text, re.M).group(1)
-        (DOCS / fname).write_text(shell(title, fname, page))
+        write(DOCS / fname, shell(title, fname, page))
 
     src_text = (ROOT / "sources" / "SOURCES.md").read_text()
     body, tokens = render_md(src_text)
     flat = tokens[0]["children"] if tokens and tokens[0].get("level") == 1 else tokens
-    (DOCS / "sources.html").write_text(shell("Master sources", "sources.html",
+    write(DOCS / "sources.html", shell("Master sources", "sources.html",
         f'<div class="layout"><article class="doc" style="max-width:100%">{body}</article><aside class="toc">{toc_html(flat)}</aside></div>'))
 
     gallery = ""
@@ -222,9 +240,14 @@ def build():
 </div>
 <h2>Watch the results</h2>
 <div class="gallery">{gallery}</div>
-<p style="margin-top:40px"><a href="render.py">Download render.py</a>, the author's frame-perfect HTML-to-MP4 renderer.</p>
+<h2>Downloads</h2>
+<div class="cards">
+<a class="card" href="media/prompt-pack-one-half.pdf"><span class="k">PDF · 5 pages</span><h3>One Half prompt pack</h3><p>The original designed PDF.</p></a>
+<a class="card" href="media/prompt-pack-capybara-onsen.pdf"><span class="k">PDF · 4 pages</span><h3>Capybara Onsen prompt pack</h3><p>The original designed PDF.</p></a>
+<a class="card" href="render.py"><span class="k">Python</span><h3>render.py</h3><p>The author's frame-perfect HTML-to-MP4 renderer.</p></a>
+</div>
 </div>"""
-    (DOCS / "index.html").write_text(shell("Fable 5.2 Motion Design Archive", "index.html", home))
+    write(DOCS / "index.html", shell("Fable 5.2 Motion Design Archive", "index.html", home))
     shutil.copy(ROOT / "tools" / "render.py", DOCS / "render.py")
     (DOCS / ".nojekyll").write_text("")
     print("built:", sorted(p.name for p in DOCS.iterdir()))

@@ -1,0 +1,154 @@
+{
+  "note": "Media manifest. The fetch-media workflow downloads each file into docs/media/, trying the original URL first and the Apify mirror second, then rewrites every remote link in the repo to the local copy. To archive more media later, add rows and push.",
+  "apify_mirror": {
+    "store_id": "eGqZkhrpbkCW6Xi5Q",
+    "captured": "2026-11-18",
+    "retention": "unnamed Apify store: kept 7 days (until about 25 Nov 2026)"
+  },
+  "files": [
+    {
+      "path": "docs/media/article-cover.jpg",
+      "original": "https://pbs.twimg.com/media/HXH4Wh8aMAAWybP.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000000-HXH4Wh8aMAAWybP.jpg?signature=ihITBqoIpKPUqFz0iC9P",
+      "bytes": 83366
+    },
+    {
+      "path": "docs/media/article-pipeline.jpg",
+      "original": "https://pbs.twimg.com/media/HXH1NnKbgAAW2Y_.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000001-HXH1NnKbgAAW2Y_.jpg?signature=1gi3SvVKWzv22ZagJIskp",
+      "bytes": 57522
+    },
+    {
+      "path": "docs/media/v1-finished-intro.mp4",
+      "original": "https://video.twimg.com/amplify_video/2121746406381875200/vid/avc1/1920x1080/NV6Js20RBFQ2Vdgv.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000002-NV6Js20RBFQ2Vdgv.mp4?signature=uGUOYByCYrlElJmLAST8",
+      "bytes": 5238393
+    },
+    {
+      "path": "docs/media/v2-one-line-prompt.mp4",
+      "original": "https://video.twimg.com/amplify_video/2121746964320841728/vid/avc1/1920x1080/cwT81mc0LNPzsLU2.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000003-cwT81mc0LNPzsLU2.mp4?signature=gTVKmaRhWGtNUL1qXHud",
+      "bytes": 7560282
+    },
+    {
+      "path": "docs/media/v3-directors-template.mp4",
+      "original": "https://video.twimg.com/amplify_video/2121747161084018688/vid/avc1/1920x1080/SonE7XOMf2OEAitC.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000004-SonE7XOMf2OEAitC.mp4?signature=1JoCcxydIVqs5VhobXb5f",
+      "bytes": 4786153
+    },
+    {
+      "path": "docs/media/v4-side-by-side.mp4",
+      "original": "https://video.twimg.com/amplify_video/2121747275059965952/vid/avc1/1920x800/UoD2B2tykucHTh0W.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000005-UoD2B2tykucHTh0W.mp4?signature=1yCLD5XdH4lkobuen3Gf",
+      "bytes": 2856805
+    },
+    {
+      "path": "docs/media/v5-after-follow-up.mp4",
+      "original": "https://video.twimg.com/amplify_video/2121747404760518656/vid/avc1/1920x1080/7HW9y5RvGC_kGuVn.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000006-7HW9y5RvGC_kGuVn.mp4?signature=1fEjXIdbKRG6YmMJL8lbW",
+      "bytes": 5234200
+    },
+    {
+      "path": "docs/media/v6-vertical-reel.mp4",
+      "original": "https://video.twimg.com/amplify_video/2121747753890177024/vid/avc1/1080x1920/4W38UmmxDL_E9pun.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000007-4W38UmmxDL_E9pun.mp4?signature=1rfG4KrIXwKEdAer0XiyZ",
+      "bytes": 3411640
+    },
+    {
+      "path": "docs/media/v7-20-repos-post.mp4",
+      "original": "https://video.twimg.com/amplify_video/2122677403998965760/vid/avc1/1080x1350/jbXBov89DPz7X9vj.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000008-jbXBov89DPz7X9vj.mp4?signature=1lSwDtzKeb2HQsNfA2hmt",
+      "bytes": 4628254
+    },
+    {
+      "path": "docs/media/v8-claude-launch.mp4",
+      "original": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000009-E6naF0FCPw_qRYv0.mp4?signature=AQHk7OVPwM2ho3A7bnCF",
+      "bytes": 9653404
+    },
+    {
+      "path": "docs/media/v9-one-half-cartoon.mp4",
+      "original": "https://video.twimg.com/amplify_video/2121215855254196224/vid/avc1/1080x1350/TV3uTpkB9ZA6Z-0R.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000010-TV3uTpkB9ZA6Z-0R.mp4?signature=zh55SSxletu7ydUSOwiv",
+      "bytes": 6785953
+    },
+    {
+      "path": "docs/media/v10-capybara-onsen.mp4",
+      "original": "https://video.twimg.com/amplify_video/2120496468310237184/vid/avc1/1080x1350/BX-YgJYbxCfCnFiP.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000011-BX-YgJYbxCfCnFiP.mp4?signature=f6vXmSKtmk0KtVKe98Ca",
+      "bytes": 16255883
+    },
+    {
+      "path": "docs/media/v1-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2121746406381875200/img/tyMXifONr3G427Ft.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000012-tyMXifONr3G427Ft.jpg?signature=1h6BRAKw0T30V8cvePUmc",
+      "bytes": 97444
+    },
+    {
+      "path": "docs/media/v2-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2121746964320841728/img/vbVj7cneRMmx5wUW.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000013-vbVj7cneRMmx5wUW.jpg?signature=qzrAd2PdtX5ZQJydrhNv",
+      "bytes": 74264
+    },
+    {
+      "path": "docs/media/v3-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2121747161084018688/img/JwwOeWYhJc45VG6n.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000014-JwwOeWYhJc45VG6n.jpg?signature=1qE4plJHdaOnBLA0ld8ne",
+      "bytes": 95381
+    },
+    {
+      "path": "docs/media/v4-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2121747275059965952/img/D8eqMiGpUbv383AT.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000015-D8eqMiGpUbv383AT.jpg?signature=1dYZ0PVWKCBmlnoCoNtoR",
+      "bytes": 32072
+    },
+    {
+      "path": "docs/media/v5-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2121747404760518656/img/Qp_AGxk3mpB5e0HV.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000016-Qp_AGxk3mpB5e0HV.jpg?signature=1a3JoKsQwj6nvZHBk030h",
+      "bytes": 97444
+    },
+    {
+      "path": "docs/media/v6-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2121747753890177024/img/sssl0noNoX6VElUQ.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000017-sssl0noNoX6VElUQ.jpg?signature=7RotM6W33dBkYUVfU9V0",
+      "bytes": 45479
+    },
+    {
+      "path": "docs/media/v7-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2122677403998965760/img/cH2isJgN6nv5UA3f.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000018-cH2isJgN6nv5UA3f.jpg?signature=1uWj82rxBUWTBWJD9UtGN",
+      "bytes": 157695
+    },
+    {
+      "path": "docs/media/v8-poster.jpg",
+      "original": "https://pbs.twimg.com/media/HWtIJNLWUAAcc7I.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000019-HWtIJNLWUAAcc7I.jpg?signature=vHwWUbpmWRvDKS2ZlDcy",
+      "bytes": 98715
+    },
+    {
+      "path": "docs/media/v9-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2121215855254196224/img/WCYghVlgHjuprsa-.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000020-WCYghVlgHjuprsa-.jpg?signature=kpV8nH4jb42gMpq1CMSW",
+      "bytes": 127352
+    },
+    {
+      "path": "docs/media/v10-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2120496468310237184/img/MqrKAE4MJhVo858D.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000021-MqrKAE4MJhVo858D.jpg?signature=SGqLYj904geiQEZArwfK",
+      "bytes": 209674
+    },
+    {
+      "path": "docs/media/prompt-pack-one-half.pdf",
+      "original": "https://drive.google.com/uc?export=download&id=1dWidG6WcoGWuUxCoT4UcYYh6jtlpXbe7",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000022-Prompt_Kids_Cartoon_Fable_5.2_vs_Opus_5.5.pdf?signature=jwo1RJddNuUBRfdyEHUo",
+      "bytes": 1036785
+    },
+    {
+      "path": "docs/media/prompt-pack-capybara-onsen.pdf",
+      "original": "https://drive.google.com/uc?export=download&id=1xq-DmBA85qnfZ9D3belPO43-hyDzWs8M",
+      "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000023-Prompt_Capybara_Onsen_Fable_5.2_vs_Opus_5.5.pdf?signature=cZdFzrbaowR7YtiBCc2U",
+      "bytes": 1384334
+    }
+  ]
+}
