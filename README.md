@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://pbs.twimg.com/media/HXH4Wh8aMAAWybP.jpg" width="100%" alt="Motion Design with Fable 5.2">
+<img src="docs/media/article-cover.jpg" width="100%" alt="Motion Design with Fable 5.2">
 
 # Fable 5.2 Motion Design Archive
 
@@ -22,11 +22,11 @@
 
 | Finished intro (two messages) | One-line prompt (generic) | Director's template (on brief) |
 |:---:|:---:|:---:|
-| [![Finished intro](https://pbs.twimg.com/amplify_video_thumb/2121746406381875200/img/tyMXifONr3G427Ft.jpg)](https://video.twimg.com/amplify_video/2121746406381875200/vid/avc1/1920x1080/NV6Js20RBFQ2Vdgv.mp4?tag=29) | [![One-line result](https://pbs.twimg.com/amplify_video_thumb/2121746964320841728/img/vbVj7cneRMmx5wUW.jpg)](https://video.twimg.com/amplify_video/2121746964320841728/vid/avc1/1920x1080/cwT81mc0LNPzsLU2.mp4?tag=29) | [![Template result](https://pbs.twimg.com/amplify_video_thumb/2121747161084018688/img/JwwOeWYhJc45VG6n.jpg)](https://video.twimg.com/amplify_video/2121747161084018688/vid/avc1/1920x1080/SonE7XOMf2OEAitC.mp4?tag=29) |
+| [![Finished intro](docs/media/v1-poster.jpg)](docs/media/v1-finished-intro.mp4) | [![One-line result](docs/media/v2-poster.jpg)](docs/media/v2-one-line-prompt.mp4) | [![Template result](docs/media/v3-poster.jpg)](docs/media/v3-directors-template.mp4) |
 | **After one follow-up** | **Side by side** | **Vertical Reel (9:16 loop)** |
-| [![Follow-up result](https://pbs.twimg.com/amplify_video_thumb/2121747404760518656/img/Qp_AGxk3mpB5e0HV.jpg)](https://video.twimg.com/amplify_video/2121747404760518656/vid/avc1/1920x1080/7HW9y5RvGC_kGuVn.mp4?tag=29) | [![Side by side](https://pbs.twimg.com/amplify_video_thumb/2121747275059965952/img/D8eqMiGpUbv383AT.jpg)](https://video.twimg.com/amplify_video/2121747275059965952/vid/avc1/1920x800/UoD2B2tykucHTh0W.mp4?tag=29) | [![Vertical Reel](https://pbs.twimg.com/amplify_video_thumb/2121747753890177024/img/sssl0noNoX6VElUQ.jpg)](https://video.twimg.com/amplify_video/2121747753890177024/vid/avc1/1080x1920/4W38UmmxDL_E9pun.mp4?tag=29) |
+| [![Follow-up result](docs/media/v5-poster.jpg)](docs/media/v5-after-follow-up.mp4) | [![Side by side](docs/media/v4-poster.jpg)](docs/media/v4-side-by-side.mp4) | [![Vertical Reel](docs/media/v6-poster.jpg)](docs/media/v6-vertical-reel.mp4) |
 | **"One Half" kids cartoon (3D)** | **Capybara onsen (3D)** | **20-repo stack** |
-| [![One Half](https://pbs.twimg.com/amplify_video_thumb/2121215855254196224/img/WCYghVlgHjuprsa-.jpg)](https://video.twimg.com/amplify_video/2121215855254196224/vid/avc1/1080x1350/TV3uTpkB9ZA6Z-0R.mp4?tag=29) | [![Capybara](https://pbs.twimg.com/amplify_video_thumb/2120496468310237184/img/MqrKAE4MJhVo858D.jpg)](https://video.twimg.com/amplify_video/2120496468310237184/vid/avc1/1080x1350/BX-YgJYbxCfCnFiP.mp4?tag=29) | [![20 repos](https://pbs.twimg.com/amplify_video_thumb/2122677403998965760/img/cH2isJgN6nv5UA3f.jpg)](https://video.twimg.com/amplify_video/2122677403998965760/vid/avc1/1080x1350/jbXBov89DPz7X9vj.mp4?tag=29) |
+| [![One Half](docs/media/v9-poster.jpg)](docs/media/v9-one-half-cartoon.mp4) | [![Capybara](docs/media/v10-poster.jpg)](docs/media/v10-capybara-onsen.mp4) | [![20 repos](docs/media/v7-poster.jpg)](docs/media/v7-20-repos-post.mp4) |
 
 <sub>Click any thumbnail to play the MP4. All 24 media files are stored in this repo under <code>docs/media/</code>, so nothing depends on X staying online.</sub>
 

@@ -9,8 +9,8 @@
 
 ## Attached video
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2122677403998965760/vid/avc1/1080x1350/jbXBov89DPz7X9vj.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2122677403998965760/img/cH2isJgN6nv5UA3f.jpg" width="720" alt="Video, 21 s, 1080x1350 (4:5)"></a><br>
-<sub>▶ Video, 21 s, 1080x1350 (4:5) · <a href="https://video.twimg.com/amplify_video/2122677403998965760/vid/avc1/1080x1350/jbXBov89DPz7X9vj.mp4?tag=29">MP4 1080p</a></sub></p>
+<p align="center"><a href="../docs/media/v7-20-repos-post.mp4"><img src="../docs/media/v7-poster.jpg" width="720" alt="Video, 21 s, 1080x1350 (4:5)"></a><br>
+<sub>▶ Video, 21 s, 1080x1350 (4:5) · <a href="../docs/media/v7-20-repos-post.mp4">MP4 1080p</a></sub></p>
 
 ## Full post text (verbatim, links expanded)
 
