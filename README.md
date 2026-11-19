@@ -12,7 +12,7 @@
 ![Repos](https://img.shields.io/badge/GitHub%20repos-20-2B1B12?style=flat-square)
 ![Source](https://img.shields.io/badge/source-X%20%2B%20Google%20Drive-1E140E?style=flat-square)
 
-[**Read the article**](content/01-article-motion-design-with-fable-5.2.md) · [**20 repos**](content/02-thread-20-github-repos-video-editing.md) · [**Prompt packs**](content/03-embedded-posts-and-prompt-packs.md) · [**Master sources**](sources/SOURCES.md) · [**Website**](docs/index.html)
+[**Read the article**](content/01-article-motion-design-with-fable-5.2.md) · [**20 repos**](content/02-thread-20-github-repos-video-editing.md) · [**Prompt packs**](content/03-embedded-posts-and-prompt-packs.md) · [**Master sources**](sources/SOURCES.md) · [**▶ Open the website**](https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/index.html)
 
 </div>
 
@@ -22,13 +22,13 @@
 
 | Finished intro (two messages) | One-line prompt (generic) | Director's template (on brief) |
 |:---:|:---:|:---:|
-| [![Finished intro](docs/media/v1-poster.jpg)](docs/media/v1-finished-intro.mp4) | [![One-line result](docs/media/v2-poster.jpg)](docs/media/v2-one-line-prompt.mp4) | [![Template result](docs/media/v3-poster.jpg)](docs/media/v3-directors-template.mp4) |
+| [![Finished intro](docs/media/v1-poster.jpg)](https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v1-finished-intro.mp4) | [![One-line result](docs/media/v2-poster.jpg)](https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v2-one-line-prompt.mp4) | [![Template result](docs/media/v3-poster.jpg)](https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v3-directors-template.mp4) |
 | **After one follow-up** | **Side by side** | **Vertical Reel (9:16 loop)** |
-| [![Follow-up result](docs/media/v5-poster.jpg)](docs/media/v5-after-follow-up.mp4) | [![Side by side](docs/media/v4-poster.jpg)](docs/media/v4-side-by-side.mp4) | [![Vertical Reel](docs/media/v6-poster.jpg)](docs/media/v6-vertical-reel.mp4) |
+| [![Follow-up result](docs/media/v5-poster.jpg)](https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v5-after-follow-up.mp4) | [![Side by side](docs/media/v4-poster.jpg)](https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v4-side-by-side.mp4) | [![Vertical Reel](docs/media/v6-poster.jpg)](https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v6-vertical-reel.mp4) |
 | **"One Half" kids cartoon (3D)** | **Capybara onsen (3D)** | **20-repo stack** |
-| [![One Half](docs/media/v9-poster.jpg)](docs/media/v9-one-half-cartoon.mp4) | [![Capybara](docs/media/v10-poster.jpg)](docs/media/v10-capybara-onsen.mp4) | [![20 repos](docs/media/v7-poster.jpg)](docs/media/v7-20-repos-post.mp4) |
+| [![One Half](docs/media/v9-poster.jpg)](https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v9-one-half-cartoon.mp4) | [![Capybara](docs/media/v10-poster.jpg)](https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v10-capybara-onsen.mp4) | [![20 repos](docs/media/v7-poster.jpg)](https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v7-20-repos-post.mp4) |
 
-<sub>Click any thumbnail to play the MP4. All 24 media files are stored in this repo under <code>docs/media/</code>, so nothing depends on X staying online.</sub>
+<sub>Tap any thumbnail to play the video in your browser. For the full designed experience, <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/index.html">open the website</a>. All 24 media files are stored in this repo under <code>docs/media/</code>, so nothing depends on X staying online.</sub>
 
 ---
 
@@ -42,7 +42,7 @@
 | 📄 | [**Original PDFs**](docs/media/) | Both prompt packs as the author designed them: [One Half](docs/media/prompt-pack-one-half.pdf) (5 pages) and [Capybara Onsen](docs/media/prompt-pack-capybara-onsen.pdf) (4 pages). |
 | 🗂 | [**Master sources**](sources/SOURCES.md) | Every original URL, how it was captured, and an inventory of all 12 media items. |
 | ⚙️ | [**render.py**](tools/render.py) | The author's frame-perfect HTML-to-MP4 renderer. |
-| 🌐 | [**Website**](docs/index.html) | The same content as a designed site with videos playing inline. Turn on GitHub Pages from `/docs` to publish it. |
+| 🌐 | [**Website**](https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/index.html) | The same content as a designed site with every video playing inline. Live now through the githack CDN; it also works on GitHub Pages (`main` branch, `/docs` folder) if switched on. |
 
 ---
 

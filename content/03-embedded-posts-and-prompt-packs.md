@@ -16,8 +16,8 @@ The article embeds three posts. Two of them link to PDF prompt packs on Google D
 >
 > They're capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision.
 
-<p align="center"><a href="../docs/media/v8-claude-launch.mp4"><img src="../docs/media/v8-poster.jpg" width="560" alt="Video (18.5 s, 3840x2160 source)"></a><br>
-<sub>▶ Video (18.5 s, 3840x2160 source) · <a href="../docs/media/v8-claude-launch.mp4">MP4 1080p</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v8-claude-launch.mp4"><img src="../docs/media/v8-poster.jpg" width="560" alt="Video (18.5 s, 3840x2160 source)"></a><br>
+<sub>▶ Video (18.5 s, 3840x2160 source) · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v8-claude-launch.mp4">MP4 1080p</a></sub></p>
 
 ---
 
@@ -39,8 +39,8 @@ The article embeds three posts. Two of them link to PDF prompt packs on Google D
 >
 > the prompt is below, change one line ↓
 
-<p align="center"><a href="../docs/media/v9-one-half-cartoon.mp4"><img src="../docs/media/v9-poster.jpg" width="560" alt="Video (30 s, 1080x1350)"></a><br>
-<sub>▶ Video (30 s, 1080x1350) · <a href="../docs/media/v9-one-half-cartoon.mp4">MP4 1080p</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v9-one-half-cartoon.mp4"><img src="../docs/media/v9-poster.jpg" width="560" alt="Video (30 s, 1080x1350)"></a><br>
+<sub>▶ Video (30 s, 1080x1350) · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v9-one-half-cartoon.mp4">MP4 1080p</a></sub></p>
 
 **Author's reply:** "Prompt: https://drive.google.com/file/d/1dWidG6WcoGWuUxCoT4UcYYh6jtlpXbe7/view?usp=sharing" ([reply](https://x.com/anstapnever/status/2121216555086422374))
 
@@ -266,8 +266,8 @@ Shot 7, 24.0-30.0 s: close-up: they turn to the camera: "Great job, [name]!"
 >
 > same speed, almost 2x the price. but look at the snow, steam and reflections on top
 
-<p align="center"><a href="../docs/media/v10-capybara-onsen.mp4"><img src="../docs/media/v10-poster.jpg" width="560" alt="Video (24 s, 1080x1350)"></a><br>
-<sub>▶ Video (24 s, 1080x1350) · <a href="../docs/media/v10-capybara-onsen.mp4">MP4 1080p</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v10-capybara-onsen.mp4"><img src="../docs/media/v10-poster.jpg" width="560" alt="Video (24 s, 1080x1350)"></a><br>
+<sub>▶ Video (24 s, 1080x1350) · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v10-capybara-onsen.mp4">MP4 1080p</a></sub></p>
 
 **Author's reply:** "Prompt: https://drive.google.com/file/d/1xq-DmBA85qnfZ9D3belPO43-hyDzWs8M/view?usp=sharing" ([reply](https://x.com/anstapnever/status/2120500825802068095))
 

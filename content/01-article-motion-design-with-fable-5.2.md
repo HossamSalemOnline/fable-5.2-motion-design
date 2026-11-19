@@ -17,8 +17,8 @@ You don't need After Effects for this. You don't need to know code either, or to
 
 You need Claude, a browser and this guide.
 
-<p align="center"><a href="../docs/media/v1-finished-intro.mp4"><img src="../docs/media/v1-poster.jpg" width="720" alt="Video 1: finished &quot;Deep Cuts&quot; intro, 10 s, 1920x1080"></a><br>
-<sub>▶ Video 1: finished "Deep Cuts" intro, 10 s, 1920x1080 · <a href="../docs/media/v1-finished-intro.mp4">MP4 1080p</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v1-finished-intro.mp4"><img src="../docs/media/v1-poster.jpg" width="720" alt="Video 1: finished &quot;Deep Cuts&quot; intro, 10 s, 1920x1080"></a><br>
+<sub>▶ Video 1: finished "Deep Cuts" intro, 10 s, 1920x1080 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v1-finished-intro.mp4">MP4 1080p</a></sub></p>
 
 That intro took Fable 5.2 two messages and under 6 minutes. Both were typed in plain English, and every shape, letter and bounce in it is drawn by code Fable wrote. There's no stock footage, no template and no plugin behind it.
 
@@ -150,8 +150,8 @@ Make me a 10-second animated intro for my YouTube channel called "Deep Cuts". Ma
 
 This is what Fable 5.2 made from it, with no follow-ups:
 
-<p align="center"><a href="../docs/media/v2-one-line-prompt.mp4"><img src="../docs/media/v2-poster.jpg" width="720" alt="Video 2: one-line prompt result, 10 s, 1920x1080"></a><br>
-<sub>▶ Video 2: one-line prompt result, 10 s, 1920x1080 · <a href="../docs/media/v2-one-line-prompt.mp4">MP4 1080p</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v2-one-line-prompt.mp4"><img src="../docs/media/v2-poster.jpg" width="720" alt="Video 2: one-line prompt result, 10 s, 1920x1080"></a><br>
+<sub>▶ Video 2: one-line prompt result, 10 s, 1920x1080 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v2-one-line-prompt.mp4">MP4 1080p</a></sub></p>
 
 It looks like a movie trailer. A dive through a tunnel of red frames, a depth counter, a glowing blade slashing across the screen, and "DEEP CUTS" slamming together from two halves. Technically, it's impressive.
 
@@ -220,8 +220,8 @@ SOUND: none.
 
 And the result, again first try, no follow-ups:
 
-<p align="center"><a href="../docs/media/v3-directors-template.mp4"><img src="../docs/media/v3-poster.jpg" width="720" alt="Video 3: director's template result, 10 s, 1920x1080"></a><br>
-<sub>▶ Video 3: director's template result, 10 s, 1920x1080 · <a href="../docs/media/v3-directors-template.mp4">MP4 1080p</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v3-directors-template.mp4"><img src="../docs/media/v3-poster.jpg" width="720" alt="Video 3: director's template result, 10 s, 1920x1080"></a><br>
+<sub>▶ Video 3: director's template result, 10 s, 1920x1080 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v3-directors-template.mp4">MP4 1080p</a></sub></p>
 
 Every line of the timeline is on screen at the second it was asked for. The sleeve slides in, the record slides out and starts spinning, the tonearm drops, the title pops in letter by letter, the tagline slides up, the notes float away. Your colors, your words, your channel.
 
@@ -231,8 +231,8 @@ It isn't perfect, though. In the first 3 seconds the sleeve sits in the top left
 
 Side by side, the difference is the whole point of this guide:
 
-<p align="center"><a href="../docs/media/v4-side-by-side.mp4"><img src="../docs/media/v4-poster.jpg" width="720" alt="Video 4: side-by-side comparison, 10 s, 1920x800"></a><br>
-<sub>▶ Video 4: side-by-side comparison, 10 s, 1920x800 · <a href="../docs/media/v4-side-by-side.mp4">MP4 1080p</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v4-side-by-side.mp4"><img src="../docs/media/v4-poster.jpg" width="720" alt="Video 4: side-by-side comparison, 10 s, 1920x800"></a><br>
+<sub>▶ Video 4: side-by-side comparison, 10 s, 1920x800 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v4-side-by-side.mp4">MP4 1080p</a></sub></p>
 
 You don't need to know animation words to write a timeline. "A record slides out of the sleeve" is enough. What matters is that every moment has a time, and that you said what you wanted instead of "make it professional".
 
@@ -252,8 +252,8 @@ Here's a real one. After the template intro above, I sent Fable one message:
 Two changes. 1) From 0 to 3 s the sleeve and the record sit in the top left corner and look tiny: center them in the frame, and make the record 30% bigger for the whole video. 2) The tonearm looks like a stick lying on the record: make it a real tonearm with a round base at the top right of the record, and the arm swings from the base onto the record at 3.0 s.
 ```
 
-<p align="center"><a href="../docs/media/v5-after-follow-up.mp4"><img src="../docs/media/v5-poster.jpg" width="720" alt="Video 5: result after one follow-up, 10 s, 1920x1080"></a><br>
-<sub>▶ Video 5: result after one follow-up, 10 s, 1920x1080 · <a href="../docs/media/v5-after-follow-up.mp4">MP4 1080p</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v5-after-follow-up.mp4"><img src="../docs/media/v5-poster.jpg" width="720" alt="Video 5: result after one follow-up, 10 s, 1920x1080"></a><br>
+<sub>▶ Video 5: result after one follow-up, 10 s, 1920x1080 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v5-after-follow-up.mp4">MP4 1080p</a></sub></p>
 
 Fable rewrote the file in 3m 21s, for $2.39 at API prices. The sleeve and the record now sit in the center, the record is bigger, and a real tonearm with a base and a counterweight swings onto the grooves. It also added one move I didn't ask for and told me why: the record glides left at 2.4 s so the bigger record still fits next to the title. Two problems, two numbers, one message.
 
@@ -306,8 +306,8 @@ MOTION: nothing moves in a straight line at constant speed. Entrances ease out, 
 SOUND: none.
 ```
 
-<p align="center"><a href="../docs/media/v6-vertical-reel.mp4"><img src="../docs/media/v6-poster.jpg" width="720" alt="Video 6: vertical &quot;Record of the Week&quot; Reel, 12 s, 1080x1920"></a><br>
-<sub>▶ Video 6: vertical "Record of the Week" Reel, 12 s, 1080x1920 · <a href="../docs/media/v6-vertical-reel.mp4">MP4 1080p</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v6-vertical-reel.mp4"><img src="../docs/media/v6-poster.jpg" width="720" alt="Video 6: vertical &quot;Record of the Week&quot; Reel, 12 s, 1080x1920"></a><br>
+<sub>▶ Video 6: vertical "Record of the Week" Reel, 12 s, 1080x1920 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v6-vertical-reel.mp4">MP4 1080p</a></sub></p>
 
 The record is spinning on frame 1, the words land on the beat, and the stamp hits like a real rubber stamp. The record makes exactly 7 full turns in 12 seconds, so the last frame flows straight into the first and the loop has no seam.
 

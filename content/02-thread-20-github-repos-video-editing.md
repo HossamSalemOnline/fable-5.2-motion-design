@@ -9,8 +9,8 @@
 
 ## Attached video
 
-<p align="center"><a href="../docs/media/v7-20-repos-post.mp4"><img src="../docs/media/v7-poster.jpg" width="720" alt="Video, 21 s, 1080x1350 (4:5)"></a><br>
-<sub>▶ Video, 21 s, 1080x1350 (4:5) · <a href="../docs/media/v7-20-repos-post.mp4">MP4 1080p</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v7-20-repos-post.mp4"><img src="../docs/media/v7-poster.jpg" width="720" alt="Video, 21 s, 1080x1350 (4:5)"></a><br>
+<sub>▶ Video, 21 s, 1080x1350 (4:5) · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v7-20-repos-post.mp4">MP4 1080p</a></sub></p>
 
 ## Full post text (verbatim, links expanded)
 
