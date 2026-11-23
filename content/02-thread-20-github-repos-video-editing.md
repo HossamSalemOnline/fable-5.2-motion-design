@@ -123,6 +123,6 @@ The "Stage" column is my grouping against the post's own "edit. captions. audio.
 | 18 Nov 02:12 | [@YXxquf](https://x.com/YXxquf/status/2122875643256000590) | The underrated feature in a stack like this is a reversible edit. Keep the source footage untouched and save the edit decisions separately, so "undo that cut" does not become "rerun the entire pipeline." Twenty tools are useful; one reliable way back is essential. | 1 | 211 |
 | 18 Nov 05:03 | [@nakaastd](https://x.com/nakaastd/status/2122918654052634790) | crazy ... | 1 | 48 |
 | 18 Nov 06:06 | [@kimindiehacker](https://x.com/kimindiehacker/status/2122934326056931482) | those tools are solid, but some may need a learning curve to master | 0 | 60 |
-| 18 Nov 06:51 | [@xuemy_](https://x.com/xuemy_/status/2122945839563940207) | 视频工具链先保证剪切确定性和音画同步，再叠视觉效果。 (Translation: a video toolchain should first guarantee cut determinism and audio/video sync, then layer visual effects on top.) | 0 | 34 |
+| 18 Nov 06:51 | [@xuemy_](https://x.com/xuemy_/status/2122945839563940207) | A video toolchain should first guarantee cut determinism and audio/video sync, then layer visual effects on top. *(translated from Chinese)* | 0 | 34 |
 
 One further item returned by the scraper was an unrelated eToro ad and has been excluded.

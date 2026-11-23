@@ -112,8 +112,8 @@ The "Stage" column is my mapping onto the post's own "Rebuild. Time. Paint. Glow
 | 22 Nov 17:23 | [@TomO85613447](https://x.com/TomO85613447/status/2124554346599985529) | Sure, if you're creating garbage content. You do you. | 8 |
 | 22 Nov 18:04 | [@itsTeko0](https://x.com/itsTeko0/status/2124564646212628558) | motionmaxxing is the best repo name I've seen lol | 12 |
 | 22 Nov 19:16 | [@syowro](https://x.com/syowro/status/2124582696299229437) | Fire I want to try | 8 |
-| 22 Nov 19:25 | [@An_yhl](https://x.com/An_yhl/status/2124585164852600944) | 18 个 repo 一口气装完，感觉会先花半天配环境 😂 (Translation: installing 18 repos in one go, I'd probably spend half a day setting up the environment first) | 7 |
-| 22 Nov 22:58 | [@sirt_ai_](https://x.com/sirt_ai_/status/2124638739762921632) | @bot俺はこれを使ってるかな？ (Translation: @bot, do I use these?) | 3 |
+| 22 Nov 19:25 | [@An_yhl](https://x.com/An_yhl/status/2124585164852600944) | Installing 18 repos in one go, I'd probably spend half a day setting up the environment first 😂 *(translated from Chinese)* | 7 |
+| 22 Nov 22:58 | [@sirt_ai_](https://x.com/sirt_ai_/status/2124638739762921632) | @bot, do I use these? *(translated from Japanese)* | 3 |
 | 22 Nov 23:38 | [@__mharrison__](https://x.com/__mharrison__/status/2124648756188717539) | Thanks for sharing | 5 |
-| 23 Nov 02:36 | [@sofiacorvetti](https://x.com/sofiacorvetti/status/2124693509554966961) | 18 repos para llevar el motion design al siguiente nivel sin depender de After Effects, esto es oro para quienes trabajan con IA (Translation: 18 repos to take motion design to the next level without depending on After Effects, this is gold for anyone working with AI) | 0 |
+| 23 Nov 02:36 | [@sofiacorvetti](https://x.com/sofiacorvetti/status/2124693509554966961) | 18 repos to take motion design to the next level without depending on After Effects, this is gold for anyone working with AI *(translated from Spanish)* | 0 |
 | 23 Nov 06:09 | [@fountible](https://x.com/fountible/status/2124747101041275153) | or skip the 18 repos, describe it and bro animates it on a canvas. editable after | 0 |
