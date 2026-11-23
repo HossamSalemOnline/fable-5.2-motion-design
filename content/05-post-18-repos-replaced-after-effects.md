@@ -9,8 +9,8 @@
 
 ## Attached video
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2124485540909031424/vid/avc1/1440x1800/_Jbz_xVC-G1kS15h.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2124485540909031424/img/Dkwr65Y668U3VhoG.jpg" width="560" alt="Video, 30 s, 1440x1800 (4:5)"></a><br>
-<sub>▶ Video, 30 s, 1440x1800 (4:5) · <a href="https://video.twimg.com/amplify_video/2124485540909031424/vid/avc1/1440x1800/_Jbz_xVC-G1kS15h.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e05-v1-18-repos-post.mp4"><img src="../docs/media/e05-v1-18-repos-post-poster.jpg" width="560" alt="Video, 30 s, 1440x1800 (4:5)"></a><br>
+<sub>▶ Video, 30 s, 1440x1800 (4:5) · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e05-v1-18-repos-post.mp4">MP4</a></sub></p>
 
 ## Full post text (verbatim, links expanded)
 

@@ -1,6 +1,6 @@
 # Motion Design with Fable 5.2: From One Prompt to a Finished Film (Full Course)
 
-<p align="center"><img src="https://pbs.twimg.com/media/HXQ_ScwXQAE1uGc.png" width="860" alt="Cover"></p>
+<p align="center"><img src="../docs/media/e04-cover.png" width="860" alt="Cover"></p>
 
 - **Author:** seeco ([@seeconvm](https://x.com/seeconvm))
 - **Published:** Mon 16 Nov 2026, 19:04 UTC (X Article)
@@ -20,8 +20,8 @@ Fable 5.2 dropped on November 9, and Anthropic's own page for it has a heading m
 >
 > They’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision.
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4?tag=29"><img src="https://pbs.twimg.com/media/HWtIJNLWUAAcc7I.jpg" width="560" alt="@claudeai video, 19 s, 1920x1080"></a><br>
-<sub>▶ @claudeai video, 19 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v8-claude-launch.mp4"><img src="../docs/media/v8-poster.jpg" width="560" alt="@claudeai video, 19 s, 1920x1080"></a><br>
+<sub>▶ @claudeai video, 19 s, 1920x1080 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/v8-claude-launch.mp4">MP4</a></sub></p>
 
 A week later my feed is one long demo reel. Games built overnight. Films made from a PDF. A painting done stroke by stroke in an MS Paint clone.
 
@@ -72,8 +72,8 @@ The one that set the tone: a full 3D game, one-shot, zero human feedback. Models
 >
 > Play it here: https://claude.ai/artifact/BGY1SztrAYcJQHSsnHHGmp
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2119919821538447360/vid/avc1/1298x720/mOFYQV7DCU4GR366.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2119919821538447360/img/tuJ7YP9fTEVJK8C8.jpg" width="560" alt="@felixrieseberg video, 72 s, 1298x720"></a><br>
-<sub>▶ @felixrieseberg video, 72 s, 1298x720 · <a href="https://video.twimg.com/amplify_video/2119919821538447360/vid/avc1/1298x720/mOFYQV7DCU4GR366.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v2-felixrieseberg.mp4"><img src="../docs/media/e04-v2-felixrieseberg-poster.jpg" width="560" alt="@felixrieseberg video, 72 s, 1298x720"></a><br>
+<sub>▶ @felixrieseberg video, 72 s, 1298x720 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v2-felixrieseberg.mp4">MP4</a></sub></p>
 
 Then the precise ones. A nature game recorded as video: 1,920 frames at 1080p and 60 fps, 30 minutes of render, $37 in tokens. That's about $1.16 per second of finished footage.
 
@@ -102,8 +102,8 @@ Then the precise ones. A nature game recorded as video: 1,920 frames at 1080p an
 > >
 > > From a one-paragraph prompt, Fable 5.2 designed three working electronic devices, including this home voice assistant hub.
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2120131789054156800/vid/avc1/1280x720/E_n4ckNaBdKmxmYU.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2120131789054156800/img/JpVlwyJ4_RFhqyHA.jpg" width="560" alt="@polinaaAi video, 32 s, 1280x720"></a><br>
-<sub>▶ @polinaaAi video, 32 s, 1280x720 · <a href="https://video.twimg.com/amplify_video/2120131789054156800/vid/avc1/1280x720/E_n4ckNaBdKmxmYU.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v3-polinaaai.mp4"><img src="../docs/media/e04-v3-polinaaai-poster.jpg" width="560" alt="@polinaaAi video, 32 s, 1280x720"></a><br>
+<sub>▶ @polinaaAi video, 32 s, 1280x720 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v3-polinaaai.mp4">MP4</a></sub></p>
 
 A music video animated in Python and rendered in Blender, same route as the GIFs from the last launch, just way more going on in the frame:
 
@@ -119,8 +119,8 @@ A music video animated in Python and rendered in Blender, same route as the GIFs
 > >
 > > A 3D model of a cell, built entirely from code one organelle at a time. Built by @kevin_t_ngo.
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2120197953780613120/vid/avc1/720x720/XW84yHlBGTZcH8IK.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2120197953780613120/img/xqwqp-Vm_2GebEaj.jpg" width="560" alt="@kevin_t_ngo video, 77 s, 720x720"></a><br>
-<sub>▶ @kevin_t_ngo video, 77 s, 720x720 · <a href="https://video.twimg.com/amplify_video/2120197953780613120/vid/avc1/720x720/XW84yHlBGTZcH8IK.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v4-kevin.mp4"><img src="../docs/media/e04-v4-kevin-poster.jpg" width="560" alt="@kevin_t_ngo video, 77 s, 720x720"></a><br>
+<sub>▶ @kevin_t_ngo video, 77 s, 720x720 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v4-kevin.mp4">MP4</a></sub></p>
 
 And my favorite flex. Someone asked it to "make a masterpiece". It opened a browser clone of MS Paint and painted a lake at dusk: 11,066 brush strokes, 261 colors mixed by typing numbers into a dialog, 94 minutes. Then it made a song for the timelapse and wrote an artist statement.
 
@@ -145,8 +145,8 @@ And my favorite flex. Someone asked it to "make a masterpiece". It opened a brow
 >
 > I hope it gives you the feeling of standing somewhere quiet at the end of a day."
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2120331464747446272/vid/avc1/1152x720/z-daEGgO698QyATz.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2120331464747446272/img/393G35hrZ6N6HXyO.jpg" width="560" alt="@venturetwins video, 46 s, 1152x720"></a><br>
-<sub>▶ @venturetwins video, 46 s, 1152x720 · <a href="https://video.twimg.com/amplify_video/2120331464747446272/vid/avc1/1152x720/z-daEGgO698QyATz.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v5-venturetwins.mp4"><img src="../docs/media/e04-v5-venturetwins-poster.jpg" width="560" alt="@venturetwins video, 46 s, 1152x720"></a><br>
+<sub>▶ @venturetwins video, 46 s, 1152x720 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v5-venturetwins.mp4">MP4</a></sub></p>
 
 The receipts people posted, in one place:
 
@@ -173,7 +173,7 @@ Then you turn the page into an MP4. Either you record the screen (fine for a dra
 
 That's the whole pipeline. Everything else in this course is about two things: getting good motion on the first try, and fixing what's off on the second.
 
-<p align="center"><img src="https://pbs.twimg.com/media/HXQ56dJXsAAxteX.png" width="860" alt="02. How it works in one minute"></p>
+<p align="center"><img src="../docs/media/e04-img6-02-how-it-works.png" width="860" alt="02. How it works in one minute"></p>
 
 Why Fable 5.2 for this? Anthropic lists 3D and motion among the things it's built for, and it follows detailed direction closely. Tell it "the title lands at 3.0 s with a small bounce" and it lands at 3.0 s with a small bounce.
 
@@ -299,7 +299,7 @@ First try, no follow-ups: every line of the timeline is on screen at the second 
 
 Stuck on the timeline? Describe the video out loud like you're telling a friend what you saw, second by second. Then write that down.
 
-<p align="center"><img src="https://pbs.twimg.com/media/HXQ6fZSXsAAX2aH.png" width="860" alt="04. Your first video: one line vs a director's brief"></p>
+<p align="center"><img src="../docs/media/e04-img7-04-your-first-video.png" width="860" alt="04. Your first video: one line vs a director's brief"></p>
 
 ## 05. Numbers, not adjectives
 
@@ -347,7 +347,7 @@ ENDING    the last frame is the image. No end line under it.
 
 The HERO line is the biggest single fix I know. First stills always come out too wide, and your tiny hero becomes a dot. Give it a minimum pixel width from day one and make the agent measure it.
 
-<p align="center"><img src="https://pbs.twimg.com/media/HXQ6xCqXQAAwYsI.png" width="860" alt="05. Numbers, not adjectives"></p>
+<p align="center"><img src="../docs/media/e04-img8-05-numbers-not-adjectives.png" width="860" alt="05. Numbers, not adjectives"></p>
 
 ## 06. Springs and easing: one number decides the landing
 
@@ -386,7 +386,7 @@ One technical line saves you a whole class of bugs. A spring that adds speed eve
 Every spring is a closed-form function of t, damping ratio as written, no integration across frames.
 ```
 
-<p align="center"><img src="https://pbs.twimg.com/media/HXQ7Co_WkAAaZUO.png" width="860" alt="06. Springs and easing: one number decides the landing"></p>
+<p align="center"><img src="../docs/media/e04-img9-06-springs-and-easing.png" width="860" alt="06. Springs and easing: one number decides the landing"></p>
 
 ## 07. The clock: timing first, everything else second
 
@@ -418,7 +418,7 @@ window.__ready = true;                 // only after fonts, models and textures 
 
 **A loop is frames 0 to N-1.** Frame N is frame 0 again. Render it and the double frame shows up as a stutter at the seam. And the last frame has to flow into the first: pose, speed, camera and light, not just position.
 
-<p align="center"><img src="https://pbs.twimg.com/media/HXQ7QR4WMAA2lHN.png" width="860" alt="07. The clock: timing first, everything else second"></p>
+<p align="center"><img src="../docs/media/e04-img10-07-the-clock-timing.png" width="860" alt="07. The clock: timing first, everything else second"></p>
 
 Design bugs out instead of fixing them. If falling notes could hit a running character, put the notes in a plane behind the keys. One sentence in the prompt, and that bug can never happen. A collision you made impossible never needs a fix.
 
@@ -547,7 +547,7 @@ QA before you say done:
 Report each check with its number, not "looks good".
 ```
 
-<p align="center"><img src="https://pbs.twimg.com/media/HXQ74kVWwAAdGsZ.png" width="860" alt="10. Motion QA: stills lie"></p>
+<p align="center"><img src="../docs/media/e04-img11-10-motion-qa-stills.png" width="860" alt="10. Motion QA: stills lie"></p>
 
 For characters, steal this trick from a game that went viral in launch week: ask for skeletal animation, then have it analyze the walk cycle frame by frame until it decides the motion is right.
 
@@ -567,8 +567,8 @@ For characters, steal this trick from a game that went viral in launch week: ask
 > >
 > > They’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision.
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2120187656881516544/vid/avc1/1280x720/IZBkfP1KYv4Uzx2S.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2120187656881516544/img/ugjT74smgSzi_U3X.jpg" width="560" alt="@loktar00 video, 68 s, 1280x720"></a><br>
-<sub>▶ @loktar00 video, 68 s, 1280x720 · <a href="https://video.twimg.com/amplify_video/2120187656881516544/vid/avc1/1280x720/IZBkfP1KYv4Uzx2S.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v12-loktar00.mp4"><img src="../docs/media/e04-v12-loktar00-poster.jpg" width="560" alt="@loktar00 video, 68 s, 1280x720"></a><br>
+<sub>▶ @loktar00 video, 68 s, 1280x720 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v12-loktar00.mp4">MP4</a></sub></p>
 
 Three rules that save the most hours:
 
@@ -622,8 +622,8 @@ One prompt plus a PDF with notes and photos of a ruin in Tuscany someone's think
 > >
 > > A 3D model of a cell, built entirely from code one organelle at a time. Built by @kevin_t_ngo.
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2120187442615521280/vid/avc1/720x900/oLAX06uREas11xmu.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2120187442615521280/img/rtc8K6L-mggInjFK.jpg" width="560" alt="@TimurNegru video, 34 s, 720x900"></a><br>
-<sub>▶ @TimurNegru video, 34 s, 720x900 · <a href="https://video.twimg.com/amplify_video/2120187442615521280/vid/avc1/720x900/oLAX06uREas11xmu.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v13-timurnegru.mp4"><img src="../docs/media/e04-v13-timurnegru-poster.jpg" width="560" alt="@TimurNegru video, 34 s, 720x900"></a><br>
+<sub>▶ @TimurNegru video, 34 s, 720x900 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v13-timurnegru.mp4">MP4</a></sub></p>
 
 That use case is underrated. Your documents and your photos become a video about your actual life, no stock footage.
 
@@ -633,8 +633,8 @@ Style images work the same way. Attach a few images in a style you love, describ
 >
 > Fable 5.2 : artist inside llm , pure js
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2120178938458812416/vid/avc1/1280x720/zsWcAf8fGFFL8Zv1.mp4?tag=29"><img src="https://pbs.twimg.com/media/HWxjguwb0AA3KPN.jpg" width="560" alt="@chetaslua video, 34 s, 1280x720"></a><br>
-<sub>▶ @chetaslua video, 34 s, 1280x720 · <a href="https://video.twimg.com/amplify_video/2120178938458812416/vid/avc1/1280x720/zsWcAf8fGFFL8Zv1.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v14-chetaslua.mp4"><img src="../docs/media/e04-v14-chetaslua-poster.jpg" width="560" alt="@chetaslua video, 34 s, 1280x720"></a><br>
+<sub>▶ @chetaslua video, 34 s, 1280x720 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v14-chetaslua.mp4">MP4</a></sub></p>
 
 And floor plans: a 2D plan plus photos of the space, and it builds a 3D walkthrough to scale you can tour in the browser.
 
@@ -712,8 +712,8 @@ And floor plans: a 2D plan plus photos of the space, and it builds a 3D walkthro
 > - per paid client: the hosted walkthrough link, a contact sheet of every room, the critic log, and a note on anything a human should still check
 > </deliverables>
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2120175906501345281/vid/avc1/1902x1080/bf_XglfsEta4QCXA.mp4?tag=16"><img src="https://pbs.twimg.com/amplify_video_thumb/2120175906501345281/img/dUwiRWH4RxZBExAl.jpg" width="560" alt="@everestchris6 video, 10 s, 1902x1080"></a><br>
-<sub>▶ @everestchris6 video, 10 s, 1902x1080 · <a href="https://video.twimg.com/amplify_video/2120175906501345281/vid/avc1/1902x1080/bf_XglfsEta4QCXA.mp4?tag=16">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v15-everestchris6.mp4"><img src="../docs/media/e04-v15-everestchris6-poster.jpg" width="560" alt="@everestchris6 video, 10 s, 1902x1080"></a><br>
+<sub>▶ @everestchris6 video, 10 s, 1902x1080 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v15-everestchris6.mp4">MP4</a></sub></p>
 
 Before any of it, turn your idea into a brief. Don't ask Fable to "optimize my prompt": it assumes the reader knows nothing and writes a tutorial. Ask it to **"write a task brief I can hand directly to an engineer"**, and to point out what you haven't thought through. For a video, that's the moment it asks how long each shot holds.
 
@@ -757,8 +757,8 @@ Day one, a lot of people had the same reaction:
 >
 > WOW Claude Fable 5.2 is insanely good at 3D
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2119876518524370944/vid/avc1/1924x1080/YhutqkQz5auqxqTl.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2119876518524370944/img/uGe952vMSqUail_-.jpg" width="560" alt="@flavioAd video, 25 s, 1924x1080"></a><br>
-<sub>▶ @flavioAd video, 25 s, 1924x1080 · <a href="https://video.twimg.com/amplify_video/2119876518524370944/vid/avc1/1924x1080/YhutqkQz5auqxqTl.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v16-flavioad.mp4"><img src="../docs/media/e04-v16-flavioad-poster.jpg" width="560" alt="@flavioAd video, 25 s, 1924x1080"></a><br>
+<sub>▶ @flavioAd video, 25 s, 1924x1080 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v16-flavioad.mp4">MP4</a></sub></p>
 
 For real 3D you have two routes. three.js in the browser (everything in this course so far), or Blender. And Fable 5.2 can drive Blender headless. No clicking, no plugin needed: it writes a Python script, runs it, renders a turnaround sheet, looks at it and fixes what pokes through. Export one GLB and three.js loads it.
 
@@ -815,7 +815,7 @@ Limits: at most 2 render processes at once, at most 3 revisions per shot before 
 Keep the shared rules under 40 lines; when a rule stops a real bug, keep it; otherwise delete it.
 ```
 
-<p align="center"><img src="https://pbs.twimg.com/media/HXQ87XWWEAAPtRJ.png" width="860" alt="15. Agent teams: who builds, who reviews"></p>
+<p align="center"><img src="../docs/media/e04-img17-15-agent-teams-who.png" width="860" alt="15. Agent teams: who builds, who reviews"></p>
 
 ## 16. Money: effort, limits and the real bills
 
@@ -848,10 +848,10 @@ What one overnight Max run looks like on the bill:
 > >
 > > https://www.youtube.com/watch?v=QwaU4yU0PdQ
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2120166054257168384/vid/avc1/572x360/nEbA27lIh0_n1pTO.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2120166054257168384/img/gbXo0KcJZg6tbcjJ.jpg" width="560" alt="@petergostev video, 282 s, 572x360"></a><br>
-<sub>▶ @petergostev video, 282 s, 572x360 · <a href="https://video.twimg.com/amplify_video/2120166054257168384/vid/avc1/572x360/nEbA27lIh0_n1pTO.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v18-petergostev.mp4"><img src="../docs/media/e04-v18-petergostev-poster.jpg" width="560" alt="@petergostev video, 282 s, 572x360"></a><br>
+<sub>▶ @petergostev video, 282 s, 572x360 · <a href="https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/docs/media/e04-v18-petergostev.mp4">MP4</a></sub></p>
 
-<p align="center"><img src="https://pbs.twimg.com/media/HXQ9J5dXoAAWUQL.png" width="860" alt="16. Money: effort, limits and the real bills"></p>
+<p align="center"><img src="../docs/media/e04-img19-16-money-effort-limits.png" width="860" alt="16. Money: effort, limits and the real bills"></p>
 
 Real bills for small stuff are way friendlier. From one creator's session logs, at API prices: a one-line YouTube intro: about 7 minutes, $3.65. The same intro from a director's brief: 2 minutes, $2.81. A vertical Reels post: $3.03. A 30-second 3D kids cartoon: 11 minutes, $9.34. Short 2D motion is cheap. Big 3D costs more. Either way it's a fraction of what a freelance motion designer charges for the same 10 seconds.
 
