@@ -52,7 +52,9 @@ def fetch_all(files):
     return ok, failed
 
 
-def localize(files):
+def localize(files, cdn_base=""):
+    """Images and PDFs link to the repo-relative copy; MP4s link to the CDN copy so they play in the browser
+    (GitHub itself only plays videos uploaded through its web editor)."""
     targets = [ROOT / "README.md", *sorted((ROOT / "content").glob("*.md"))]
     for doc in targets:
         text = original = doc.read_text()
@@ -60,18 +62,22 @@ def localize(files):
             local = ROOT / item["path"]
             if not local.exists():
                 continue
-            rel = os.path.relpath(local, doc.parent).replace(os.sep, "/")
-            text = text.replace(item["original"], rel)
+            if cdn_base and item["path"].endswith(".mp4"):
+                target = cdn_base + item["path"]
+            else:
+                target = os.path.relpath(local, doc.parent).replace(os.sep, "/")
+            text = text.replace(item["original"], target)
         if text != original:
             doc.write_text(text)
             print(f"  ↺ links localized in {doc.relative_to(ROOT)}")
 
 
 def main():
-    files = json.loads(MANIFEST.read_text())["files"]
+    manifest = json.loads(MANIFEST.read_text())
+    files = manifest["files"]
     print(f"Fetching {len(files)} files…")
     ok, failed = fetch_all(files)
-    localize(files)
+    localize(files, manifest.get("cdn_base", ""))
     print(f"Done: {ok}/{len(files)} present.")
     if failed:
         print("Missing:", *failed, sep="\n  ")

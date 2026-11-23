@@ -1,5 +1,5 @@
 {
-  "note": "Media manifest. The fetch-media workflow downloads each file into docs/media/, trying the original URL first and the Apify mirror second, then rewrites every remote link in the repo to the local copy. To archive more media later, add rows and push.",
+  "note": "Every media file in the archive. On push, the fetch-media workflow downloads each into docs/media/ (original URL first, Apify mirror second when listed), rewrites links to local copies and rebuilds the site.",
   "apify_mirror": {
     "store_id": "eGqZkhrpbkCW6Xi5Q",
     "captured": "2026-11-18",
@@ -10,145 +10,455 @@
       "path": "docs/media/article-cover.jpg",
       "original": "https://pbs.twimg.com/media/HXH4Wh8aMAAWybP.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000000-HXH4Wh8aMAAWybP.jpg?signature=ihITBqoIpKPUqFz0iC9P",
-      "bytes": 83366
+      "bytes": 83366,
+      "entry": "e01",
+      "kind": "image",
+      "title": "Article cover"
     },
     {
       "path": "docs/media/article-pipeline.jpg",
       "original": "https://pbs.twimg.com/media/HXH1NnKbgAAW2Y_.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000001-HXH1NnKbgAAW2Y_.jpg?signature=1gi3SvVKWzv22ZagJIskp",
-      "bytes": 57522
+      "bytes": 57522,
+      "entry": "e01",
+      "kind": "image",
+      "title": "Pipeline diagram"
     },
     {
       "path": "docs/media/v1-finished-intro.mp4",
       "original": "https://video.twimg.com/amplify_video/2121746406381875200/vid/avc1/1920x1080/NV6Js20RBFQ2Vdgv.mp4?tag=29",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000002-NV6Js20RBFQ2Vdgv.mp4?signature=uGUOYByCYrlElJmLAST8",
-      "bytes": 5238393
+      "bytes": 5238393,
+      "entry": "e01",
+      "kind": "video",
+      "title": "Finished intro (two messages)",
+      "poster": "docs/media/v1-poster.jpg"
     },
     {
       "path": "docs/media/v2-one-line-prompt.mp4",
       "original": "https://video.twimg.com/amplify_video/2121746964320841728/vid/avc1/1920x1080/cwT81mc0LNPzsLU2.mp4?tag=29",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000003-cwT81mc0LNPzsLU2.mp4?signature=gTVKmaRhWGtNUL1qXHud",
-      "bytes": 7560282
+      "bytes": 7560282,
+      "entry": "e01",
+      "kind": "video",
+      "title": "One-line prompt (generic)",
+      "poster": "docs/media/v2-poster.jpg"
     },
     {
       "path": "docs/media/v3-directors-template.mp4",
       "original": "https://video.twimg.com/amplify_video/2121747161084018688/vid/avc1/1920x1080/SonE7XOMf2OEAitC.mp4?tag=29",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000004-SonE7XOMf2OEAitC.mp4?signature=1JoCcxydIVqs5VhobXb5f",
-      "bytes": 4786153
+      "bytes": 4786153,
+      "entry": "e01",
+      "kind": "video",
+      "title": "Director's template (on brief)",
+      "poster": "docs/media/v3-poster.jpg"
     },
     {
       "path": "docs/media/v4-side-by-side.mp4",
       "original": "https://video.twimg.com/amplify_video/2121747275059965952/vid/avc1/1920x800/UoD2B2tykucHTh0W.mp4?tag=29",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000005-UoD2B2tykucHTh0W.mp4?signature=1yCLD5XdH4lkobuen3Gf",
-      "bytes": 2856805
+      "bytes": 2856805,
+      "entry": "e01",
+      "kind": "video",
+      "title": "Side by side",
+      "poster": "docs/media/v4-poster.jpg"
     },
     {
       "path": "docs/media/v5-after-follow-up.mp4",
       "original": "https://video.twimg.com/amplify_video/2121747404760518656/vid/avc1/1920x1080/7HW9y5RvGC_kGuVn.mp4?tag=29",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000006-7HW9y5RvGC_kGuVn.mp4?signature=1fEjXIdbKRG6YmMJL8lbW",
-      "bytes": 5234200
+      "bytes": 5234200,
+      "entry": "e01",
+      "kind": "video",
+      "title": "After one follow-up",
+      "poster": "docs/media/v5-poster.jpg"
     },
     {
       "path": "docs/media/v6-vertical-reel.mp4",
       "original": "https://video.twimg.com/amplify_video/2121747753890177024/vid/avc1/1080x1920/4W38UmmxDL_E9pun.mp4?tag=29",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000007-4W38UmmxDL_E9pun.mp4?signature=1rfG4KrIXwKEdAer0XiyZ",
-      "bytes": 3411640
+      "bytes": 3411640,
+      "entry": "e01",
+      "kind": "video",
+      "title": "Vertical Reel (9:16 loop)",
+      "poster": "docs/media/v6-poster.jpg"
     },
     {
       "path": "docs/media/v7-20-repos-post.mp4",
       "original": "https://video.twimg.com/amplify_video/2122677403998965760/vid/avc1/1080x1350/jbXBov89DPz7X9vj.mp4?tag=29",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000008-jbXBov89DPz7X9vj.mp4?signature=1lSwDtzKeb2HQsNfA2hmt",
-      "bytes": 4628254
+      "bytes": 4628254,
+      "entry": "e02",
+      "kind": "video",
+      "title": "20-repo stack",
+      "poster": "docs/media/v7-poster.jpg"
     },
     {
       "path": "docs/media/v8-claude-launch.mp4",
       "original": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4?tag=29",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000009-E6naF0FCPw_qRYv0.mp4?signature=AQHk7OVPwM2ho3A7bnCF",
-      "bytes": 9653404
+      "bytes": 9653404,
+      "entry": "e03",
+      "kind": "video",
+      "title": "Claude Fable 5.2 launch",
+      "poster": "docs/media/v8-poster.jpg"
     },
     {
       "path": "docs/media/v9-one-half-cartoon.mp4",
       "original": "https://video.twimg.com/amplify_video/2121215855254196224/vid/avc1/1080x1350/TV3uTpkB9ZA6Z-0R.mp4?tag=29",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000010-TV3uTpkB9ZA6Z-0R.mp4?signature=zh55SSxletu7ydUSOwiv",
-      "bytes": 6785953
+      "bytes": 6785953,
+      "entry": "e03",
+      "kind": "video",
+      "title": "\"One Half\" kids cartoon (3D)",
+      "poster": "docs/media/v9-poster.jpg"
     },
     {
       "path": "docs/media/v10-capybara-onsen.mp4",
       "original": "https://video.twimg.com/amplify_video/2120496468310237184/vid/avc1/1080x1350/BX-YgJYbxCfCnFiP.mp4?tag=29",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000011-BX-YgJYbxCfCnFiP.mp4?signature=f6vXmSKtmk0KtVKe98Ca",
-      "bytes": 16255883
+      "bytes": 16255883,
+      "entry": "e03",
+      "kind": "video",
+      "title": "Capybara onsen (3D)",
+      "poster": "docs/media/v10-poster.jpg"
     },
     {
       "path": "docs/media/v1-poster.jpg",
       "original": "https://pbs.twimg.com/amplify_video_thumb/2121746406381875200/img/tyMXifONr3G427Ft.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000012-tyMXifONr3G427Ft.jpg?signature=1h6BRAKw0T30V8cvePUmc",
-      "bytes": 97444
+      "bytes": 97444,
+      "entry": "e01",
+      "kind": "poster"
     },
     {
       "path": "docs/media/v2-poster.jpg",
       "original": "https://pbs.twimg.com/amplify_video_thumb/2121746964320841728/img/vbVj7cneRMmx5wUW.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000013-vbVj7cneRMmx5wUW.jpg?signature=qzrAd2PdtX5ZQJydrhNv",
-      "bytes": 74264
+      "bytes": 74264,
+      "entry": "e01",
+      "kind": "poster"
     },
     {
       "path": "docs/media/v3-poster.jpg",
       "original": "https://pbs.twimg.com/amplify_video_thumb/2121747161084018688/img/JwwOeWYhJc45VG6n.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000014-JwwOeWYhJc45VG6n.jpg?signature=1qE4plJHdaOnBLA0ld8ne",
-      "bytes": 95381
+      "bytes": 95381,
+      "entry": "e01",
+      "kind": "poster"
     },
     {
       "path": "docs/media/v4-poster.jpg",
       "original": "https://pbs.twimg.com/amplify_video_thumb/2121747275059965952/img/D8eqMiGpUbv383AT.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000015-D8eqMiGpUbv383AT.jpg?signature=1dYZ0PVWKCBmlnoCoNtoR",
-      "bytes": 32072
+      "bytes": 32072,
+      "entry": "e01",
+      "kind": "poster"
     },
     {
       "path": "docs/media/v5-poster.jpg",
       "original": "https://pbs.twimg.com/amplify_video_thumb/2121747404760518656/img/Qp_AGxk3mpB5e0HV.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000016-Qp_AGxk3mpB5e0HV.jpg?signature=1a3JoKsQwj6nvZHBk030h",
-      "bytes": 97444
+      "bytes": 97444,
+      "entry": "e01",
+      "kind": "poster"
     },
     {
       "path": "docs/media/v6-poster.jpg",
       "original": "https://pbs.twimg.com/amplify_video_thumb/2121747753890177024/img/sssl0noNoX6VElUQ.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000017-sssl0noNoX6VElUQ.jpg?signature=7RotM6W33dBkYUVfU9V0",
-      "bytes": 45479
+      "bytes": 45479,
+      "entry": "e01",
+      "kind": "poster"
     },
     {
       "path": "docs/media/v7-poster.jpg",
       "original": "https://pbs.twimg.com/amplify_video_thumb/2122677403998965760/img/cH2isJgN6nv5UA3f.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000018-cH2isJgN6nv5UA3f.jpg?signature=1uWj82rxBUWTBWJD9UtGN",
-      "bytes": 157695
+      "bytes": 157695,
+      "entry": "e02",
+      "kind": "poster"
     },
     {
       "path": "docs/media/v8-poster.jpg",
       "original": "https://pbs.twimg.com/media/HWtIJNLWUAAcc7I.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000019-HWtIJNLWUAAcc7I.jpg?signature=vHwWUbpmWRvDKS2ZlDcy",
-      "bytes": 98715
+      "bytes": 98715,
+      "entry": "e03",
+      "kind": "poster"
     },
     {
       "path": "docs/media/v9-poster.jpg",
       "original": "https://pbs.twimg.com/amplify_video_thumb/2121215855254196224/img/WCYghVlgHjuprsa-.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000020-WCYghVlgHjuprsa-.jpg?signature=kpV8nH4jb42gMpq1CMSW",
-      "bytes": 127352
+      "bytes": 127352,
+      "entry": "e03",
+      "kind": "poster"
     },
     {
       "path": "docs/media/v10-poster.jpg",
       "original": "https://pbs.twimg.com/amplify_video_thumb/2120496468310237184/img/MqrKAE4MJhVo858D.jpg",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000021-MqrKAE4MJhVo858D.jpg?signature=SGqLYj904geiQEZArwfK",
-      "bytes": 209674
+      "bytes": 209674,
+      "entry": "e03",
+      "kind": "poster"
     },
     {
       "path": "docs/media/prompt-pack-one-half.pdf",
       "original": "https://drive.google.com/uc?export=download&id=1dWidG6WcoGWuUxCoT4UcYYh6jtlpXbe7",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000022-Prompt_Kids_Cartoon_Fable_5.2_vs_Opus_5.5.pdf?signature=jwo1RJddNuUBRfdyEHUo",
-      "bytes": 1036785
+      "bytes": 1036785,
+      "entry": "e03",
+      "kind": "pdf",
+      "title": "prompt pack one half"
     },
     {
       "path": "docs/media/prompt-pack-capybara-onsen.pdf",
       "original": "https://drive.google.com/uc?export=download&id=1xq-DmBA85qnfZ9D3belPO43-hyDzWs8M",
       "mirror": "https://api.apify.com/v2/key-value-stores/eGqZkhrpbkCW6Xi5Q/records/files-000023-Prompt_Capybara_Onsen_Fable_5.2_vs_Opus_5.5.pdf?signature=cZdFzrbaowR7YtiBCc2U",
-      "bytes": 1384334
+      "bytes": 1384334,
+      "entry": "e03",
+      "kind": "pdf",
+      "title": "prompt pack capybara onsen"
+    },
+    {
+      "path": "docs/media/e04-cover.png",
+      "original": "https://pbs.twimg.com/media/HXQ_ScwXQAE1uGc.png",
+      "kind": "image",
+      "entry": "e04",
+      "title": "Cover"
+    },
+    {
+      "path": "docs/media/e04-v2-felixrieseberg.mp4",
+      "original": "https://video.twimg.com/amplify_video/2119919821538447360/vid/avc1/1298x720/mOFYQV7DCU4GR366.mp4?tag=29",
+      "kind": "video",
+      "entry": "e04",
+      "title": "@felixrieseberg: I wanted to test Fable 5.2's quality with one-shot prompts w",
+      "poster": "docs/media/e04-v2-felixrieseberg-poster.jpg"
+    },
+    {
+      "path": "docs/media/e04-v2-felixrieseberg-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2119919821538447360/img/tuJ7YP9fTEVJK8C8.jpg",
+      "kind": "poster",
+      "entry": "e04"
+    },
+    {
+      "path": "docs/media/e04-v3-polinaaai.mp4",
+      "original": "https://video.twimg.com/amplify_video/2120131789054156800/vid/avc1/1280x720/E_n4ckNaBdKmxmYU.mp4?tag=29",
+      "kind": "video",
+      "entry": "e04",
+      "title": "@polinaaAi: what the f*ck. this is a nature game",
+      "poster": "docs/media/e04-v3-polinaaai-poster.jpg"
+    },
+    {
+      "path": "docs/media/e04-v3-polinaaai-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2120131789054156800/img/JpVlwyJ4_RFhqyHA.jpg",
+      "kind": "poster",
+      "entry": "e04"
+    },
+    {
+      "path": "docs/media/e04-v4-kevin.mp4",
+      "original": "https://video.twimg.com/amplify_video/2120197953780613120/vid/avc1/720x720/XW84yHlBGTZcH8IK.mp4?tag=29",
+      "kind": "video",
+      "entry": "e04",
+      "title": "@kevin_t_ngo: Thank you @claudeai!",
+      "poster": "docs/media/e04-v4-kevin-poster.jpg"
+    },
+    {
+      "path": "docs/media/e04-v4-kevin-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2120197953780613120/img/xqwqp-Vm_2GebEaj.jpg",
+      "kind": "poster",
+      "entry": "e04"
+    },
+    {
+      "path": "docs/media/e04-v5-venturetwins.mp4",
+      "original": "https://video.twimg.com/amplify_video/2120331464747446272/vid/avc1/1152x720/z-daEGgO698QyATz.mp4?tag=29",
+      "kind": "video",
+      "entry": "e04",
+      "title": "@venturetwins: I asked Fable 5.2 to make a masterpiece.",
+      "poster": "docs/media/e04-v5-venturetwins-poster.jpg"
+    },
+    {
+      "path": "docs/media/e04-v5-venturetwins-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2120331464747446272/img/393G35hrZ6N6HXyO.jpg",
+      "kind": "poster",
+      "entry": "e04"
+    },
+    {
+      "path": "docs/media/e04-img6-02-how-it-works.png",
+      "original": "https://pbs.twimg.com/media/HXQ56dJXsAAxteX.png",
+      "kind": "image",
+      "entry": "e04",
+      "title": "02. How it works in one minute"
+    },
+    {
+      "path": "docs/media/e04-img7-04-your-first-video.png",
+      "original": "https://pbs.twimg.com/media/HXQ6fZSXsAAX2aH.png",
+      "kind": "image",
+      "entry": "e04",
+      "title": "04. Your first video: one line vs a director's brief"
+    },
+    {
+      "path": "docs/media/e04-img8-05-numbers-not-adjectives.png",
+      "original": "https://pbs.twimg.com/media/HXQ6xCqXQAAwYsI.png",
+      "kind": "image",
+      "entry": "e04",
+      "title": "05. Numbers, not adjectives"
+    },
+    {
+      "path": "docs/media/e04-img9-06-springs-and-easing.png",
+      "original": "https://pbs.twimg.com/media/HXQ7Co_WkAAaZUO.png",
+      "kind": "image",
+      "entry": "e04",
+      "title": "06. Springs and easing: one number decides the landing"
+    },
+    {
+      "path": "docs/media/e04-img10-07-the-clock-timing.png",
+      "original": "https://pbs.twimg.com/media/HXQ7QR4WMAA2lHN.png",
+      "kind": "image",
+      "entry": "e04",
+      "title": "07. The clock: timing first, everything else second"
+    },
+    {
+      "path": "docs/media/e04-img11-10-motion-qa-stills.png",
+      "original": "https://pbs.twimg.com/media/HXQ74kVWwAAdGsZ.png",
+      "kind": "image",
+      "entry": "e04",
+      "title": "10. Motion QA: stills lie"
+    },
+    {
+      "path": "docs/media/e04-v12-loktar00.mp4",
+      "original": "https://video.twimg.com/amplify_video/2120187656881516544/vid/avc1/1280x720/IZBkfP1KYv4Uzx2S.mp4?tag=29",
+      "kind": "video",
+      "entry": "e04",
+      "title": "@loktar00: This is INSANE Fable 5.2 just created this entire game, anim",
+      "poster": "docs/media/e04-v12-loktar00-poster.jpg"
+    },
+    {
+      "path": "docs/media/e04-v12-loktar00-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2120187656881516544/img/ugjT74smgSzi_U3X.jpg",
+      "kind": "poster",
+      "entry": "e04"
+    },
+    {
+      "path": "docs/media/e04-v13-timurnegru.mp4",
+      "original": "https://video.twimg.com/amplify_video/2120187442615521280/vid/avc1/720x900/oLAX06uREas11xmu.mp4?tag=29",
+      "kind": "video",
+      "entry": "e04",
+      "title": "@TimurNegru: Fable 5.2 is a banger",
+      "poster": "docs/media/e04-v13-timurnegru-poster.jpg"
+    },
+    {
+      "path": "docs/media/e04-v13-timurnegru-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2120187442615521280/img/rtc8K6L-mggInjFK.jpg",
+      "kind": "poster",
+      "entry": "e04"
+    },
+    {
+      "path": "docs/media/e04-v14-chetaslua.mp4",
+      "original": "https://video.twimg.com/amplify_video/2120178938458812416/vid/avc1/1280x720/zsWcAf8fGFFL8Zv1.mp4?tag=29",
+      "kind": "video",
+      "entry": "e04",
+      "title": "@chetaslua: Fable 5.2 : artist inside llm , pure js",
+      "poster": "docs/media/e04-v14-chetaslua-poster.jpg"
+    },
+    {
+      "path": "docs/media/e04-v14-chetaslua-poster.jpg",
+      "original": "https://pbs.twimg.com/media/HWxjguwb0AA3KPN.jpg",
+      "kind": "poster",
+      "entry": "e04"
+    },
+    {
+      "path": "docs/media/e04-v15-everestchris6.mp4",
+      "original": "https://video.twimg.com/amplify_video/2120175906501345281/vid/avc1/1902x1080/bf_XglfsEta4QCXA.mp4?tag=16",
+      "kind": "video",
+      "entry": "e04",
+      "title": "@everestchris6: claude fable 5.2 is f*cking insane",
+      "poster": "docs/media/e04-v15-everestchris6-poster.jpg"
+    },
+    {
+      "path": "docs/media/e04-v15-everestchris6-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2120175906501345281/img/dUwiRWH4RxZBExAl.jpg",
+      "kind": "poster",
+      "entry": "e04"
+    },
+    {
+      "path": "docs/media/e04-v16-flavioad.mp4",
+      "original": "https://video.twimg.com/amplify_video/2119876518524370944/vid/avc1/1924x1080/YhutqkQz5auqxqTl.mp4?tag=29",
+      "kind": "video",
+      "entry": "e04",
+      "title": "@flavioAd: WOW Claude Fable 5.2 is insanely good at 3D",
+      "poster": "docs/media/e04-v16-flavioad-poster.jpg"
+    },
+    {
+      "path": "docs/media/e04-v16-flavioad-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2119876518524370944/img/uGe952vMSqUail_-.jpg",
+      "kind": "poster",
+      "entry": "e04"
+    },
+    {
+      "path": "docs/media/e04-img17-15-agent-teams-who.png",
+      "original": "https://pbs.twimg.com/media/HXQ87XWWEAAPtRJ.png",
+      "kind": "image",
+      "entry": "e04",
+      "title": "15. Agent teams: who builds, who reviews"
+    },
+    {
+      "path": "docs/media/e04-v18-petergostev.mp4",
+      "original": "https://video.twimg.com/amplify_video/2120166054257168384/vid/avc1/572x360/nEbA27lIh0_n1pTO.mp4?tag=29",
+      "kind": "video",
+      "entry": "e04",
+      "title": "@petergostev: $2,618 prompt - this is what Fable 5.2 (Max) built overnight",
+      "poster": "docs/media/e04-v18-petergostev-poster.jpg"
+    },
+    {
+      "path": "docs/media/e04-v18-petergostev-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2120166054257168384/img/gbXo0KcJZg6tbcjJ.jpg",
+      "kind": "poster",
+      "entry": "e04"
+    },
+    {
+      "path": "docs/media/e04-img19-16-money-effort-limits.png",
+      "original": "https://pbs.twimg.com/media/HXQ9J5dXoAAWUQL.png",
+      "kind": "image",
+      "entry": "e04",
+      "title": "16. Money: effort, limits and the real bills"
+    },
+    {
+      "path": "docs/media/e05-v1-18-repos-post.mp4",
+      "original": "https://video.twimg.com/amplify_video/2124485540909031424/vid/avc1/1440x1800/_Jbz_xVC-G1kS15h.mp4?tag=29",
+      "kind": "video",
+      "entry": "e05",
+      "title": "18 repos that replaced After Effects",
+      "poster": "docs/media/e05-v1-18-repos-post-poster.jpg"
+    },
+    {
+      "path": "docs/media/e05-v1-18-repos-post-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2124485540909031424/img/Dkwr65Y668U3VhoG.jpg",
+      "kind": "poster",
+      "entry": "e05"
+    }
+  ],
+  "cdn_base": "https://raw.githack.com/HossamSalemOnline/fable-5.2-motion-design/main/",
+  "apify_mirrors": [
+    {
+      "store_id": "eGqZkhrpbkCW6Xi5Q",
+      "captured": "2026-11-18",
+      "entries": [
+        "e01",
+        "e02",
+        "e03"
+      ]
+    },
+    {
+      "store_id": "RdXOYxhkEcf1p7YpI",
+      "captured": "2026-11-23",
+      "entries": [
+        "e04",
+        "e05"
+      ],
+      "note": "backup of all e04/e05 media; records expire after 7 days"
     }
   ]
 }

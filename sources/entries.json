@@ -1,0 +1,96 @@
+{
+  "hub": {
+    "title": "Fable 5.2 Motion Archive",
+    "tagline": "Guides, prompt packs, repo stacks and every video about motion design with Claude Fable 5.2, archived word for word and kept in one place that grows with each new post.",
+    "owner": "HossamSalemOnline",
+    "repo": "fable-5.2-motion-design"
+  },
+  "entries": [
+    {
+      "id": "e01",
+      "file": "content/01-article-motion-design-with-fable-5.2.md",
+      "title": "Motion Design with Fable 5.2: from zero to your first video in 10 minutes",
+      "kind": "Article",
+      "author": "anstap",
+      "handle": "anstapnever",
+      "date": "2026-11-14",
+      "source": "https://x.com/anstapnever/status/2121750611691712817",
+      "cover": "docs/media/article-cover.jpg",
+      "summary": "The guide that started this archive: setup in the Claude app or Claude Code, the 6-line director's template, 12 fix-it phrases, vertical video, render.py and 10 beginner mistakes.",
+      "tags": [
+        "Director's template",
+        "render.py",
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "e02",
+      "file": "content/02-thread-20-github-repos-video-editing.md",
+      "title": "20 GitHub repos that turn Fable 5.2 into a video editing studio",
+      "kind": "Post",
+      "author": "anstap",
+      "handle": "anstapnever",
+      "date": "2026-11-17",
+      "source": "https://x.com/anstapnever/status/2122679111323922521",
+      "cover": "docs/media/v7-poster.jpg",
+      "summary": "Edit, captions, audio, AI FX and export: 20 open-source repos with every link expanded, plus the replies.",
+      "tags": [
+        "Video editing",
+        "Open source"
+      ]
+    },
+    {
+      "id": "e03",
+      "file": "content/03-embedded-posts-and-prompt-packs.md",
+      "title": "Embedded posts and full prompt packs (One Half, Capybara Onsen)",
+      "kind": "Prompt packs",
+      "author": "anstap",
+      "handle": "anstapnever",
+      "date": "2026-11-13",
+      "source": "https://x.com/anstapnever/status/2121216551890419748",
+      "cover": "docs/media/v9-poster.jpg",
+      "summary": "Both PDF prompt packs in full: the 1146-word kids cartoon and 822-word capybara prompts, Fable vs Opus costs, 10 lessons and fill-in templates, plus the original PDFs.",
+      "tags": [
+        "Three.js",
+        "Prompts",
+        "3D"
+      ]
+    },
+    {
+      "id": "e04",
+      "file": "content/04-article-seeco-motion-design-full-course.md",
+      "title": "Motion Design with Fable 5.2: From One Prompt to a Finished Film (Full Course)",
+      "kind": "Article",
+      "author": "seeco",
+      "handle": "seeconvm",
+      "date": "2026-11-16",
+      "source": "https://x.com/seeconvm/status/2122405510779375668",
+      "cover": "docs/media/e04-cover.png",
+      "summary": "A 20-chapter course: what people built and what it cost, setup, director's briefs, springs and easing, the clock, loops, rendering, motion QA, follow-ups, 3D and Blender, agent teams, budgets, formats, the toolbox, fixes and 4 prompts, with 11 embedded showcase posts.",
+      "tags": [
+        "Full course",
+        "Springs & easing",
+        "Motion QA",
+        "Blender",
+        "Agent teams"
+      ]
+    },
+    {
+      "id": "e05",
+      "file": "content/05-post-18-repos-replaced-after-effects.md",
+      "title": "I haven't opened After Effects in months, these 18 GitHub repos replaced it",
+      "kind": "Post",
+      "author": "soul",
+      "handle": "0xsoul",
+      "date": "2026-11-22",
+      "source": "https://x.com/0xsoul/status/2124485659041604080",
+      "cover": "docs/media/e05-v1-18-repos-post-poster.jpg",
+      "summary": "Rebuild, time, paint, glow, sync, caption: 18 tools from reanimate to FFmpeg, every link expanded, plus the replies.",
+      "tags": [
+        "Motion tools",
+        "Open source",
+        "After Effects alternative"
+      ]
+    }
+  ]
+}

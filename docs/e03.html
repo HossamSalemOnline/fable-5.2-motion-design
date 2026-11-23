@@ -1,0 +1,641 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Embedded posts and full prompt packs (One Half, Capybara Onsen)</title><meta name="robots" content="noindex"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#0e0a09;--panel:#18110f;--panel2:#211715;--line:#33241f;--ink:#f3e7d3;--muted:#b6a48d;
+--accent:#e8613c;--accent2:#e9407a;--mustard:#e3a82b;--cream:#efe4cf;--radius:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#3a1712 0%,transparent 60%),var(--bg);
+color:var(--ink);font:17px/1.7 Inter,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--mustard);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(14,10,9,.78);border-bottom:1px solid var(--line)}
+.nav .in{max-width:1180px;margin:auto;display:flex;align-items:center;gap:22px;padding:14px 22px;flex-wrap:wrap}
+.brand{font-family:'Bricolage Grotesque',Inter,sans-serif;font-weight:800;font-size:19px;color:var(--ink)}
+.brand b{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav a.l{color:var(--muted);font-size:15px;font-weight:500}.nav a.l.on,.nav a.l:hover{color:var(--ink);text-decoration:none}
+.nav .sp{flex:1}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',Inter,sans-serif;line-height:1.15;letter-spacing:-.015em}
+h1{font-size:clamp(34px,5vw,56px);margin:.2em 0 .4em}
+h2{font-size:30px;margin:2.2em 0 .6em;padding-top:.4em}
+h3{font-size:22px;margin:1.8em 0 .5em;color:var(--cream)}h4{font-size:18px;margin:1.6em 0 .4em;color:var(--mustard)}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:56px;max-width:1180px;margin:auto;padding:40px 22px 100px}
+.doc{max-width:780px;min-width:0}
+.toc{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 110px);overflow:auto;font-size:14px;border-left:1px solid var(--line);padding-left:18px}
+.toc b{display:block;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.toc a{display:block;color:var(--muted);padding:4px 0;line-height:1.35}.toc a:hover{color:var(--ink);text-decoration:none}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.toc{display:none}}
+p,li,td{color:#eadcc6;overflow-wrap:anywhere}strong{color:var(--ink)}
+hr{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:48px 0}
+blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 12px 12px 0;color:var(--muted)}
+blockquote p{margin:.3em 0;color:#e2d3bd}
+code{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:.88em;background:var(--panel2);border:1px solid var(--line);padding:.1em .4em;border-radius:6px}
+pre{position:relative;background:#120d0c;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;overflow:auto;line-height:1.55}
+pre code{background:none;border:0;padding:0;font-size:13.5px;color:#f1e2cb;white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:10px;right:10px;font:600 12px Inter,sans-serif;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer;opacity:.85}
+.copy:hover{opacity:1;border-color:var(--accent)}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:22px 0;font-size:15px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:block;overflow-x:auto}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--panel2);color:var(--cream);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}tbody tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+img{max-width:100%;border-radius:12px}
+figure{margin:30px 0}figure img{display:block;margin:auto;border:1px solid var(--line)}
+figure.video video{display:block;width:100%;border-radius:var(--radius);border:1px solid var(--line);background:#000;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+figure.video.tall video{max-height:78vh;width:auto;max-width:100%;margin:auto}
+figcaption{text-align:center;font-size:14px;color:var(--muted);margin-top:10px}
+figcaption a{font-weight:600}
+.hero{position:relative;border-radius:28px;overflow:hidden;margin:36px 0 18px;border:1px solid var(--line)}
+.hero img{display:block;width:100%;border-radius:0}
+.hero-copy{padding:40px 0 10px;max-width:820px}
+.hero-copy p.lead{font-size:20px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:30px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.stat b{display:block;font:800 30px 'Bricolage Grotesque',Inter,sans-serif;color:var(--ink)}
+.stat span{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:26px 0 10px}
+.card{display:block;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:26px;color:var(--ink);transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);text-decoration:none}
+.card .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.card h3{margin:.4em 0 .3em;color:var(--ink)}.card p{color:var(--muted);margin:0;font-size:15px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:22px}
+.gallery .g{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.gallery video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.gallery .g.tall video{aspect-ratio:4/5}
+.gallery .t{padding:12px 14px}.gallery .t b{display:block}.gallery .t span{font-size:13.5px;color:var(--muted)}
+.foot{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center;padding:30px 22px 50px}
+.pill{display:inline-block;font-size:12.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+
+.entry{display:grid;grid-template-columns:220px 1fr;gap:22px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:18px;color:var(--ink);margin-bottom:18px;transition:.2s}
+.entry:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px)}
+.entry img{width:100%;height:150px;object-fit:cover;border-radius:14px}
+.entry .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.entry h3{margin:.3em 0 .4em;color:var(--ink)}.entry p{color:var(--muted);margin:.2em 0 .6em;font-size:15px}
+@media(max-width:700px){.entry{grid-template-columns:1fr}.entry img{height:180px}}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+.hero-grad{border-radius:28px;border:1px solid var(--line);padding:56px 40px;margin:36px 0 10px;background:radial-gradient(600px 300px at 85% 20%,rgba(232,97,60,.35),transparent 70%),linear-gradient(180deg,var(--panel2),var(--panel))}
+</style></head><body>
+<nav class="nav"><div class="in"><a class="brand" href="index.html">Fable <b>5.2</b> Motion Archive</a><span class="sp"></span><a class="l" href="index.html" title="Home">Home</a><a class="l" href="e01.html" title="Motion Design with Fable 5.2: from zero to your first video in 10 minutes">E01</a><a class="l" href="e02.html" title="20 GitHub repos that turn Fable 5.2 into a video editing studio">E02</a><a class="l on" href="e03.html" title="Embedded posts and full prompt packs (One Half, Capybara Onsen)">E03</a><a class="l" href="e04.html" title="Motion Design with Fable 5.2: From One Prompt to a Finished Film (Full Course)">E04</a><a class="l" href="e05.html" title="I haven&#x27;t opened After Effects in months, these 18 GitHub repos replaced it">E05</a><a class="l" href="repos.html" title="All repos">All repos</a><a class="l" href="sources.html" title="Sources">Sources</a></div></nav>
+<div class="layout"><article class="doc"><h1 id="embedded-posts-and-full-prompt-packs">Embedded posts and full prompt packs</h1>
+<p>The article embeds three posts. Two of them link to PDF prompt packs on Google Drive, and the article calls those prompts "printed in full". All three posts are captured here, with the complete text of both PDFs.</p>
+<ul>
+<li><strong>Captured:</strong> 18 Nov 2026 via Apify (<code>xquik/x-tweet-scraper</code>, <code>apidojo/tweet-scraper</code>, <code>memo23/pdf-text-extractor</code>)</li>
+<li><strong>PDF text:</strong> the PDFs set headings in letter-spaced small caps (for example "P R O M P T"). I've rejoined those words and laid each page out as sections. <strong>Every prompt is word for word.</strong></li>
+</ul>
+<hr />
+<h2 id="a-claude-launch-post-embedded-under-why-fable-52-for-this">A. Claude launch post (embedded under "Why Fable 5.2 for this?")</h2>
+<ul>
+<li><strong>Post:</strong> <a href="https://x.com/claudeai/status/2119867114450268322">https://x.com/claudeai/status/2119867114450268322</a> · @claudeai · Mon 9 Nov 2026, 18:57 UTC</li>
+<li><strong>Stats at capture:</strong> 20,416,479 views · 96,316 likes · 15,782 bookmarks</li>
+</ul>
+<blockquote>
+<p>Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.</p>
+<p>They're capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision.</p>
+</blockquote>
+<figure class="video"><video controls playsinline preload="none" poster="media/v8-poster.jpg"><source src="media/v8-claude-launch.mp4" type="video/mp4"></video><figcaption>Video (18.5 s, 3840x2160 source) · <a href="media/v8-claude-launch.mp4">MP4 1080p</a></figcaption></figure>
+
+<hr />
+<h2 id="b-kids-cartoon-one-half-embedded-as-prompt-1">B. Kids cartoon: "One Half" (embedded as prompt 1)</h2>
+<ul>
+<li><strong>Post:</strong> <a href="https://x.com/anstapnever/status/2121216551890419748">https://x.com/anstapnever/status/2121216551890419748</a> · Fri 13 Nov 2026, 12:20 UTC</li>
+<li><strong>Stats at capture:</strong> 2,324 views · 44 likes · 30 bookmarks</li>
+<li><strong>Quotes:</strong> <a href="https://x.com/anstapnever/status/2110392373377380473">https://x.com/anstapnever/status/2110392373377380473</a> (its text is only a link; not expanded)</li>
+</ul>
+<blockquote>
+<p>a 6-year-old understood fractions thanks to Fable 5.2</p>
+<p>i gave Fable 5.2 and Opus 5.5 one prompt: make a kind cartoon that explains what "half" means</p>
+<p>no animators. no voice actors. pure code</p>
+<p>stop showing your kids Skibidi Toilet.</p>
+<p>if your kid doesn't get something, make them a cartoon that explains it.</p>
+<p>the prompt is below, change one line ↓</p>
+</blockquote>
+<figure class="video tall"><video controls playsinline preload="none" poster="media/v9-poster.jpg"><source src="media/v9-one-half-cartoon.mp4" type="video/mp4"></video><figcaption>Video (30 s, 1080x1350) · <a href="media/v9-one-half-cartoon.mp4">MP4 1080p</a></figcaption></figure>
+
+<p><strong>Author's reply:</strong> "Prompt: <a href="https://drive.google.com/file/d/1dWidG6WcoGWuUxCoT4UcYYh6jtlpXbe7/view?usp=sharing&quot;">https://drive.google.com/file/d/1dWidG6WcoGWuUxCoT4UcYYh6jtlpXbe7/view?usp=sharing"</a> (<a href="https://x.com/anstapnever/status/2121216555086422374">reply</a>)</p>
+<h3 id="pdf-one-half-kids-cartoon-prompt-pack-5-pages">PDF: "One Half Kids Cartoon Prompt Pack" (5 pages)</h3>
+<p><strong>Original PDF with full design:</strong> <a href="media/prompt-pack-one-half.pdf">prompt-pack-one-half.pdf</a></p>
+<h4 id="page-01-overview">Page 01: Overview</h4>
+<p><strong>ONE HALF. Prompt pack. Fable 5.2 + Opus 5.5 prompt. A kids cartoon in pure code, 30 seconds.</strong></p>
+<p><strong>A cartoon that teaches. From one prompt.</strong></p>
+<p>A fox cub cuts a pizza and his bunny friend gets a tiny piece. To share it fairly they cut it right in the middle, flip one part onto the other to check, and a 6-year-old sees what one half really is. 7 shots, kind and calm, made by Claude Fable 5.2 and Claude Opus 5.5 from the same prompt. No animators, no 3D models, no images: every frame is Three.js code.</p>
+<table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30.0 s</td>
+<td>7 shots, hard cuts</td>
+</tr>
+<tr>
+<td>60 fps</td>
+<td>1800 frames</td>
+</tr>
+<tr>
+<td>1 file</td>
+<td>HTML, Three.js</td>
+</tr>
+<tr>
+<td>0 assets</td>
+<td>No models, no images</td>
+</tr>
+<tr>
+<td>1146</td>
+<td>Words of prompt</td>
+</tr>
+<tr>
+<td>4 lines</td>
+<td>To change the lesson</td>
+</tr>
+</tbody>
+</table>
+<p>Frame strip caption: One half / kids cartoon / 30 s / 16:9 / 60 fps / Fable 5.2 + Opus 5.5 · 2.3 s / Fable 5.2 / "That's not fair"</p>
+<p>Shot map: 0 s THE CUT (1) · 1.5 s NOT FAIR (2) · 3 s HELP US (3) · 7 s THE MIDDLE (4) · 12 s ONE HALF (5) · 18 s SHARING (6) · 24 s GREAT JOB (7). Story beats: Hook, Problem, The lesson, Sharing, Praise.</p>
+<p><strong>Why it works</strong></p>
+<ol>
+<li><strong>A problem first.</strong> Frame 1 is a pizza being cut unfairly. By second 3 the bunny is about to cry and everyone wants to see it fixed.</li>
+<li><strong>One idea only.</strong> Same size = one half. Different sizes = not halves. Nothing else competes for attention.</li>
+<li><strong>The proof is visual.</strong> One part flips onto the other and the outlines match. The child sees it, not just hears it.</li>
+<li><strong>Your child's name.</strong> The fox asks Mia for help and praises Mia at the end. Put your kid's name in one line.</li>
+<li><strong>Kind, not loud.</strong> No flashing, no fast cuts, soft colors. Short lines a parent can read out loud.</li>
+<li><strong>Change 4 lines.</strong> Topic, age, name, key idea. Page 05 has 10 ready lessons from counting to money.</li>
+</ol>
+<p>Contents: Page 02-03, the prompt, copy-ready, the same for both models. Page 04, Fable vs Opus: how to run each, time, cost, shots. Page 05, 10 lessons ready to paste, ages 4 to 7.</p>
+<p><strong>One shot.</strong> No follow-ups. What you see is the first answer. (@anstapnever, 01/05)</p>
+<h4 id="page-02-the-prompt-part-1-of-2">Page 02: The prompt, part 1 of 2</h4>
+<p>Copy-ready. 1146 words. Same for Fable 5.2 and Opus 5.5.</p>
+<p>Copy pages 02 and 03 together as one message. Paste it into Claude Code in an empty folder, effort high. It writes index.html: open it in Chrome and the cartoon plays.</p>
+<p><code>one-half.prompt / 1 of 2</code></p>
+<pre><code>Create a single self-contained index.html file with a 30-second 3D educational cartoon for young kids, made in Three.js (load it from a CDN). Everything must be built in code: no external 3D models, textures or images. Do it in one go without asking me any questions, and tell me when the file is ready.
+
+THE LESSON (change these lines to make a new cartoon)
+- TOPIC: what &quot;one half&quot; means
+- AGE: 6 years old
+- CHILD'S NAME: Mia
+- KEY IDEA: if you split something into 2 parts that are exactly the same size, each part is one half. If the parts are different sizes, they are not halves.
+
+STYLE
+- A warm, kind, modern preschool cartoon: soft rounded shapes, pastel colors, soft sunny lighting, soft shadows, gentle squash-and-stretch on every move.
+- Kind, not overstimulating: no flashing, no loud colors, every step easy for a child to follow.
+- Make it as beautiful and polished as you can.
+
+CHARACTERS
+- Pip: a small round orange fox cub (#f08a4b fur, cream #fff1df belly and muzzle, big dark eyes with white highlights, a tiny smile). About 0.6 m tall.
+- Lulu: a small round white bunny (#f7f3ee fur, pink #f6b8c6 inner ears and cheeks, big dark eyes). About 0.6 m tall, ears included.
+- The pizza: 0.4 m across, golden crust #e8b25c, cheese #ffd76a, 6 red pepperoni slices #d9573b.
+
+SET (follow these numbers exactly)
+- Units are meters, Y is up, the floor is at y = 0.
+- A round wooden kitchen table (#c98f5a), tabletop at y = 0.75, 1.2 m across, centered at (0, 0.75, 0).
+- The pizza lies in the middle of the table at (0, 0.76, 0).
+- Two stools behind the table: Pip sits at (-0.4, 0.75, -0.45), Lulu's stool is at (0.4, 0.75, -0.45). Both face +Z (toward the starting camera).
+- A pale mint kitchen wall (#cfe8dc) at z = -1.5 with a big window on the left showing a sunny sky and a tree, and two potted plants on the window sill.
+- Warm soft sunlight comes from the window, upper left.
+
+THE HOOK (most important)
+- This cartoon must stop an adult scrolling a social feed. The first 3 seconds decide everything.
+- Frame 1 is already in motion, bright and clear: the pizza fills the screen and is being cut. No title, no fade-in, no empty establishing shot.
+- By second 3 the viewer must feel a small problem and want to know how it ends: Lulu got a tiny unfair piece and is about to cry.
+- Make the food look delicious: glossy melted cheese, long stretchy cheese pulls every time the pizza is pulled apart.
+
+ON-SCREEN TEXT
+- Large rounded friendly letters (at least 52 px tall at 1080p), dark text #3b2f2a on a soft white rounded bubble in the lower third. Max 8 words per line, so a parent can read it out loud.
+- Text fades in over 0.2 s and out over 0.2 s.
+</code></pre>
+<p>(Footer: The prompt / part 1 / lesson, style, set, hook. 02/05)</p>
+<h4 id="page-03-the-prompt-part-2-of-2">Page 03: The prompt, part 2 of 2</h4>
+<p>Copy-ready. Part 2 of 2: 7 shots on the second. Paste it right after part 1, in the same message.</p>
+<p><code>one-half.prompt / 2 of 2</code></p>
+<pre><code>TIMELINE: exactly 30 seconds, 7 shots with hard cuts, then it loops from 0
+All camera FOVs are 35° unless stated otherwise. &quot;Look at&quot; means the camera target.
+
+Shot 1, 0.0–1.5 s: macro close-up of the pizza (the hook)
+- The camera is at (0.15, 1.05, 0.35), FOV 30°, looks at (0, 0.76, 0), and pushes in slowly.
+- From the very first frame a big shiny pizza cutter wheel is already rolling across the pizza, off-center, 0.1 m to the right of the middle.
+- 0.9 s: the pizza splits into a big piece and a tiny piece, and they pull apart with a long, stretchy cheese pull that snaps at 1.4 s.
+
+Shot 2, 1.5–3.0 s: close-up of Lulu
+- The camera is at (0.55, 1.05, 0.25), looks at Lulu's face (0.4, 1.0, -0.45).
+- Lulu looks down at the tiny piece in front of her. Her ears slowly droop, her lower lip trembles, her eyes get shiny with tears.
+- Text 1.7–3.0 s: &quot;That's not fair...&quot;
+
+Shot 3, 3.0–7.0 s: wide shot of the kitchen
+- The camera starts at (0, 1.5, 2.6), looks at (0, 0.9, 0), and slowly pushes in to (0, 1.4, 2.2).
+- Pip holds the huge piece, Lulu has the tiny one. 4.0 s: Pip notices Lulu is sad, his ears go down, he puts his piece back on the table. 5.5 s: Pip turns to the camera.
+- Text 4.2–6.8 s: &quot;Mia, can you help us share?&quot;
+
+Shot 4, 7.0–12.0 s: top-down shot of the pizza
+- The camera is at (0, 2.1, 0.01), looks straight down at (0, 0.76, 0), and very slowly rotates 10° around the vertical axis.
+- 7.3 s: the two pieces slide back together and the pizza is whole again, with a small happy bounce.
+- 8.5 s: a dotted line draws exactly through the middle. 9.5 s: the pizza cutter rolls along it. 10.3 s: the two parts slide 6 cm apart with a cheese pull.
+- Text 7.5–11.8 s: &quot;Let's cut it right in the middle.&quot;
+
+Shot 5, 12.0–18.0 s: the same top-down camera, continuing the rotation
+- 12.5 s: the left part lifts, flips over and lies exactly on top of the right part: their outlines glow and match perfectly. 14.0 s: it flips back to its place.
+- 15.0 s: a big rounded &quot;1/2&quot; pops up above each part with a bounce.
+- Text 12.6–17.8 s: &quot;Same size! Each part is ONE HALF.&quot;
+
+Shot 6, 18.0–24.0 s: medium shot of the friends
+- The camera starts at (0, 1.2, 1.6), looks at (0, 0.95, -0.3), and slowly pushes in to (0, 1.2, 1.35).
+- 18.5 s: Pip and Lulu each pick up one half. 19.8 s: they hold the halves up side by side, the halves are the same size. 20.5 s: Lulu's ears spring up, she smiles. 21.5 s: both take a bite with a cheese pull and do a happy bounce.
+- Text 19.0–23.8 s: &quot;One half for Pip, one half for Lulu!&quot;
+
+Shot 7, 24.0–30.0 s: two-shot close-up of Pip and Lulu
+- The camera is at (0, 1.15, 0.85), looks at (0, 1.0, -0.45), and slowly pushes in by 15 cm.
+- 24.5 s: Pip and Lulu high-five. 26.0 s: both turn to the camera and smile. 27.0 s: Pip winks. 27.2 s: soft little stars float down gently.
+- Text 25.0–29.8 s: &quot;Great job, Mia! Now you know halves!&quot;
+
+TECHNICAL
+- The canvas is always 16:9 (1920x1080 aspect), letterboxed with black bars if the window has a different shape.
+- All animation and text are driven by one clock that runs from 0 to 30 s and then restarts at 0.
+- Press R to restart the timeline from 0.
+- No sound. No UI, buttons or overlays other than the cartoon text.
+- Starts playing immediately and runs smoothly at 60 fps.
+</code></pre>
+<p>(Footer: The prompt / part 2 / timeline and technical. 03/05)</p>
+<h4 id="page-04-fable-vs-opus">Page 04: Fable vs Opus</h4>
+<p>Both got the prompt from pages 02-03 and nothing else. Each timed itself from the first step to the finished file. Cost is the API list price of every token in the session log.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Claude Fable 5.2</th>
+<th>Claude Opus 5.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Character</td>
+<td>Richer look / faster here</td>
+<td>Softer look / cheaper</td>
+</tr>
+<tr>
+<td>Steps</td>
+<td>1. Open Claude Code in an empty folder. 2. Pick the model: <code>/model fable</code> 3. Set effort to high. 4. Paste the prompt, wait for index.html.</td>
+<td>1. Open Claude Code in an empty folder. 2. Pick the model: <code>/model opus</code> 3. Set effort to high. 4. Paste the prompt, wait for index.html.</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>11m 11s</td>
+<td>28m 53s</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>$9.34</td>
+<td>$7.12</td>
+</tr>
+<tr>
+<td>Price per 1M tokens (in / out)</td>
+<td>$8 / $40</td>
+<td>$4 / $20</td>
+</tr>
+</tbody>
+</table>
+<p>Same second, both models (frame comparisons): 0.9 s THE CUT · 2.3 s NOT FAIR · 15.5 s ONE HALF · 20.0 s SHARING.</p>
+<p>(Footer: Fable 5.2 vs Opus 5.5 / same prompt / effort high / one shot. 04/05)</p>
+<h4 id="page-05-your-kids-lesson">Page 05: Your kid's lesson</h4>
+<p>Your child doesn't get something? Make them a cartoon that explains it. Replace the LESSON block, put your kid's name in, and swap the timeline for the story template below.</p>
+<table>
+<thead>
+<tr>
+<th>Age</th>
+<th>Topic</th>
+<th>Key idea + the story</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>Counting to 5</td>
+<td>each new thing adds one / ducklings hop into a pond one by one, the fox counts them</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Circle, square, triangle</td>
+<td>shapes by their sides and corners / the bunny cuts cookies, each shape fits only its own hole</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Bigger and smaller</td>
+<td>compare by putting side by side / two balloons, two towers of blocks, the bigger one wins the race</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Adding: 2 + 3</td>
+<td>adding means putting together / 2 apples in a basket, 3 more fall from the tree, count all 5</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Odd and even</td>
+<td>even numbers make pairs / socks on a line, one sock is left alone and looks for a friend</td>
+</tr>
+<tr>
+<td>6</td>
+<td>One quarter</td>
+<td>4 equal parts, each is one quarter / a cake for 4 friends, cut in half, then in half again</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Taking away: 5 - 2</td>
+<td>subtracting means taking away / 5 cupcakes, the friends eat 2, how many are left</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Telling the hour</td>
+<td>the short hand shows the hour / a day on the clock: breakfast at 8, park at 3, bed at 8</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Times 2</td>
+<td>times 2 means doubling / pairs of boots for 1, 2, 3, 4 friends</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Coins add up</td>
+<td>small coins add up to a bigger one / filling a piggy bank to buy a kite</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Story template for any lesson</strong> (<code>your-lesson.timeline</code>)</p>
+<pre><code>THE LESSON (change these lines to make a new cartoon)
+- TOPIC: [topic from the table]
+- AGE: [age] years old
+- CHILD'S NAME: [your kid's name]
+- KEY IDEA: [key idea from the table]
+
+TIMELINE: exactly 30 seconds, 7 shots with hard cuts, then it loops from 0
+Shot 1, 0.0-1.5 s: macro close-up, already in motion: the small problem starts ([story]).
+Shot 2, 1.5-3.0 s: close-up of the friend who is upset by the problem. Text: max 4 words.
+Shot 3, 3.0-7.0 s: wide shot of the kitchen. The fox turns to the camera and asks [name] for help.
+Shot 4, 7.0-12.0 s: top-down or close shot: the right way to do it, step by step.
+Shot 5, 12.0-18.0 s: the proof the child can see, then the key word pops up big.
+Shot 6, 18.0-24.0 s: medium shot: the friends use what they learned and are happy.
+Shot 7, 24.0-30.0 s: close-up: they turn to the camera: &quot;Great job, [name]!&quot;
+</code></pre>
+<p>(Footer: 10 lessons / change the lesson block / ages 4 to 7. 05/05)</p>
+<hr />
+<h2 id="c-capybara-onsen-fable-52-vs-opus-55-embedded-as-prompt-2">C. Capybara onsen: Fable 5.2 vs Opus 5.5 (embedded as prompt 2)</h2>
+<ul>
+<li><strong>Post:</strong> <a href="https://x.com/anstapnever/status/2120500496850997258">https://x.com/anstapnever/status/2120500496850997258</a> · Wed 11 Nov 2026, 12:54 UTC</li>
+<li><strong>Stats at capture:</strong> 11,201 views · 79 likes · 24 bookmarks</li>
+<li><strong>Quotes:</strong> <a href="https://x.com/anstapnever/status/2110392373377380473">https://x.com/anstapnever/status/2110392373377380473</a> (its text is only a link; not expanded)</li>
+</ul>
+<blockquote>
+<p>Fable 5.2 vs Opus 5.5: the capybara test</p>
+<p>Fable 5.2
+⏱ 26m 47s
+💰 $11.32</p>
+<p>Opus 5.5
+⏱ 27m 37s
+💰 $6.39</p>
+<p>the rules:
+→ one prompt, no follow-ups
+→ zero assets, everything is Three.js code
+→ 5 shots, every camera set in meters
+→ both on high effort</p>
+<p>same speed, almost 2x the price. but look at the snow, steam and reflections on top</p>
+</blockquote>
+<figure class="video tall"><video controls playsinline preload="none" poster="media/v10-poster.jpg"><source src="media/v10-capybara-onsen.mp4" type="video/mp4"></video><figcaption>Video (24 s, 1080x1350) · <a href="media/v10-capybara-onsen.mp4">MP4 1080p</a></figcaption></figure>
+
+<p><strong>Author's reply:</strong> "Prompt: <a href="https://drive.google.com/file/d/1xq-DmBA85qnfZ9D3belPO43-hyDzWs8M/view?usp=sharing&quot;">https://drive.google.com/file/d/1xq-DmBA85qnfZ9D3belPO43-hyDzWs8M/view?usp=sharing"</a> (<a href="https://x.com/anstapnever/status/2120500825802068095">reply</a>)</p>
+<p><strong>Other reply captured:</strong> @preprintpigeon: "the capybara's tiny fruit hat is an excellent bit of holiday planning. absolutely nothing left on the itinerary." (<a href="https://x.com/preprintpigeon/status/2121103781655904734">link</a>)</p>
+<h3 id="pdf-capybara-onsen-prompt-pack-4-pages">PDF: "Capybara Onsen Prompt Pack" (4 pages)</h3>
+<p><strong>Original PDF with full design:</strong> <a href="media/prompt-pack-capybara-onsen.pdf">prompt-pack-capybara-onsen.pdf</a></p>
+<h4 id="page-01-overview_1">Page 01: Overview</h4>
+<p><strong>CAPYBARA ONSEN. Prompt pack. One prompt / two models. A 3D short in pure code, 24 seconds.</strong></p>
+<p><strong>Same prompt. Two models. One capybara.</strong></p>
+<p>A capybara soaks in a Japanese hot spring at dusk, a yuzu on its head, snow falling into the steam. Five shots with hard cuts: wide, face close-up, low angle over the water, top-down, pull-back. The same prompt went to Claude Fable 5.2 and Claude Opus 5.5, both at effort high, one shot each. Each wrote a single Three.js file. No 3D models, no textures, no images: every rock, snowflake and ripple is code.</p>
+<table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24.0 s</td>
+<td>5 shots, hard cuts</td>
+</tr>
+<tr>
+<td>60 fps</td>
+<td>1440 frames</td>
+</tr>
+<tr>
+<td>1 file</td>
+<td>HTML, Three.js</td>
+</tr>
+<tr>
+<td>0 assets</td>
+<td>No models, no textures</td>
+</tr>
+<tr>
+<td>822</td>
+<td>Words of prompt</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Follow-ups, one shot</td>
+</tr>
+</tbody>
+</table>
+<p>Frame strip caption: Capybara onsen / 24 s / 16:9 / 60 fps / Fable 5.2 vs Opus 5.5 · 8.6 s / Fable 5.2 / the sniff</p>
+<p>Shot map: 0 s WIDE (1) · 5 s CLOSE-UP (2) · 10 s LOW ANGLE (3) · 15 s TOP-DOWN (4) · 20 s PULL-BACK (5).</p>
+<p><strong>Why the prompt works</strong></p>
+<ol>
+<li><strong>A world in meters.</strong> Y is up, the water is at y = 0, every object has a position. The model stops guessing the layout.</li>
+<li><strong>Cameras as numbers.</strong> Start, end and target for every shot, FOV 35°. Both models framed the same five shots.</li>
+<li><strong>Actions on the clock.</strong> Blink at 6.0 s, ear twitch at 7.5 s, sniff at 8.5 s. Small life on exact frames.</li>
+<li><strong>Colors as hex.</strong> Fur, yuzu, lantern light and sky are fixed, so the mood matches across models.</li>
+<li><strong>One clock, 24 s.</strong> Everything runs off one timer, so the file can be rendered frame by frame without stutter.</li>
+<li><strong>Hard to fake.</strong> Water, steam, snow and fur in one scene: where 3D from code usually falls apart.</li>
+</ol>
+<p>Contents: Page 02, the prompt, copy-ready, word for word. Page 03, Fable vs Opus: time, cost and every shot side by side. Page 04, make it yours: what to swap and how to render it smooth.</p>
+<p><strong>One shot.</strong> No follow-ups. What you see is the first answer. (@anstapnever, 01/04)</p>
+<h4 id="page-02-the-prompt">Page 02: The prompt</h4>
+<p>Copy-ready. 822 words. Fable 5.2 or Opus 5.5. Paste it as is into Claude Code in an empty folder, effort high. It writes index.html: open it in Chrome and it plays.</p>
+<p><code>capybara-onsen.prompt</code></p>
+<pre><code>Create a single self-contained index.html file with a realistic 3D animation made in Three.js (load it from a CDN). Everything must be built in code: no external 3D models, textures or images. Make it as realistic and beautiful as you can: lighting, materials, fur, water, steam and snow. Do it in one go without asking me any questions, and tell me when the file is ready.
+
+THE STORY
+A capybara relaxes in a Japanese hot spring (onsen) at dusk while snow falls, with a yuzu fruit balanced on its head.
+
+WORLD SETUP (follow these numbers exactly)
+- Units are meters, Y is up. The water surface is at y = 0.
+- The pool is an irregular round shape, about 3 m across, centered at (0, 0, 0) and lined with dark wet volcanic rocks. The rocks stick 0.2–0.5 m above the water and have snow on top.
+- The capybara sits in the middle of the pool at (0, 0, 0), facing +Z (toward the starting camera). Only its head, neck and the top of its back are above the water. The top of the head is about 0.4 m above the water.
+- Capybara look: a barrel-shaped body, a big blunt square snout with nostrils on top, small dark eyes set high on the head, small rounded ears, short coarse brown fur (#7a5230), darker on the snout.
+- A yuzu (an 8 cm yellow-orange citrus, #f2b330) rests on top of its head.
+- A Japanese stone lantern stands at (-1.8, 0, -1.2) on the rocks. It glows warm orange (#ffb46b) from inside and lights the steam, the water and the left side of the capybara.
+- Snow-covered pine trees stand in a half circle behind the pool, 4–8 m away (negative Z).
+- The sky is a deep dusk gradient, from #16233f at the top to #3d5a80 at the horizon. A cool, soft blue moonlight comes from the upper right behind the capybara.
+- Steam rises from the whole water surface all the time, in soft, slowly drifting wisps.
+- Snow falls all the time. Flakes that touch the water disappear. Flakes that land on the rocks and on the capybara's head stay there.
+- The water is warm and slightly transparent, with gentle ripples and reflections of the lantern and the sky.
+
+TIMELINE: exactly 24 seconds, 5 shots with hard cuts, then it loops from 0
+All camera FOVs are 35° unless stated otherwise. &quot;Look at&quot; means the camera target.
+
+Shot 1, 0.0–5.0 s: wide establishing shot
+- The camera starts at (0, 1.6, 6.5), looks at (0, 0.3, 0), and slowly dollies forward to (0, 1.2, 4.5).
+- The capybara is still, with its eyes half closed. Calm falling snow.
+
+Shot 2, 5.0–10.0 s: close-up of the face
+- The camera starts at (0.9, 0.45, 1.6), looks at the capybara's head (0, 0.35, 0.3), and slowly orbits 15° to the left around the head, keeping the same distance.
+- 6.0 s: one slow blink (0.4 s).
+- 7.5 s: the left ear twitches twice quickly.
+- 8.5 s: a snowflake lands on its nose and the capybara wrinkles its nose and sniffs once.
+
+Shot 3, 10.0–15.0 s: low angle just above the water
+- The camera starts at (-1.5, 0.08, 1.2), close to the water surface, looks at (0, 0.25, 0), and slides slowly to the right to (-0.5, 0.08, 1.6). The lantern is visible behind the capybara on the left.
+- 11.0 s: the capybara slowly sinks 10 cm deeper over 2 seconds, until the water reaches its chin. Ring-shaped ripples spread out from its body.
+- Steam wisps drift across the lens in the foreground.
+
+Shot 4, 15.0–20.0 s: top-down shot
+- The camera is at (0, 4, 0.3), looks straight down at (0, 0, 0), and slowly rotates 30° clockwise around the vertical axis.
+- We see the yuzu on its head, the ripple rings and snowflakes melting on the water.
+- 17.0 s: the capybara exhales through its nose. A few small bubbles appear in front of its snout and the yuzu wobbles slightly but stays on.
+
+Shot 5, 20.0–24.0 s: final pull-back
+- The camera starts at (0.6, 0.8, 2.5), looks at (0, 0.3, 0), and pulls back and up to (0, 2.2, 8.0), revealing the whole pool, the lantern and the pines.
+- 22.0 s: a gust of wind. The steam swirls sideways, the falling snow slants for 1.5 seconds, and the lantern light flickers.
+- 23.5 s: the capybara closes its eyes completely.
+
+TECHNICAL
+- The canvas is always 16:9 (1920x1080 aspect), letterboxed with black bars if the window has a different shape.
+- All animation is driven by one clock that runs from 0 to 24 s and then restarts at 0.
+- Press R to restart the timeline from 0.
+- No UI, text, buttons or overlays on screen.
+- Starts playing immediately and runs smoothly at 60 fps.
+</code></pre>
+<p>(Footer: The prompt / paste as is / Claude Code / effort high. 02/04)</p>
+<h4 id="page-03-fable-vs-opus">Page 03: Fable vs Opus</h4>
+<p>Both sessions got the prompt from page 2 and nothing else. Each timed itself from the first step to the finished file. Cost is the API list price of every token in the session log.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Fable 5.2 / high</th>
+<th>Opus 5.5 / high</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time to finished file</td>
+<td>26m 47s</td>
+<td>27m 37s</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>$11.32</td>
+<td>$6.39</td>
+</tr>
+<tr>
+<td>Price per 1M tokens, in / out</td>
+<td>$8 / $40</td>
+<td>$4 / $20</td>
+</tr>
+<tr>
+<td>Output tokens, with thinking</td>
+<td>146,345</td>
+<td>162,213</td>
+</tr>
+<tr>
+<td>File size</td>
+<td>65 KB</td>
+<td>80 KB</td>
+</tr>
+</tbody>
+</table>
+<p>Every shot, same frame (side-by-side stills): 2.5 s 1. WIDE · 7.6 s 2. EAR TWITCH · 12.5 s 3. SINKING · 17.0 s 4. THE EXHALE · 22.0 s 5. THE GUST.</p>
+<p>(Footer: Fable 5.2 vs Opus 5.5 / same prompt / effort high / one shot. 03/04)</p>
+<h4 id="page-04-make-it-yours">Page 04: Make it yours</h4>
+<p>The structure is the trick, not the capybara. Keep the blocks and the numbers, swap what is in them.</p>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>In this prompt</th>
+<th>Yours (example)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STORY</td>
+<td>a capybara in an onsen at dusk, snow falling</td>
+<td>a cat on a windowsill in a rainy Tokyo night</td>
+</tr>
+<tr>
+<td>HERO</td>
+<td>barrel body, square snout, fur #7a5230</td>
+<td>orange tabby, fur #d98a3d, green eyes</td>
+</tr>
+<tr>
+<td>PROP</td>
+<td>a yuzu on its head</td>
+<td>a cup of tea steaming next to it</td>
+</tr>
+<tr>
+<td>LIGHT</td>
+<td>stone lantern #ffb46b + blue moonlight</td>
+<td>neon sign #ff4fa3 + cold street light</td>
+</tr>
+<tr>
+<td>HARD STUFF</td>
+<td>water, steam, snow, fur</td>
+<td>rain on glass, drops, reflections</td>
+</tr>
+<tr>
+<td>SHOTS</td>
+<td>5 shots x ~5 s, positions in meters</td>
+<td>same 5 shots, move the numbers to your hero</td>
+</tr>
+<tr>
+<td>BEATS</td>
+<td>blink 6.0 s, ear 7.5 s, sniff 8.5 s</td>
+<td>tail flick 6.0 s, yawn 8.0 s, slow blink 9.0 s</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Render it smooth.</strong> A screen recording of a WebGL page drops frames. Render it frame by frame instead: the file runs off one clock, so time can be stepped exactly 1/60 s per frame.</p>
+<ol>
+<li>Serve the folder locally and open index.html in headless Chrome at 1920x1080.</li>
+<li>Before the page loads, replace performance.now and requestAnimationFrame with a fake clock.</li>
+<li>Step the clock by 16.67 ms, run the frame callbacks, take a screenshot.</li>
+<li>Repeat 1440 times for 24 s. Pipe the frames straight into ffmpeg.</li>
+<li>Same clock for every model, so side-by-side cuts land on the same frame.</li>
+</ol>
+<p><strong>Tips</strong></p>
+<ol>
+<li><strong>Empty folder each.</strong> One folder per model, so neither sees the other's file.</li>
+<li><strong>Same effort.</strong> Both on high. A fair test changes only the model.</li>
+<li><strong>Check the cameras.</strong> Exact numbers can hide an object: in shot 3 the lantern is out of frame, only its light shows.</li>
+</ol>
+<p><strong>Fill-in template</strong> (<code>your-scene.prompt</code>)</p>
+<pre><code>Create a single self-contained index.html file with a realistic 3D animation made in Three.js (load it from a CDN). Everything must be built in code: no external 3D models, textures or images. Make it as realistic and beautiful as you can. Do it in one go without asking me any questions.
+
+THE STORY
+[one sentence: who, where, what time of day, what the weather does]
+
+WORLD SETUP (follow these numbers exactly)
+- Units are meters, Y is up. [the main surface] is at y = 0.
+- [hero] at (0, 0, 0), facing +Z. Look: [shape, proportions, color #hex].
+- [prop] at [x, y, z]. [light source] at [x, y, z], glows [#hex].
+- Background: [what stands behind, how far]. Sky: from [#hex] at the top to [#hex] at the horizon.
+- Always moving: [rain / snow / steam / leaves], and how it behaves when it lands.
+
+TIMELINE: exactly [N] seconds, [5] shots with hard cuts, then it loops from 0
+Shot 1, 0.0-5.0 s: [shot type]. Camera from [x, y, z] to [x, y, z], looks at [x, y, z].
+- [time] s: [small action: blink, twitch, sniff]
+[repeat for every shot]
+
+TECHNICAL
+- Always 16:9, letterboxed. One clock from 0 to [N] s, then restart. No UI. 60 fps.
+</code></pre>
+<p>(Footer: Make it yours / swap the story / keep the numbers. 04/04)</p></article><aside class="toc"><b>On this page</b><a href="#a-claude-launch-post-embedded-under-why-fable-52-for-this">A. Claude launch post (embedded under "Why Fable 5.2 for this?")</a><a href="#b-kids-cartoon-one-half-embedded-as-prompt-1">B. Kids cartoon: "One Half" (embedded as prompt 1)</a><a href="#pdf-one-half-kids-cartoon-prompt-pack-5-pages" style="padding-left:12px">PDF: "One Half Kids Cartoon Prompt Pack" (5 pages)</a><a href="#c-capybara-onsen-fable-52-vs-opus-55-embedded-as-prompt-2">C. Capybara onsen: Fable 5.2 vs Opus 5.5 (embedded as prompt 2)</a><a href="#pdf-capybara-onsen-prompt-pack-4-pages" style="padding-left:12px">PDF: "Capybara Onsen Prompt Pack" (4 pages)</a></aside></div>
+<div class="foot">All archived content © its original authors. Captured from X for personal reference.</div>
+<script>
+document.querySelectorAll('pre').forEach(pre=>{const b=document.createElement('button');b.className='copy';b.textContent='Copy';
+b.onclick=()=>{navigator.clipboard.writeText(pre.innerText.replace(/^Copy\n?/,'')).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1400)})};pre.prepend(b)});
+</script></body></html>

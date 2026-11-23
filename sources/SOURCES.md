@@ -66,6 +66,40 @@ All media stays on X's CDN, linked rather than copied. Links break if the author
 | One Half cartoon | 30 s | 1080x1350 | https://video.twimg.com/amplify_video/2121215855254196224/vid/avc1/1080x1350/TV3uTpkB9ZA6Z-0R.mp4?tag=29 | https://pbs.twimg.com/amplify_video_thumb/2121215855254196224/img/WCYghVlgHjuprsa-.jpg |
 | Capybara onsen | 24 s | 1080x1350 | https://video.twimg.com/amplify_video/2120496468310237184/vid/avc1/1080x1350/BX-YgJYbxCfCnFiP.mp4?tag=29 | https://pbs.twimg.com/amplify_video_thumb/2120496468310237184/img/MqrKAE4MJhVo858D.jpg |
 
+## e04: Motion Design with Fable 5.2: From One Prompt to a Finished Film (Full Course)
+
+| Source | Type | Author | Published (UTC) | Captured | Method |
+|---|---|---|---|---|---|
+| https://x.com/seeconvm/status/2122405510779375668 | X Article | @seeconvm | 16 Nov 2026, 19:04 | 23 Nov 2026 | `xquik/x-article-scraper`, converted with `tools/x_article_to_md.py` |
+
+The 11 posts embedded in the article, each captured in full and shown in place:
+
+| Post | Author | Date | Method |
+|---|---|---|---|
+| https://x.com/claudeai/status/2119867114450268322 | @claudeai | Nov 09 2026 | `xquik/x-tweet-scraper` |
+| https://x.com/felixrieseberg/status/2119925633564463609 | @felixrieseberg | Nov 09 2026 | `xquik/x-tweet-scraper` |
+| https://x.com/polinaaAi/status/2120132270249947466 | @polinaaAi | Nov 10 2026 | `xquik/x-tweet-scraper` |
+| https://x.com/kevin_t_ngo/status/2120198663062622581 | @kevin_t_ngo | Nov 10 2026 | `xquik/x-tweet-scraper` |
+| https://x.com/venturetwins/status/2120331599283954137 | @venturetwins | Nov 11 2026 | `xquik/x-tweet-scraper` |
+| https://x.com/loktar00/status/2120192761542615271 | @loktar00 | Nov 10 2026 | `xquik/x-tweet-scraper` |
+| https://x.com/TimurNegru/status/2120188343870964113 | @TimurNegru | Nov 10 2026 | `xquik/x-tweet-scraper` |
+| https://x.com/chetaslua/status/2120179018964324566 | @chetaslua | Nov 10 2026 | `xquik/x-tweet-scraper` |
+| https://x.com/everestchris6/status/2120175941616128277 | @everestchris6 | Nov 10 2026 | `xquik/x-tweet-scraper` |
+| https://x.com/flavioAd/status/2119876761299059127 | @flavioAd | Nov 09 2026 | `xquik/x-tweet-scraper` |
+| https://x.com/petergostev/status/2120167560700383572 | @petergostev | Nov 10 2026 | `xquik/x-tweet-scraper` |
+
+Article replies were not returned publicly by X.
+
+## e05: I haven't opened After Effects in months, these 18 GitHub repos replaced it
+
+| Source | Type | Author | Published (UTC) | Captured | Method |
+|---|---|---|---|---|---|
+| https://x.com/0xsoul/status/2124485659041604080 | X post (long-form note) | @0xsoul | 22 Nov 2026, 12:50 | 23 Nov 2026 | `xquik/x-tweet-scraper` (text + expanded links), `apidojo/tweet-scraper` (replies) |
+
+## Media backups (e04, e05)
+
+All 31 new media files (videos at the best quality under 40 MB, posters, the course cover and 8 chapter diagrams) were backed up to Apify store `RdXOYxhkEcf1p7YpI` on 23 Nov 2026 and are stored in this repo under `docs/media/`. The full list is in [media-manifest.json](https://github.com/HossamSalemOnline/fable-5.2-motion-design/blob/main/sources/media-manifest.json).
+
 ## Rights
 
-All post text, prompts, PDFs and videos belong to their authors (@anstapnever, and @claudeai for #3). This archive is for personal reference. Keep the repository **private** unless you have the author's permission to republish.
+All post text, prompts, PDFs and videos belong to their authors (@anstapnever, @seeconvm, @0xsoul, and the authors of each embedded post). This archive is for personal reference. Keep the repository **private** unless you have the author's permission to republish.

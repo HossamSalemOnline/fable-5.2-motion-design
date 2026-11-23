@@ -1,0 +1,349 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>I haven&#x27;t opened After Effects in months, these 18 GitHub repos replaced it</title><meta name="robots" content="noindex"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#0e0a09;--panel:#18110f;--panel2:#211715;--line:#33241f;--ink:#f3e7d3;--muted:#b6a48d;
+--accent:#e8613c;--accent2:#e9407a;--mustard:#e3a82b;--cream:#efe4cf;--radius:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#3a1712 0%,transparent 60%),var(--bg);
+color:var(--ink);font:17px/1.7 Inter,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--mustard);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(14,10,9,.78);border-bottom:1px solid var(--line)}
+.nav .in{max-width:1180px;margin:auto;display:flex;align-items:center;gap:22px;padding:14px 22px;flex-wrap:wrap}
+.brand{font-family:'Bricolage Grotesque',Inter,sans-serif;font-weight:800;font-size:19px;color:var(--ink)}
+.brand b{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav a.l{color:var(--muted);font-size:15px;font-weight:500}.nav a.l.on,.nav a.l:hover{color:var(--ink);text-decoration:none}
+.nav .sp{flex:1}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',Inter,sans-serif;line-height:1.15;letter-spacing:-.015em}
+h1{font-size:clamp(34px,5vw,56px);margin:.2em 0 .4em}
+h2{font-size:30px;margin:2.2em 0 .6em;padding-top:.4em}
+h3{font-size:22px;margin:1.8em 0 .5em;color:var(--cream)}h4{font-size:18px;margin:1.6em 0 .4em;color:var(--mustard)}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:56px;max-width:1180px;margin:auto;padding:40px 22px 100px}
+.doc{max-width:780px;min-width:0}
+.toc{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 110px);overflow:auto;font-size:14px;border-left:1px solid var(--line);padding-left:18px}
+.toc b{display:block;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.toc a{display:block;color:var(--muted);padding:4px 0;line-height:1.35}.toc a:hover{color:var(--ink);text-decoration:none}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.toc{display:none}}
+p,li,td{color:#eadcc6;overflow-wrap:anywhere}strong{color:var(--ink)}
+hr{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:48px 0}
+blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 12px 12px 0;color:var(--muted)}
+blockquote p{margin:.3em 0;color:#e2d3bd}
+code{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:.88em;background:var(--panel2);border:1px solid var(--line);padding:.1em .4em;border-radius:6px}
+pre{position:relative;background:#120d0c;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;overflow:auto;line-height:1.55}
+pre code{background:none;border:0;padding:0;font-size:13.5px;color:#f1e2cb;white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:10px;right:10px;font:600 12px Inter,sans-serif;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer;opacity:.85}
+.copy:hover{opacity:1;border-color:var(--accent)}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:22px 0;font-size:15px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:block;overflow-x:auto}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--panel2);color:var(--cream);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}tbody tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+img{max-width:100%;border-radius:12px}
+figure{margin:30px 0}figure img{display:block;margin:auto;border:1px solid var(--line)}
+figure.video video{display:block;width:100%;border-radius:var(--radius);border:1px solid var(--line);background:#000;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+figure.video.tall video{max-height:78vh;width:auto;max-width:100%;margin:auto}
+figcaption{text-align:center;font-size:14px;color:var(--muted);margin-top:10px}
+figcaption a{font-weight:600}
+.hero{position:relative;border-radius:28px;overflow:hidden;margin:36px 0 18px;border:1px solid var(--line)}
+.hero img{display:block;width:100%;border-radius:0}
+.hero-copy{padding:40px 0 10px;max-width:820px}
+.hero-copy p.lead{font-size:20px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:30px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.stat b{display:block;font:800 30px 'Bricolage Grotesque',Inter,sans-serif;color:var(--ink)}
+.stat span{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:26px 0 10px}
+.card{display:block;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:26px;color:var(--ink);transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);text-decoration:none}
+.card .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.card h3{margin:.4em 0 .3em;color:var(--ink)}.card p{color:var(--muted);margin:0;font-size:15px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:22px}
+.gallery .g{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.gallery video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.gallery .g.tall video{aspect-ratio:4/5}
+.gallery .t{padding:12px 14px}.gallery .t b{display:block}.gallery .t span{font-size:13.5px;color:var(--muted)}
+.foot{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center;padding:30px 22px 50px}
+.pill{display:inline-block;font-size:12.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+
+.entry{display:grid;grid-template-columns:220px 1fr;gap:22px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:18px;color:var(--ink);margin-bottom:18px;transition:.2s}
+.entry:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px)}
+.entry img{width:100%;height:150px;object-fit:cover;border-radius:14px}
+.entry .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.entry h3{margin:.3em 0 .4em;color:var(--ink)}.entry p{color:var(--muted);margin:.2em 0 .6em;font-size:15px}
+@media(max-width:700px){.entry{grid-template-columns:1fr}.entry img{height:180px}}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+.hero-grad{border-radius:28px;border:1px solid var(--line);padding:56px 40px;margin:36px 0 10px;background:radial-gradient(600px 300px at 85% 20%,rgba(232,97,60,.35),transparent 70%),linear-gradient(180deg,var(--panel2),var(--panel))}
+</style></head><body>
+<nav class="nav"><div class="in"><a class="brand" href="index.html">Fable <b>5.2</b> Motion Archive</a><span class="sp"></span><a class="l" href="index.html" title="Home">Home</a><a class="l" href="e01.html" title="Motion Design with Fable 5.2: from zero to your first video in 10 minutes">E01</a><a class="l" href="e02.html" title="20 GitHub repos that turn Fable 5.2 into a video editing studio">E02</a><a class="l" href="e03.html" title="Embedded posts and full prompt packs (One Half, Capybara Onsen)">E03</a><a class="l" href="e04.html" title="Motion Design with Fable 5.2: From One Prompt to a Finished Film (Full Course)">E04</a><a class="l on" href="e05.html" title="I haven&#x27;t opened After Effects in months, these 18 GitHub repos replaced it">E05</a><a class="l" href="repos.html" title="All repos">All repos</a><a class="l" href="sources.html" title="Sources">Sources</a></div></nav>
+<div class="layout"><article class="doc"><h1 id="i-havent-opened-after-effects-in-months-these-18-github-repos-replaced-it">I haven't opened After Effects in months, these 18 GitHub repos replaced it</h1>
+<ul>
+<li><strong>Author:</strong> soul (<a href="https://x.com/0xsoul">@0xsoul</a>)</li>
+<li><strong>Posted:</strong> Sun 22 Nov 2026, 12:50 UTC</li>
+<li><strong>Source:</strong> <a href="https://x.com/0xsoul/status/2124485659041604080">https://x.com/0xsoul/status/2124485659041604080</a></li>
+<li><strong>Quotes:</strong> the course <a href="e04.html">Motion Design with Fable 5.2: From One Prompt to a Finished Film</a> by @seeconvm (https://x.com/seeconvm/status/2122405510779375668)</li>
+<li><strong>Stats at capture (23 Nov 2026):</strong> 60,136 views · 805 likes · 85 reposts · 6 quotes · 24 replies · 1,509 bookmarks</li>
+<li><strong>Captured via:</strong> Apify (<code>xquik/x-tweet-scraper</code> for the post, <code>apidojo/tweet-scraper</code> for replies). All t.co short links expanded to their real URLs.</li>
+</ul>
+<h2 id="attached-video">Attached video</h2>
+<figure class="video tall"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2124485540909031424/img/Dkwr65Y668U3VhoG.jpg"><source src="https://video.twimg.com/amplify_video/2124485540909031424/vid/avc1/1440x1800/_Jbz_xVC-G1kS15h.mp4?tag=29" type="video/mp4"></video><figcaption>Video, 30 s, 1440x1800 (4:5) · <a href="https://video.twimg.com/amplify_video/2124485540909031424/vid/avc1/1440x1800/_Jbz_xVC-G1kS15h.mp4?tag=29">MP4</a></figcaption></figure>
+
+<h2 id="full-post-text-verbatim-links-expanded">Full post text (verbatim, links expanded)</h2>
+<p>I haven't opened After Effects in months, these 18 GitHub repos replaced it</p>
+<p>this is f*cking gold for Fable 5.2</p>
+<p>Rebuild. Time. Paint. Glow. Sync. Caption.</p>
+<p>reanimate → rebuild any animation you see, frame by frame
+<a href="https://github.com/NiazMorshed2007/reanimate">https://github.com/NiazMorshed2007/reanimate</a></p>
+<p>motion-design-skill → timing and easing like a trained animator
+<a href="https://github.com/LottieFiles/motion-design-skill">https://github.com/LottieFiles/motion-design-skill</a></p>
+<p>mg-styles-15 → 15 motion styles, one prompt each
+<a href="https://github.com/Vincentwei1021/mg-styles-15">https://github.com/Vincentwei1021/mg-styles-15</a></p>
+<p>huashu-art-motion → paintings that move in 35 art styles
+<a href="https://github.com/alchaincyf/huashu-art-motion">https://github.com/alchaincyf/huashu-art-motion</a></p>
+<p>anidoodle → doodles and loops, all in code
+<a href="https://github.com/alexgreensh/anidoodle">https://github.com/alexgreensh/anidoodle</a></p>
+<p>cinetic → launch films straight from code
+<a href="https://github.com/Leonxlnx/cinetic">https://github.com/Leonxlnx/cinetic</a></p>
+<p>motionmaxxing → turns AI slop into designer-level motion
+<a href="https://github.com/Tejashmakwana/motionmaxxing">https://github.com/Tejashmakwana/motionmaxxing</a></p>
+<p>Manim → turns formulas into smooth animation
+<a href="https://github.com/ManimCommunity/manim">https://github.com/ManimCommunity/manim</a></p>
+<p>blender-skills → pro Blender tricks your agent can use
+<a href="https://github.com/EL4CTEO/blender-skills">https://github.com/EL4CTEO/blender-skills</a></p>
+<p>three.quarks → particle effects that make every scene pop
+<a href="https://github.com/Alchemist0823/three.quarks">https://github.com/Alchemist0823/three.quarks</a></p>
+<p>react-postprocessing → the cinematic finish on every frame
+<a href="https://github.com/pmndrs/react-postprocessing">https://github.com/pmndrs/react-postprocessing</a></p>
+<p>Tweakpane → sliders for every tiny detail
+<a href="https://github.com/cocopon/tweakpane">https://github.com/cocopon/tweakpane</a></p>
+<p>EffectCraft → fast compositing, built in Rust
+<a href="https://github.com/storytold/effectcraft">https://github.com/storytold/effectcraft</a></p>
+<p>Openverse → free sounds and music for every scene
+<a href="http://api.openverse.org/v1/">http://api.openverse.org/v1/</a></p>
+<p>librosa → finds the beat so your motion follows it
+<a href="https://github.com/librosa/librosa">https://github.com/librosa/librosa</a></p>
+<p>WhisperX → word-perfect captions, timed to the millisecond
+<a href="https://github.com/m-bain/whisperX">https://github.com/m-bain/whisperX</a></p>
+<p>Remotion Skills → official video skills for any coding agent
+<a href="https://github.com/remotion-dev/skills">https://github.com/remotion-dev/skills</a></p>
+<p>FFmpeg → turns your animation into a real video file
+<a href="https://github.com/FFmpeg/FFmpeg">https://github.com/FFmpeg/FFmpeg</a></p>
+<p>See → rebuild → polish → score → export.</p>
+<p>Bookmark this, then the guide below shows how to rebuild your first animation tonight ↓</p>
+<h2 id="quick-reference-table">Quick-reference table</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tool</th>
+<th>What it does (author's line)</th>
+<th>Stage</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>reanimate</td>
+<td>rebuild any animation you see, frame by frame</td>
+<td>Rebuild</td>
+<td><a href="https://github.com/NiazMorshed2007/reanimate">NiazMorshed2007/reanimate</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>motion-design-skill</td>
+<td>timing and easing like a trained animator</td>
+<td>Time</td>
+<td><a href="https://github.com/LottieFiles/motion-design-skill">LottieFiles/motion-design-skill</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>mg-styles-15</td>
+<td>15 motion styles, one prompt each</td>
+<td>Paint</td>
+<td><a href="https://github.com/Vincentwei1021/mg-styles-15">Vincentwei1021/mg-styles-15</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>huashu-art-motion</td>
+<td>paintings that move in 35 art styles</td>
+<td>Paint</td>
+<td><a href="https://github.com/alchaincyf/huashu-art-motion">alchaincyf/huashu-art-motion</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>anidoodle</td>
+<td>doodles and loops, all in code</td>
+<td>Paint</td>
+<td><a href="https://github.com/alexgreensh/anidoodle">alexgreensh/anidoodle</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>cinetic</td>
+<td>launch films straight from code</td>
+<td>Paint</td>
+<td><a href="https://github.com/Leonxlnx/cinetic">Leonxlnx/cinetic</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>motionmaxxing</td>
+<td>turns AI slop into designer-level motion</td>
+<td>Time</td>
+<td><a href="https://github.com/Tejashmakwana/motionmaxxing">Tejashmakwana/motionmaxxing</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Manim</td>
+<td>turns formulas into smooth animation</td>
+<td>Paint</td>
+<td><a href="https://github.com/ManimCommunity/manim">ManimCommunity/manim</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>blender-skills</td>
+<td>pro Blender tricks your agent can use</td>
+<td>Paint</td>
+<td><a href="https://github.com/EL4CTEO/blender-skills">EL4CTEO/blender-skills</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>three.quarks</td>
+<td>particle effects that make every scene pop</td>
+<td>Glow</td>
+<td><a href="https://github.com/Alchemist0823/three.quarks">Alchemist0823/three.quarks</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>react-postprocessing</td>
+<td>the cinematic finish on every frame</td>
+<td>Glow</td>
+<td><a href="https://github.com/pmndrs/react-postprocessing">pmndrs/react-postprocessing</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Tweakpane</td>
+<td>sliders for every tiny detail</td>
+<td>Glow</td>
+<td><a href="https://github.com/cocopon/tweakpane">cocopon/tweakpane</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>EffectCraft</td>
+<td>fast compositing, built in Rust</td>
+<td>Glow</td>
+<td><a href="https://github.com/storytold/effectcraft">storytold/effectcraft</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Openverse</td>
+<td>free sounds and music for every scene</td>
+<td>Sync</td>
+<td><a href="http://api.openverse.org/v1/">api.openverse.org/v1</a> (an API, not a GitHub repo)</td>
+</tr>
+<tr>
+<td>15</td>
+<td>librosa</td>
+<td>finds the beat so your motion follows it</td>
+<td>Sync</td>
+<td><a href="https://github.com/librosa/librosa">librosa/librosa</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>WhisperX</td>
+<td>word-perfect captions, timed to the millisecond</td>
+<td>Caption</td>
+<td><a href="https://github.com/m-bain/whisperX">m-bain/whisperX</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Remotion Skills</td>
+<td>official video skills for any coding agent</td>
+<td>Caption</td>
+<td><a href="https://github.com/remotion-dev/skills">remotion-dev/skills</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>FFmpeg</td>
+<td>turns your animation into a real video file</td>
+<td>Export</td>
+<td><a href="https://github.com/FFmpeg/FFmpeg">FFmpeg/FFmpeg</a></td>
+</tr>
+</tbody>
+</table>
+<p>The "Stage" column is my mapping onto the post's own "Rebuild. Time. Paint. Glow. Sync. Caption." line; the author did not label each repo. Note the post says 18 GitHub repos, but Openverse is linked as an API rather than a repo.</p>
+<h2 id="replies-captured-10-of-24-shown-publicly">Replies captured (10 of 24 shown publicly)</h2>
+<table>
+<thead>
+<tr>
+<th>Time (UTC)</th>
+<th>Author</th>
+<th>Reply</th>
+<th>Likes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22 Nov 16:16</td>
+<td><a href="https://x.com/shafinbinnur/status/2124537557824471545">@shafinbinnur</a></td>
+<td>reanimate repo is lowkey game changer tbh</td>
+<td>9</td>
+</tr>
+<tr>
+<td>22 Nov 16:45</td>
+<td><a href="https://x.com/0xkryx/status/2124544732009480252">@0xkryx</a></td>
+<td>These repos was lit 🔥</td>
+<td>7</td>
+</tr>
+<tr>
+<td>22 Nov 17:23</td>
+<td><a href="https://x.com/TomO85613447/status/2124554346599985529">@TomO85613447</a></td>
+<td>Sure, if you're creating garbage content. You do you.</td>
+<td>8</td>
+</tr>
+<tr>
+<td>22 Nov 18:04</td>
+<td><a href="https://x.com/itsTeko0/status/2124564646212628558">@itsTeko0</a></td>
+<td>motionmaxxing is the best repo name I've seen lol</td>
+<td>12</td>
+</tr>
+<tr>
+<td>22 Nov 19:16</td>
+<td><a href="https://x.com/syowro/status/2124582696299229437">@syowro</a></td>
+<td>Fire I want to try</td>
+<td>8</td>
+</tr>
+<tr>
+<td>22 Nov 19:25</td>
+<td><a href="https://x.com/An_yhl/status/2124585164852600944">@An_yhl</a></td>
+<td>18 个 repo 一口气装完，感觉会先花半天配环境 😂 (Translation: installing 18 repos in one go, I'd probably spend half a day setting up the environment first)</td>
+<td>7</td>
+</tr>
+<tr>
+<td>22 Nov 22:58</td>
+<td><a href="https://x.com/sirt_ai_/status/2124638739762921632">@sirt_ai_</a></td>
+<td>@bot俺はこれを使ってるかな？ (Translation: @bot, do I use these?)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>22 Nov 23:38</td>
+<td><a href="https://x.com/__mharrison__/status/2124648756188717539">@<strong>mharrison</strong></a></td>
+<td>Thanks for sharing</td>
+<td>5</td>
+</tr>
+<tr>
+<td>23 Nov 02:36</td>
+<td><a href="https://x.com/sofiacorvetti/status/2124693509554966961">@sofiacorvetti</a></td>
+<td>18 repos para llevar el motion design al siguiente nivel sin depender de After Effects, esto es oro para quienes trabajan con IA (Translation: 18 repos to take motion design to the next level without depending on After Effects, this is gold for anyone working with AI)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>23 Nov 06:09</td>
+<td><a href="https://x.com/fountible/status/2124747101041275153">@fountible</a></td>
+<td>or skip the 18 repos, describe it and bro animates it on a canvas. editable after</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></article><aside class="toc"><b>On this page</b><a href="#attached-video">Attached video</a><a href="#full-post-text-verbatim-links-expanded">Full post text (verbatim, links expanded)</a><a href="#quick-reference-table">Quick-reference table</a><a href="#replies-captured-10-of-24-shown-publicly">Replies captured (10 of 24 shown publicly)</a></aside></div>
+<div class="foot">All archived content © its original authors. Captured from X for personal reference.</div>
+<script>
+document.querySelectorAll('pre').forEach(pre=>{const b=document.createElement('button');b.className='copy';b.textContent='Copy';
+b.onclick=()=>{navigator.clipboard.writeText(pre.innerText.replace(/^Copy\n?/,'')).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1400)})};pre.prepend(b)});
+</script></body></html>

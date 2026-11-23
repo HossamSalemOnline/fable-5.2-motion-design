@@ -9,7 +9,7 @@
 - **Stats at capture (18 Nov 2026):** 174,403 views · 67 likes · 10 reposts · 161 bookmarks
 - **Captured via:** Apify (`xquik/x-article-scraper`), full text and every media block, unedited
 
-> Note: X media links (video.twimg.com / pbs.twimg.com) can expire if the post is deleted. Download the MP4s if you want permanent copies.
+> Note: every video and image in this entry is stored in this repo under `docs/media/`, so it keeps working even if the original post is deleted.
 
 ---
 

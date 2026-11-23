@@ -1,47 +1,26 @@
-"""Build the GitHub Pages site in docs/ from the Markdown in content/.
+"""Build the knowledge hub: docs/ website, REPOS.md and the auto section of README.md.
 
-Usage:  python tools/build_site.py
-Needs:  pip install markdown
+Usage:  python tools/build_site.py      (needs: pip install markdown)
+Driven entirely by sources/entries.json and sources/media-manifest.json,
+so adding an X post = add its content file + an entry + its media rows, then push.
 """
 import html
+import json
+import os
 import pathlib
 import re
 import shutil
-
-import json
+from collections import OrderedDict
 
 import markdown
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-CONTENT = ROOT / "content"
 DOCS = ROOT / "docs"
-
-COVER = "https://pbs.twimg.com/media/HXH4Wh8aMAAWybP.jpg"
-
-PAGES = [
-    ("article.html", "01-article-motion-design-with-fable-5.2.md", "Article", "The guide"),
-    ("repos.html", "02-thread-20-github-repos-video-editing.md", "20 Repos", "Video editing stack"),
-    ("prompts.html", "03-embedded-posts-and-prompt-packs.md", "Prompt packs", "Full prompts"),
-]
-
-LINK_MAP = {
-    "01-article-motion-design-with-fable-5.2.md": "article.html",
-    "02-thread-20-github-repos-video-editing.md": "repos.html",
-    "03-embedded-posts-and-prompt-packs.md": "prompts.html",
-    "../tools/render.py": "render.py",
-    "render.py": "render.py",
-}
-
-GALLERY = [
-    ("Finished intro", "Two plain-English messages, under 6 minutes", "2121746406381875200/vid/avc1/1920x1080/NV6Js20RBFQ2Vdgv", "2121746406381875200/img/tyMXifONr3G427Ft", "wide"),
-    ("One-line prompt", "Impressive, but generic: Fable guessed the brief", "2121746964320841728/vid/avc1/1920x1080/cwT81mc0LNPzsLU2", "2121746964320841728/img/vbVj7cneRMmx5wUW", "wide"),
-    ("Director's template", "Six blocks of direction, first try", "2121747161084018688/vid/avc1/1920x1080/SonE7XOMf2OEAitC", "2121747161084018688/img/JwwOeWYhJc45VG6n", "wide"),
-    ("After one follow-up", "Two problems, two numbers, one message", "2121747404760518656/vid/avc1/1920x1080/7HW9y5RvGC_kGuVn", "2121747404760518656/img/Qp_AGxk3mpB5e0HV", "wide"),
-    ("Vertical Reel", "12 s seamless loop at 120 BPM", "2121747753890177024/vid/avc1/1080x1920/4W38UmmxDL_E9pun", "2121747753890177024/img/sssl0noNoX6VElUQ", "tall"),
-    ("One Half (3D)", "A kids cartoon that teaches fractions", "2121215855254196224/vid/avc1/1080x1350/TV3uTpkB9ZA6Z-0R", "2121215855254196224/img/WCYghVlgHjuprsa-", "tall"),
-    ("Capybara onsen (3D)", "Five shots, cameras set in meters", "2120496468310237184/vid/avc1/1080x1350/BX-YgJYbxCfCnFiP", "2120496468310237184/img/MqrKAE4MJhVo858D", "tall"),
-    ("20-repo stack", "The post's own showcase video", "2122677403998965760/vid/avc1/1080x1350/jbXBov89DPz7X9vj", "2122677403998965760/img/cH2isJgN6nv5UA3f", "tall"),
-]
+HUB = json.loads((ROOT / "sources" / "entries.json").read_text())
+MANIFEST = json.loads((ROOT / "sources" / "media-manifest.json").read_text())
+CDN = MANIFEST.get("cdn_base", "")
+ENTRIES = sorted(HUB["entries"], key=lambda e: e["date"], reverse=True)
+MEDIA = MANIFEST["files"]
 
 CSS = r"""
 :root{--bg:#0e0a09;--panel:#18110f;--panel2:#211715;--line:#33241f;--ink:#f3e7d3;--muted:#b6a48d;
@@ -107,42 +86,58 @@ figcaption a{font-weight:600}
 .gallery .t{padding:12px 14px}.gallery .t b{display:block}.gallery .t span{font-size:13.5px;color:var(--muted)}
 .foot{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center;padding:30px 22px 50px}
 .pill{display:inline-block;font-size:12.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
-"""
 
+.entry{display:grid;grid-template-columns:220px 1fr;gap:22px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:18px;color:var(--ink);margin-bottom:18px;transition:.2s}
+.entry:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px)}
+.entry img{width:100%;height:150px;object-fit:cover;border-radius:14px}
+.entry .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.entry h3{margin:.3em 0 .4em;color:var(--ink)}.entry p{color:var(--muted);margin:.2em 0 .6em;font-size:15px}
+@media(max-width:700px){.entry{grid-template-columns:1fr}.entry img{height:180px}}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+.hero-grad{border-radius:28px;border:1px solid var(--line);padding:56px 40px;margin:36px 0 10px;background:radial-gradient(600px 300px at 85% 20%,rgba(232,97,60,.35),transparent 70%),linear-gradient(180deg,var(--panel2),var(--panel))}
+"""
 JS = r"""
 document.querySelectorAll('pre').forEach(pre=>{const b=document.createElement('button');b.className='copy';b.textContent='Copy';
 b.onclick=()=>{navigator.clipboard.writeText(pre.innerText.replace(/^Copy\n?/,'')).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1400)})};pre.prepend(b)});
 """
-
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">')
 
 
+def page_name(e):
+    return f"{e['id']}.html"
+
+
+def local_exists(path):
+    return (ROOT / path).exists()
+
+
+def media_src(item, for_html=True):
+    """Local copy when downloaded, original URL otherwise."""
+    if local_exists(item["path"]):
+        return "media/" + pathlib.Path(item["path"]).name if for_html else item["path"]
+    return item["original"]
+
+
+def by_path(path):
+    return next((m for m in MEDIA if m["path"] == path), None)
+
+
 def shell(title, active, body):
-    links = '<a class="l{on}" href="index.html">Home</a>'.format(on=" on" if active == "index.html" else "")
-    for fname, _, label, _ in PAGES:
-        links += f'<a class="l{" on" if active == fname else ""}" href="{fname}">{label}</a>'
-    links += f'<a class="l{" on" if active == "sources.html" else ""}" href="sources.html">Sources</a>'
+    nav = [("index.html", "Home")] + [(page_name(e), e["id"].upper()) for e in sorted(ENTRIES, key=lambda x: x["id"])]
+    nav += [("repos.html", "All repos"), ("sources.html", "Sources")]
+    titles = {page_name(e): e["title"] for e in ENTRIES}
+    links = "".join(f'<a class="l{" on" if active == href else ""}" href="{href}" title="{html.escape(titles.get(href, label))}">{html.escape(label)}</a>' for href, label in nav)
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><meta name="robots" content="noindex">{FONTS}<style>{CSS}</style></head><body>
 <nav class="nav"><div class="in"><a class="brand" href="index.html">Fable <b>5.2</b> Motion Archive</a><span class="sp"></span>{links}</div></nav>
 {body}
-<div class="foot">All content © its authors (@anstapnever; @claudeai for the launch post). Archived 18 Nov 2026 for personal reference.</div>
+<div class="foot">All archived content © its original authors. Captured from X for personal reference.</div>
 <script>{JS}</script></body></html>"""
 
 
 VID_BLOCK = re.compile(r'<p align="center"><a href="([^"]+)"><img src="([^"]+)" width="\d+" alt="([^"]*)"></a><br>\s*<sub>(.*?)</sub></p>', re.S)
 IMG_BLOCK = re.compile(r'<p align="center"><img src="([^"]+)" width="\d+" alt="([^"]*)"></p>')
-
-
-def video_fig(m):
-    mp4, poster, alt, cap = m.groups()
-    tall = any(k in mp4 for k in ("1080x1920", "1080x1350", "v6-", "v7-", "v9-", "v10-"))
-    cap = cap.replace("▶ ", "")
-    return (f'<figure class="video{" tall" if tall else ""}"><video controls playsinline preload="none" poster="{poster}">'
-            f'<source src="{mp4}" type="video/mp4"></video><figcaption>{cap}</figcaption></figure>')
-
-
 URL = re.compile(r'(?<![("<=\[/])(https?://[^\s)<>|`*]+[^\s)<>|`*.,])')
 
 
@@ -157,19 +152,41 @@ def linkify(text):
     return "\n".join(out)
 
 
+def is_tall(src):
+    return any(k in src for k in ("1080x1920", "1440x1800", "1080x1350", "720x1280"))
+
+
+def video_fig(m):
+    mp4, poster, alt, cap = m.groups()
+    item = next((x for x in MEDIA if x["original"] == mp4 or mp4.endswith(pathlib.Path(x["path"]).name)), None)
+    tall = is_tall(item["original"] if item else mp4)
+    cap = cap.replace("▶ ", "")
+    return (f'<figure class="video{" tall" if tall else ""}"><video controls playsinline preload="none" poster="{poster}">'
+            f'<source src="{mp4}" type="video/mp4"></video><figcaption>{cap}</figcaption></figure>')
+
+
+def localize_html(out):
+    if CDN:
+        out = out.replace(CDN + "docs/media/", "media/")
+    out = out.replace("../docs/media/", "media/").replace("docs/media/", "media/")
+    for item in MEDIA:
+        if local_exists(item["path"]):
+            local = "media/" + pathlib.Path(item["path"]).name
+            out = out.replace(item["original"], local).replace(item["original"].replace("&", "&amp;"), local)
+    for e in ENTRIES:
+        out = out.replace(f'href="{pathlib.Path(e["file"]).name}"', f'href="{page_name(e)}"')
+    return out
+
+
 def render_md(text):
     text = linkify(text)
     text = VID_BLOCK.sub(video_fig, text)
     text = IMG_BLOCK.sub(lambda m: f'<figure><img src="{m.group(1)}" alt="{m.group(2)}"></figure>', text)
-    md = markdown.Markdown(extensions=["tables", "fenced_code", "toc", "sane_lists"],
-                           extension_configs={"toc": {"toc_depth": "2-3"}})
+    md = markdown.Markdown(extensions=["tables", "fenced_code", "toc", "sane_lists"], extension_configs={"toc": {"toc_depth": "2-3"}})
     out = md.convert(text)
-    for src, dst in LINK_MAP.items():
-        out = out.replace(f'href="{src}"', f'href="{dst}"')
-    out = out.replace('href="../content/', 'href="').replace('href="../tools/render.py"', 'href="render.py"')
-    for src, dst in LINK_MAP.items():
-        out = out.replace(f'href="{src}"', f'href="{dst}"')
-    return out, md.toc_tokens
+    toks = md.toc_tokens
+    flat = toks[0]["children"] if toks and toks[0].get("level") == 1 else toks
+    return out, flat
 
 
 def toc_html(tokens):
@@ -181,76 +198,122 @@ def toc_html(tokens):
     return "<b>On this page</b>" + "".join(items)
 
 
-def localize_html(out):
-    """Point remote media URLs at docs/media/ copies when they exist (after tools/fetch_media.py)."""
-    out = out.replace("../docs/media/", "media/").replace("docs/media/", "media/")
-    manifest = ROOT / "sources" / "media-manifest.json"
-    if manifest.exists():
-        for item in json.loads(manifest.read_text())["files"]:
-            if (ROOT / item["path"]).exists():
-                local = "media/" + pathlib.Path(item["path"]).name
-                out = out.replace(item["original"], local).replace(item["original"].replace("&", "&amp;"), local)
-    return out
-
-
 def write(path, text):
     path.write_text(localize_html(text))
 
 
+# ---------- repo index ----------
+GH = re.compile(r"https?://github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
+
+
+def collect_repos():
+    repos = OrderedDict()
+    for e in ENTRIES:
+        text = (ROOT / e["file"]).read_text()
+        for owner, name in GH.findall(text):
+            name = name.rstrip(".")
+            key = f"{owner}/{name}".lower()
+            r = repos.setdefault(key, {"full": f"{owner}/{name}", "entries": []})
+            if e["id"] not in r["entries"]:
+                r["entries"].append(e["id"])
+    return sorted(repos.values(), key=lambda r: (-len(r["entries"]), r["full"].lower()))
+
+
+def write_repos_md(repos):
+    titles = {e["id"]: e for e in ENTRIES}
+    lines = ["# Every GitHub repo in the hub", "",
+             f"{len(repos)} unique repositories, collected automatically from all {len(ENTRIES)} entries. Repos mentioned in more than one entry come first.", "",
+             "| Repository | Mentioned in |", "|---|---|"]
+    for r in repos:
+        refs = " · ".join(f"[{titles[i]['kind']} {i.upper()}]({titles[i]['file']})" for i in r["entries"])
+        lines.append(f"| [{r['full']}](https://github.com/{r['full']}) | {refs} |")
+    lines += ["", "<sub>Generated by tools/build_site.py. Do not edit by hand.</sub>", ""]
+    (ROOT / "REPOS.md").write_text("\n".join(lines))
+
+
+# ---------- README auto section ----------
+def readme_auto(repos, videos):
+    vids = [v for v in videos][:9]
+    out = ["<!-- AUTO:START (generated by tools/build_site.py; edit sources/entries.json instead) -->", "",
+           f"**{len(ENTRIES)} entries · {len(videos)} videos · {sum(1 for m in MEDIA if m['kind']=='image')} images · {len(repos)} unique repos**", "",
+           "## Entries", "", "| | Entry | Type | Author | Date |", "|---|---|---|---|---|"]
+    for e in ENTRIES:
+        cover = by_path(e.get("cover", ""))
+        img = f'<img src="{e["cover"] if cover and local_exists(cover["path"]) else (cover or {}).get("original", "")}" width="120">' if cover else ""
+        out.append(f"| {img} | **[{e['title']}]({e['file']})**<br><sub>{e['summary']}</sub> | {e['kind']} | [@{e['handle']}](https://x.com/{e['handle']}) | {e['date']} |")
+    out += ["", "## Watch", "", "| | | |", "|:---:|:---:|:---:|"]
+    cells = []
+    for v in vids:
+        poster = by_path(v.get("poster", "")) or {}
+        p = v["poster"] if poster and local_exists(poster["path"]) else poster.get("original", "")
+        href = (CDN + v["path"]) if local_exists(v["path"]) and CDN else v["original"]
+        cells.append(f'[![{v["title"]}]({p})]({href})<br><sub>{v["title"]}</sub>')
+    while len(cells) % 3:
+        cells.append("")
+    for i in range(0, len(cells), 3):
+        out.append("| " + " | ".join(cells[i:i + 3]) + " |")
+    out += ["", f"<sub>Tap a thumbnail to play it. The full list of {len(repos)} repos is in [REPOS.md](REPOS.md).</sub>", "", "<!-- AUTO:END -->"]
+    return "\n".join(out)
+
+
+def update_readme(block):
+    p = ROOT / "README.md"
+    t = p.read_text()
+    t = re.sub(r"<!-- AUTO:START.*?<!-- AUTO:END -->", lambda m: block, t, flags=re.S)
+    p.write_text(t)
+
+
 def build():
     DOCS.mkdir(exist_ok=True)
-    for fname, src, label, _ in PAGES:
-        text = (CONTENT / src).read_text()
-        body, tokens = render_md(text)
-        flat = tokens[0]["children"] if tokens and tokens[0].get("level") == 1 else tokens
-        page = f'<div class="layout"><article class="doc">{body}</article><aside class="toc">{toc_html(flat)}</aside></div>'
-        title = re.search(r"^# (.+)$", text, re.M).group(1)
-        write(DOCS / fname, shell(title, fname, page))
+    repos = collect_repos()
+    videos = [m for m in MEDIA if m["kind"] == "video" and m.get("title")]
 
-    src_text = (ROOT / "sources" / "SOURCES.md").read_text()
-    body, tokens = render_md(src_text)
-    flat = tokens[0]["children"] if tokens and tokens[0].get("level") == 1 else tokens
-    write(DOCS / "sources.html", shell("Master sources", "sources.html",
-        f'<div class="layout"><article class="doc" style="max-width:100%">{body}</article><aside class="toc">{toc_html(flat)}</aside></div>'))
+    for e in ENTRIES:
+        body, toc = render_md((ROOT / e["file"]).read_text())
+        write(DOCS / page_name(e), shell(e["title"], page_name(e),
+              f'<div class="layout"><article class="doc">{body}</article><aside class="toc">{toc_html(toc)}</aside></div>'))
 
+    write_repos_md(repos)
+    body, toc = render_md((ROOT / "REPOS.md").read_text().replace("(content/", "("))
+    write(DOCS / "repos.html", shell("Every repo", "repos.html", f'<div class="layout"><article class="doc" style="max-width:100%">{body}</article><aside class="toc"></aside></div>'))
+
+    body, toc = render_md((ROOT / "sources" / "SOURCES.md").read_text())
+    write(DOCS / "sources.html", shell("Sources", "sources.html", f'<div class="layout"><article class="doc" style="max-width:100%">{body}</article><aside class="toc">{toc_html(toc)}</aside></div>'))
+
+    cards = ""
+    for e in ENTRIES:
+        cover = by_path(e.get("cover", ""))
+        img = f'<img src="{media_src(cover)}" alt="">' if cover else ""
+        tags = "".join(f'<span class="tag">{html.escape(t)}</span>' for t in e.get("tags", []))
+        cards += (f'<a class="entry" href="{page_name(e)}">{img}<div><span class="k">{e["kind"]} · {e["date"]} · @{e["handle"]}</span>'
+                  f'<h3>{html.escape(e["title"])}</h3><p>{html.escape(e["summary"])}</p>{tags}</div></a>')
     gallery = ""
-    for t, s, vid, th, shape in GALLERY:
-        gallery += (f'<div class="g {shape}"><video controls playsinline preload="none" '
-                    f'poster="https://pbs.twimg.com/amplify_video_thumb/{th}.jpg">'
-                    f'<source src="https://video.twimg.com/amplify_video/{vid}.mp4?tag=29" type="video/mp4"></video>'
-                    f'<div class="t"><b>{t}</b><span>{s}</span></div></div>')
+    for v in videos:
+        poster = by_path(v.get("poster", ""))
+        shape = "tall" if is_tall(v["original"]) else "wide"
+        gallery += (f'<div class="g {shape}"><video controls playsinline preload="none" poster="{media_src(poster) if poster else ""}">'
+                    f'<source src="{media_src(v)}" type="video/mp4"></video><div class="t"><b>{html.escape(v["title"])}</b>'
+                    f'<span>{v["entry"]}</span></div></div>')
     home = f"""<div class="wrap">
-<div class="hero"><img src="{COVER}" alt="Motion Design with Fable 5.2"></div>
-<div class="hero-copy">
-<span class="pill">Archived 18 Nov 2026</span><span class="pill">by @anstapnever</span><span class="pill">10 videos · 9 prompts · 20 repos</span>
+<div class="hero-grad"><span class="pill">Motion archive</span><span class="pill">{len(ENTRIES)} entries</span><span class="pill">updated automatically</span>
 <h1>Motion design with <span class="grad">Fable 5.2</span>, archived in full.</h1>
-<p class="lead">The complete guide from zero to your first MP4, the 20 open-source repos that turn Fable into a video editing studio, and both prompt packs, word for word.</p>
-</div>
+<p class="lead" style="font-size:20px;color:var(--muted);max-width:760px">{html.escape(HUB["hub"]["tagline"])}</p></div>
 <div class="stats">
-<div class="stat"><b>10 min</b><span>to your first video</span></div>
-<div class="stat"><b>6 blocks</b><span>in the director's template</span></div>
-<div class="stat"><b>$2.39</b><span>for a one-message fix</span></div>
-<div class="stat"><b>20</b><span>GitHub repos in the stack</span></div>
+<div class="stat"><b>{len(ENTRIES)}</b><span>entries archived</span></div>
+<div class="stat"><b>{len(videos)}</b><span>videos stored</span></div>
+<div class="stat"><b>{sum(1 for m in MEDIA if m["kind"]=="image")}</b><span>images and diagrams</span></div>
+<div class="stat"><b>{len(repos)}</b><span>unique GitHub repos</span></div>
 </div>
-<div class="cards">
-<a class="card" href="article.html"><span class="k">01 · Article</span><h3>The guide</h3><p>Setup, the director's template, 12 fix-it phrases, vertical video, rendering, music and 10 beginner mistakes.</p></a>
-<a class="card" href="repos.html"><span class="k">02 · Post</span><h3>20-repo editing stack</h3><p>Edit, captions, audio, AI FX and export, with every link expanded.</p></a>
-<a class="card" href="prompts.html"><span class="k">03 · Prompt packs</span><h3>Cartoon + capybara</h3><p>The 1146-word and 822-word prompts, cost tables, 10 kids lessons and templates.</p></a>
-<a class="card" href="sources.html"><span class="k">04 · Sources</span><h3>Master sources</h3><p>Every original URL, how it was captured, and the full media inventory.</p></a>
-</div>
-<h2>Watch the results</h2>
-<div class="gallery">{gallery}</div>
-<h2>Downloads</h2>
-<div class="cards">
-<a class="card" href="media/prompt-pack-one-half.pdf"><span class="k">PDF · 5 pages</span><h3>One Half prompt pack</h3><p>The original designed PDF.</p></a>
-<a class="card" href="media/prompt-pack-capybara-onsen.pdf"><span class="k">PDF · 4 pages</span><h3>Capybara Onsen prompt pack</h3><p>The original designed PDF.</p></a>
-<a class="card" href="render.py"><span class="k">Python</span><h3>render.py</h3><p>The author's frame-perfect HTML-to-MP4 renderer.</p></a>
-</div>
+<h2>Entries</h2>{cards}
+<h2>Watch</h2><div class="gallery">{gallery}</div>
+<p style="margin-top:36px"><a href="repos.html">Browse all {len(repos)} repos →</a> · <a href="sources.html">Sources and capture log →</a></p>
 </div>"""
-    write(DOCS / "index.html", shell("Fable 5.2 Motion Design Archive", "index.html", home))
-    shutil.copy(ROOT / "tools" / "render.py", DOCS / "render.py")
+    write(DOCS / "index.html", shell(HUB["hub"]["title"], "index.html", home))
+    update_readme(readme_auto(repos, videos))
+    for old, new in {"article.html": "e01.html", "prompts.html": "e03.html"}.items():
+        (DOCS / old).write_text(f'<!DOCTYPE html><meta http-equiv="refresh" content="0; url={new}"><a href="{new}">Moved</a>')
     (DOCS / ".nojekyll").write_text("")
-    print("built:", sorted(p.name for p in DOCS.iterdir()))
+    print(f"built {len(ENTRIES)} entries, {len(repos)} repos, {len(videos)} videos")
 
 
 if __name__ == "__main__":

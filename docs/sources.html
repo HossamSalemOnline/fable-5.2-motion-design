@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Master sources</title><meta name="robots" content="noindex"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>
+<title>Sources</title><meta name="robots" content="noindex"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>
 :root{--bg:#0e0a09;--panel:#18110f;--panel2:#211715;--line:#33241f;--ink:#f3e7d3;--muted:#b6a48d;
 --accent:#e8613c;--accent2:#e9407a;--mustard:#e3a82b;--cream:#efe4cf;--radius:16px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -63,8 +63,17 @@ figcaption a{font-weight:600}
 .gallery .t{padding:12px 14px}.gallery .t b{display:block}.gallery .t span{font-size:13.5px;color:var(--muted)}
 .foot{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center;padding:30px 22px 50px}
 .pill{display:inline-block;font-size:12.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+
+.entry{display:grid;grid-template-columns:220px 1fr;gap:22px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:18px;color:var(--ink);margin-bottom:18px;transition:.2s}
+.entry:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px)}
+.entry img{width:100%;height:150px;object-fit:cover;border-radius:14px}
+.entry .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.entry h3{margin:.3em 0 .4em;color:var(--ink)}.entry p{color:var(--muted);margin:.2em 0 .6em;font-size:15px}
+@media(max-width:700px){.entry{grid-template-columns:1fr}.entry img{height:180px}}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+.hero-grad{border-radius:28px;border:1px solid var(--line);padding:56px 40px;margin:36px 0 10px;background:radial-gradient(600px 300px at 85% 20%,rgba(232,97,60,.35),transparent 70%),linear-gradient(180deg,var(--panel2),var(--panel))}
 </style></head><body>
-<nav class="nav"><div class="in"><a class="brand" href="index.html">Fable <b>5.2</b> Motion Archive</a><span class="sp"></span><a class="l" href="index.html">Home</a><a class="l" href="article.html">Article</a><a class="l" href="repos.html">20 Repos</a><a class="l" href="prompts.html">Prompt packs</a><a class="l on" href="sources.html">Sources</a></div></nav>
+<nav class="nav"><div class="in"><a class="brand" href="index.html">Fable <b>5.2</b> Motion Archive</a><span class="sp"></span><a class="l" href="index.html" title="Home">Home</a><a class="l" href="e01.html" title="Motion Design with Fable 5.2: from zero to your first video in 10 minutes">E01</a><a class="l" href="e02.html" title="20 GitHub repos that turn Fable 5.2 into a video editing studio">E02</a><a class="l" href="e03.html" title="Embedded posts and full prompt packs (One Half, Capybara Onsen)">E03</a><a class="l" href="e04.html" title="Motion Design with Fable 5.2: From One Prompt to a Finished Film (Full Course)">E04</a><a class="l" href="e05.html" title="I haven&#x27;t opened After Effects in months, these 18 GitHub repos replaced it">E05</a><a class="l" href="repos.html" title="All repos">All repos</a><a class="l on" href="sources.html" title="Sources">Sources</a></div></nav>
 <div class="layout"><article class="doc" style="max-width:100%"><h1 id="master-sources">Master sources</h1>
 <p>Every original source behind this archive, with how it was captured. All captures were made on <strong>18 Nov 2026</strong> through Apify.</p>
 <h2 id="primary-posts">Primary posts</h2>
@@ -88,7 +97,7 @@ figcaption a{font-weight:600}
 <td>@anstapnever</td>
 <td>14 Nov 2026, 23:42</td>
 <td><code>xquik/x-article-scraper</code> (full content blocks + Markdown)</td>
-<td><a href="article.html">content/01-article-motion-design-with-fable-5.2.md</a></td>
+<td><a href="../content/01-article-motion-design-with-fable-5.2.md">content/01-article-motion-design-with-fable-5.2.md</a></td>
 </tr>
 <tr>
 <td>2</td>
@@ -97,7 +106,7 @@ figcaption a{font-weight:600}
 <td>@anstapnever</td>
 <td>17 Nov 2026, 13:11</td>
 <td><code>xquik/x-tweet-scraper</code> (text + expanded links), <code>apidojo/tweet-scraper</code> (replies)</td>
-<td><a href="repos.html">content/02-thread-20-github-repos-video-editing.md</a></td>
+<td><a href="../content/02-thread-20-github-repos-video-editing.md">content/02-thread-20-github-repos-video-editing.md</a></td>
 </tr>
 </tbody>
 </table>
@@ -120,7 +129,7 @@ figcaption a{font-weight:600}
 <td>X post</td>
 <td>Article, "How it works"</td>
 <td><code>xquik/x-tweet-scraper</code></td>
-<td><a href="prompts.html">content/03, section A</a></td>
+<td><a href="../content/03-embedded-posts-and-prompt-packs.md">content/03, section A</a></td>
 </tr>
 <tr>
 <td>4</td>
@@ -128,7 +137,7 @@ figcaption a{font-weight:600}
 <td>X post</td>
 <td>Article, prompt 1</td>
 <td><code>xquik/x-tweet-scraper</code></td>
-<td><a href="prompts.html">content/03, section B</a></td>
+<td><a href="../content/03-embedded-posts-and-prompt-packs.md">content/03, section B</a></td>
 </tr>
 <tr>
 <td>5</td>
@@ -152,7 +161,7 @@ figcaption a{font-weight:600}
 <td>X post</td>
 <td>Article, prompt 2</td>
 <td><code>xquik/x-tweet-scraper</code></td>
-<td><a href="prompts.html">content/03, section C</a></td>
+<td><a href="../content/03-embedded-posts-and-prompt-packs.md">content/03, section C</a></td>
 </tr>
 <tr>
 <td>8</td>
@@ -391,9 +400,137 @@ figcaption a{font-weight:600}
 </tr>
 </tbody>
 </table>
+<h2 id="e04-motion-design-with-fable-52-from-one-prompt-to-a-finished-film-full-course">e04: Motion Design with Fable 5.2: From One Prompt to a Finished Film (Full Course)</h2>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Author</th>
+<th>Published (UTC)</th>
+<th>Captured</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://x.com/seeconvm/status/2122405510779375668">https://x.com/seeconvm/status/2122405510779375668</a></td>
+<td>X Article</td>
+<td>@seeconvm</td>
+<td>16 Nov 2026, 19:04</td>
+<td>23 Nov 2026</td>
+<td><code>xquik/x-article-scraper</code>, converted with <code>tools/x_article_to_md.py</code></td>
+</tr>
+</tbody>
+</table>
+<p>The 11 posts embedded in the article, each captured in full and shown in place:</p>
+<table>
+<thead>
+<tr>
+<th>Post</th>
+<th>Author</th>
+<th>Date</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://x.com/claudeai/status/2119867114450268322">https://x.com/claudeai/status/2119867114450268322</a></td>
+<td>@claudeai</td>
+<td>Nov 09 2026</td>
+<td><code>xquik/x-tweet-scraper</code></td>
+</tr>
+<tr>
+<td><a href="https://x.com/felixrieseberg/status/2119925633564463609">https://x.com/felixrieseberg/status/2119925633564463609</a></td>
+<td>@felixrieseberg</td>
+<td>Nov 09 2026</td>
+<td><code>xquik/x-tweet-scraper</code></td>
+</tr>
+<tr>
+<td><a href="https://x.com/polinaaAi/status/2120132270249947466">https://x.com/polinaaAi/status/2120132270249947466</a></td>
+<td>@polinaaAi</td>
+<td>Nov 10 2026</td>
+<td><code>xquik/x-tweet-scraper</code></td>
+</tr>
+<tr>
+<td><a href="https://x.com/kevin_t_ngo/status/2120198663062622581">https://x.com/kevin_t_ngo/status/2120198663062622581</a></td>
+<td>@kevin_t_ngo</td>
+<td>Nov 10 2026</td>
+<td><code>xquik/x-tweet-scraper</code></td>
+</tr>
+<tr>
+<td><a href="https://x.com/venturetwins/status/2120331599283954137">https://x.com/venturetwins/status/2120331599283954137</a></td>
+<td>@venturetwins</td>
+<td>Nov 11 2026</td>
+<td><code>xquik/x-tweet-scraper</code></td>
+</tr>
+<tr>
+<td><a href="https://x.com/loktar00/status/2120192761542615271">https://x.com/loktar00/status/2120192761542615271</a></td>
+<td>@loktar00</td>
+<td>Nov 10 2026</td>
+<td><code>xquik/x-tweet-scraper</code></td>
+</tr>
+<tr>
+<td><a href="https://x.com/TimurNegru/status/2120188343870964113">https://x.com/TimurNegru/status/2120188343870964113</a></td>
+<td>@TimurNegru</td>
+<td>Nov 10 2026</td>
+<td><code>xquik/x-tweet-scraper</code></td>
+</tr>
+<tr>
+<td><a href="https://x.com/chetaslua/status/2120179018964324566">https://x.com/chetaslua/status/2120179018964324566</a></td>
+<td>@chetaslua</td>
+<td>Nov 10 2026</td>
+<td><code>xquik/x-tweet-scraper</code></td>
+</tr>
+<tr>
+<td><a href="https://x.com/everestchris6/status/2120175941616128277">https://x.com/everestchris6/status/2120175941616128277</a></td>
+<td>@everestchris6</td>
+<td>Nov 10 2026</td>
+<td><code>xquik/x-tweet-scraper</code></td>
+</tr>
+<tr>
+<td><a href="https://x.com/flavioAd/status/2119876761299059127">https://x.com/flavioAd/status/2119876761299059127</a></td>
+<td>@flavioAd</td>
+<td>Nov 09 2026</td>
+<td><code>xquik/x-tweet-scraper</code></td>
+</tr>
+<tr>
+<td><a href="https://x.com/petergostev/status/2120167560700383572">https://x.com/petergostev/status/2120167560700383572</a></td>
+<td>@petergostev</td>
+<td>Nov 10 2026</td>
+<td><code>xquik/x-tweet-scraper</code></td>
+</tr>
+</tbody>
+</table>
+<p>Article replies were not returned publicly by X.</p>
+<h2 id="e05-i-havent-opened-after-effects-in-months-these-18-github-repos-replaced-it">e05: I haven't opened After Effects in months, these 18 GitHub repos replaced it</h2>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Author</th>
+<th>Published (UTC)</th>
+<th>Captured</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://x.com/0xsoul/status/2124485659041604080">https://x.com/0xsoul/status/2124485659041604080</a></td>
+<td>X post (long-form note)</td>
+<td>@0xsoul</td>
+<td>22 Nov 2026, 12:50</td>
+<td>23 Nov 2026</td>
+<td><code>xquik/x-tweet-scraper</code> (text + expanded links), <code>apidojo/tweet-scraper</code> (replies)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="media-backups-e04-e05">Media backups (e04, e05)</h2>
+<p>All 31 new media files (videos at the best quality under 40 MB, posters, the course cover and 8 chapter diagrams) were backed up to Apify store <code>RdXOYxhkEcf1p7YpI</code> on 23 Nov 2026 and are stored in this repo under <code>media/</code>. The full list is in <a href="https://github.com/HossamSalemOnline/fable-5.2-motion-design/blob/main/sources/media-manifest.json">media-manifest.json</a>.</p>
 <h2 id="rights">Rights</h2>
-<p>All post text, prompts, PDFs and videos belong to their authors (@anstapnever, and @claudeai for #3). This archive is for personal reference. Keep the repository <strong>private</strong> unless you have the author's permission to republish.</p></article><aside class="toc"><b>On this page</b><a href="#primary-posts">Primary posts</a><a href="#embedded-and-linked-sources">Embedded and linked sources</a><a href="#the-20-repositories-from-post-2">The 20 repositories (from post #2)</a><a href="#media-inventory">Media inventory</a><a href="#rights">Rights</a></aside></div>
-<div class="foot">All content © its authors (@anstapnever; @claudeai for the launch post). Archived 18 Nov 2026 for personal reference.</div>
+<p>All post text, prompts, PDFs and videos belong to their authors (@anstapnever, @seeconvm, @0xsoul, and the authors of each embedded post). This archive is for personal reference. Keep the repository <strong>private</strong> unless you have the author's permission to republish.</p></article><aside class="toc"><b>On this page</b><a href="#primary-posts">Primary posts</a><a href="#embedded-and-linked-sources">Embedded and linked sources</a><a href="#the-20-repositories-from-post-2">The 20 repositories (from post #2)</a><a href="#media-inventory">Media inventory</a><a href="#e04-motion-design-with-fable-52-from-one-prompt-to-a-finished-film-full-course">e04: Motion Design with Fable 5.2: From One Prompt to a Finished Film (Full Course)</a><a href="#e05-i-havent-opened-after-effects-in-months-these-18-github-repos-replaced-it">e05: I haven't opened After Effects in months, these 18 GitHub repos replaced it</a><a href="#media-backups-e04-e05">Media backups (e04, e05)</a><a href="#rights">Rights</a></aside></div>
+<div class="foot">All archived content © its original authors. Captured from X for personal reference.</div>
 <script>
 document.querySelectorAll('pre').forEach(pre=>{const b=document.createElement('button');b.className='copy';b.textContent='Copy';
 b.onclick=()=>{navigator.clipboard.writeText(pre.innerText.replace(/^Copy\n?/,'')).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1400)})};pre.prepend(b)});
