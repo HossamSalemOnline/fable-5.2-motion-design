@@ -90,6 +90,7 @@ figcaption a{font-weight:600}
 .entry{display:grid;grid-template-columns:220px 1fr;gap:22px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:18px;color:var(--ink);margin-bottom:18px;transition:.2s}
 .entry:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px)}
 .entry img{width:100%;height:150px;object-fit:cover;border-radius:14px}
+.entry.nocover{grid-template-columns:1fr}
 .entry .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 .entry h3{margin:.3em 0 .4em;color:var(--ink)}.entry p{color:var(--muted);margin:.2em 0 .6em;font-size:15px}
 @media(max-width:700px){.entry{grid-template-columns:1fr}.entry img{height:180px}}
@@ -285,7 +286,7 @@ def build():
         cover = by_path(e.get("cover", ""))
         img = f'<img src="{media_src(cover)}" alt="">' if cover else ""
         tags = "".join(f'<span class="tag">{html.escape(t)}</span>' for t in e.get("tags", []))
-        cards += (f'<a class="entry" href="{page_name(e)}">{img}<div><span class="k">{e["kind"]} · {e["date"]} · @{e["handle"]}</span>'
+        cards += (f'<a class="entry{"" if img else " nocover"}" href="{page_name(e)}">{img}<div><span class="k">{e["kind"]} · {e["date"]} · @{e["handle"]}</span>'
                   f'<h3>{html.escape(e["title"])}</h3><p>{html.escape(e["summary"])}</p>{tags}</div></a>')
     gallery = ""
     for v in videos:
